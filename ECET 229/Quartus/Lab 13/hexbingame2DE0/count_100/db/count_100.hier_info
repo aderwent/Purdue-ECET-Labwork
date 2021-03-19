@@ -1,0 +1,32 @@
+|count100
+enable => _.IN0
+enable => _.IN0
+clock => lsd_bcd[3]~reg.CLK
+clock => lsd_bcd[2]~reg.CLK
+clock => lsd_bcd[1]~reg.CLK
+clock => lsd_bcd[0]~reg.CLK
+clock => msd_bcd[3]~reg.CLK
+clock => msd_bcd[2]~reg.CLK
+clock => msd_bcd[1]~reg.CLK
+clock => msd_bcd[0]~reg.CLK
+clock => game_over~reg.CLK
+clearn => lsd_bcd[3]~reg.ACLR
+clearn => lsd_bcd[2]~reg.ACLR
+clearn => lsd_bcd[1]~reg.ACLR
+clearn => lsd_bcd[0]~reg.ACLR
+clearn => msd_bcd[3]~reg.ACLR
+clearn => msd_bcd[2]~reg.ACLR
+clearn => msd_bcd[1]~reg.ACLR
+clearn => msd_bcd[0]~reg.ACLR
+clearn => game_over~reg.ACLR
+lsd_bcd[0] <= lsd_bcd[0]~reg.DB_MAX_OUTPUT_PORT_TYPE
+lsd_bcd[1] <= lsd_bcd[1]~reg.DB_MAX_OUTPUT_PORT_TYPE
+lsd_bcd[2] <= lsd_bcd[2]~reg.DB_MAX_OUTPUT_PORT_TYPE
+lsd_bcd[3] <= lsd_bcd[3]~reg.DB_MAX_OUTPUT_PORT_TYPE
+msd_bcd[0] <= msd_bcd[0]~reg.DB_MAX_OUTPUT_PORT_TYPE
+msd_bcd[1] <= msd_bcd[1]~reg.DB_MAX_OUTPUT_PORT_TYPE
+msd_bcd[2] <= msd_bcd[2]~reg.DB_MAX_OUTPUT_PORT_TYPE
+msd_bcd[3] <= msd_bcd[3]~reg.DB_MAX_OUTPUT_PORT_TYPE
+game_over <= game_over~reg.DB_MAX_OUTPUT_PORT_TYPE
+
+

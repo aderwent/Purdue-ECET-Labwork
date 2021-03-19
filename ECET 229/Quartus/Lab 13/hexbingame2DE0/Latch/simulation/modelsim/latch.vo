@@ -1,0 +1,235 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
+
+// DATE "01/18/2014 17:53:54"
+
+// 
+// Device: Altera EP4CGX15BF14C6 Package FBGA169
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module storeit (
+	timesupN,
+	hex_in,
+	hex_out);
+input 	timesupN;
+input 	[3:0] hex_in;
+output 	[3:0] hex_out;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \hex_out[0]~output_o ;
+wire \hex_out[1]~output_o ;
+wire \hex_out[2]~output_o ;
+wire \hex_out[3]~output_o ;
+wire \timesupN~input_o ;
+wire \hex_in[0]~input_o ;
+wire \hex_in[1]~input_o ;
+wire \hex_in[2]~input_o ;
+wire \hex_in[3]~input_o ;
+wire [3:0] \reg ;
+
+
+cycloneiv_io_obuf \hex_out[0]~output (
+	.i(\reg [0]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hex_out[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hex_out[0]~output .bus_hold = "false";
+defparam \hex_out[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+cycloneiv_io_obuf \hex_out[1]~output (
+	.i(\reg [1]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hex_out[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hex_out[1]~output .bus_hold = "false";
+defparam \hex_out[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+cycloneiv_io_obuf \hex_out[2]~output (
+	.i(\reg [2]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hex_out[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hex_out[2]~output .bus_hold = "false";
+defparam \hex_out[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+cycloneiv_io_obuf \hex_out[3]~output (
+	.i(\reg [3]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hex_out[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hex_out[3]~output .bus_hold = "false";
+defparam \hex_out[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+cycloneiv_io_ibuf \timesupN~input (
+	.i(timesupN),
+	.ibar(gnd),
+	.o(\timesupN~input_o ));
+// synopsys translate_off
+defparam \timesupN~input .bus_hold = "false";
+defparam \timesupN~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cycloneiv_io_ibuf \hex_in[0]~input (
+	.i(hex_in[0]),
+	.ibar(gnd),
+	.o(\hex_in[0]~input_o ));
+// synopsys translate_off
+defparam \hex_in[0]~input .bus_hold = "false";
+defparam \hex_in[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+dffeas \reg[0] (
+	.clk(\timesupN~input_o ),
+	.d(\hex_in[0]~input_o ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reg [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reg[0] .is_wysiwyg = "true";
+defparam \reg[0] .power_up = "low";
+// synopsys translate_on
+
+cycloneiv_io_ibuf \hex_in[1]~input (
+	.i(hex_in[1]),
+	.ibar(gnd),
+	.o(\hex_in[1]~input_o ));
+// synopsys translate_off
+defparam \hex_in[1]~input .bus_hold = "false";
+defparam \hex_in[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+dffeas \reg[1] (
+	.clk(\timesupN~input_o ),
+	.d(\hex_in[1]~input_o ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reg [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reg[1] .is_wysiwyg = "true";
+defparam \reg[1] .power_up = "low";
+// synopsys translate_on
+
+cycloneiv_io_ibuf \hex_in[2]~input (
+	.i(hex_in[2]),
+	.ibar(gnd),
+	.o(\hex_in[2]~input_o ));
+// synopsys translate_off
+defparam \hex_in[2]~input .bus_hold = "false";
+defparam \hex_in[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+dffeas \reg[2] (
+	.clk(\timesupN~input_o ),
+	.d(\hex_in[2]~input_o ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reg [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reg[2] .is_wysiwyg = "true";
+defparam \reg[2] .power_up = "low";
+// synopsys translate_on
+
+cycloneiv_io_ibuf \hex_in[3]~input (
+	.i(hex_in[3]),
+	.ibar(gnd),
+	.o(\hex_in[3]~input_o ));
+// synopsys translate_off
+defparam \hex_in[3]~input .bus_hold = "false";
+defparam \hex_in[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+dffeas \reg[3] (
+	.clk(\timesupN~input_o ),
+	.d(\hex_in[3]~input_o ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reg [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reg[3] .is_wysiwyg = "true";
+defparam \reg[3] .power_up = "low";
+// synopsys translate_on
+
+assign hex_out[0] = \hex_out[0]~output_o ;
+
+assign hex_out[1] = \hex_out[1]~output_o ;
+
+assign hex_out[2] = \hex_out[2]~output_o ;
+
+assign hex_out[3] = \hex_out[3]~output_o ;
+
+endmodule

@@ -1,0 +1,84 @@
+%	mod 8 counter with enable to time the answer.
+	enter causes the count to immediately go to limit (7)
+NS widmer
+January 9, 2014
+%
+SUBDESIGN count8
+( 	entern, enable, clock 				:INPUT;
+	mod8[2..0], timesupN					:OUTPUT;		)
+	
+VARIABLE
+	mod8[2..0]			:DFF;
+	SR						:TFF;
+	EDGE[0..2]			:DFF;
+	
+BEGIN	
+DEFAULTS
+	timesupN = VCC;
+END DEFAULTS;
+	mod8[].clk = clock;
+	sr.clk = clock;
+	sr.T = gnd;
+	edge[].clk = clock;
+	mod8[].clrn = vcc;	-- assure inactive
+	edge[].D = (entern, edge[0..1].q);  -- synchronize and detect edge
+	edge[].prn = timesupN;
+	edge[].clrn = vcc;
+
+	SR.clrn = edge[1].q !$ edge[2].q;	--XNOR to detect edge:  clear on PB press
+	SR.prn = timesupN; --!(enable &  (mod8[].q == 7));  -- set it just before roll over
+	
+	mod8[].prn = sr.q;	-- force to 7.
+	
+	IF !enable  THEN
+		mod8[].d = mod8[].q;
+	ELSIF mod8[].q < 7 THEN	
+		mod8[].d = mod8[].q + 1;		-- always count up
+	ELSIF enterN == 0 THEN	
+		mod8[].d = mod8[].q;
+	ELSE 	mod8[].d = 0;
+			timesupN = GND;
+	END IF;
+	--timesupN = !(enable & (mod8[] == 7) & (clock == 0));
+	
+
+	
+END;
+	
+	
+	------------------The code below kinda worked 
+--	sometimes advanced the new HEX value in the middle of countdown. 
+	
+--BEGIN
+--DEFAULTS 
+--	timesupN = VCC;
+--END DEFAULTS;
+--mod8[].clk = clock;
+--
+--
+--
+--mod8[].prn = entern # mod8[].q == 7;
+--
+--	IF enable & clock == 0 THEN
+--		mod8[].d = mod8[].q + 1;		-- always count up
+--		timesupN = !(mod8[] == 7);
+--	ELSE 	mod8[].d = mod8[].q;
+--
+--	END IF;
+--
+--END;
+-- ---------------The following code did not work. 
+--IF entern == 0 THEN	
+--	IF mod8[] == 7 THEN	
+--		mod8[].d = mod8[].q;
+--	ELSE 
+--		timesupN = GND;
+--		mod8[].d = 0;
+--	END IF;
+--ELSIF enable == 0 THEN 
+--	mod8[].d = mod8[].q;
+--ELSIF mod8[] == 7 THEN	
+--	timesupN = GND;
+--ELSE
+--	mod8[].d = mod8[].q + 1;
+--END IF;

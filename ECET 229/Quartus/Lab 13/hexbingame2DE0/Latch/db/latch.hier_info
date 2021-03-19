@@ -1,0 +1,19 @@
+|storeit_synch
+clock => reg[3].CLK
+clock => reg[2].CLK
+clock => reg[1].CLK
+clock => reg[0].CLK
+timesupN => reg[3].ENA
+timesupN => reg[2].ENA
+timesupN => reg[1].ENA
+timesupN => reg[0].ENA
+hex_in[0] => reg[0].DATAIN
+hex_in[1] => reg[1].DATAIN
+hex_in[2] => reg[2].DATAIN
+hex_in[3] => reg[3].DATAIN
+hex_out[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
+hex_out[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
+hex_out[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
+hex_out[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

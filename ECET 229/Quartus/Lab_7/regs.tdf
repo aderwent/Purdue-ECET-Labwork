@@ -1,0 +1,59 @@
+%	 Lab 6 
+ECET 22900
+Fall 2018
+
+Fundamental synchronous register operations. 
+For each concurrent code block (between BEGIN and END) 
+	1. Draw a diagram showing the inputs, connections to the flip flips, and the outputs.
+	2.	Fill in the third line with code that will accomplish what is described in the line comments. 
+	3. Create a simulation for regs and simultae the first concurrent block.
+	4. Paste your simulation into your lab document 
+%
+
+SUBDESIGN regs
+(	clock, d[3..0]		:INPUT;
+
+	Qs[3..0]				:OUTPUT;	)
+	
+	VARIABLE
+		flips[3..0]		:DFF;
+		monitor			:DFF;
+		outputFinal		:Dff;
+
+----		
+--	BEGIN							-- concurrent block #1
+--		flips[].clk = clock;
+--		flips[].d = d[];			-- load the flips register from switches
+--		qs[] = flips[].q;
+--	END;								--TEsted and verified. 
+----		
+
+----
+--BEGIN							-- concurrent block #2
+--		flips[].clk = clock;
+--		flips[].d = flips[].q +1;	 -- count up by 1. 
+--		qs[] = flips[].q;
+--END;
+
+----
+--BEGIN							-- concurrent block #3
+--		flips[].clk = clock;
+--		IF flips[].q < 8 THEN		-- limit max count to 8
+--			flips[].d = flips[].q +1;	-- count up by 1.
+--		ELSE 
+--			flips[].d = 0;
+--		END IF;
+--		qs[] = flips[].q;
+--END;
+----
+
+----
+BEGIN
+	flips[].clk = clock;
+	IF flips[].q < 9 THEN
+		flips[].d = flips[].q + 1;
+	ELSE
+		flips[].d = 0;
+	END IF;
+	qs[] = flips[].q;
+END;

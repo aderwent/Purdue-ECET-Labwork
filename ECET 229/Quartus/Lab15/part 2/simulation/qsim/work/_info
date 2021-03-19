@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dW:\Classes\ECET 229\Quartus\Lab15\part 2\simulation\qsim
+vlab15_part2
+Z1 IzaA9Th>oVmTh;3`kN<bAc0
+Z2 V<XUQT3?^Elbn]kfmX97_N0
+Z3 dW:\Classes\ECET 229\Quartus\Lab15\part 2\simulation\qsim
+Z4 w1607048414
+Z5 8lab15_part2.vo
+Z6 Flab15_part2.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|lab15_part2.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 ?mO]:Y`zB;7mR3SWVi34]0
+!s85 0
+Z11 !s108 1607048426.033000
+Z12 !s107 lab15_part2.vo|
+!s101 -O0
+vlab15_part2_vlg_check_tst
+!i10b 1
+Z13 !s100 fCVY:VQ@AHbW6Zl6g9QNL3
+Z14 IFB_elF[YRCKU0n<lf]TgP1
+Z15 VNR7K<zBTWZT3BK9D9O8:F3
+R3
+Z16 w1607048409
+Z17 8lab15_part2.vt
+Z18 Flab15_part2.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z19 !s108 1607048429.125000
+Z20 !s107 lab15_part2.vt|
+Z21 !s90 -work|work|lab15_part2.vt|
+!s101 -O0
+R9
+vlab15_part2_vlg_sample_tst
+!i10b 1
+Z22 !s100 d8mbZZ^SN3W`kZ:XXcQ0]2
+Z23 IRAmBlELOibSmj08@5Z`NX2
+Z24 V=DeBMKafmV<2=b3gVVRdb2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vlab15_part2_vlg_vec_tst
+!i10b 1
+Z25 !s100 _S3627ZPNE?FYIN6Qa76<1
+Z26 IXcNN`P]J6d:_Mf7?gDX_n3
+Z27 V=g_8kPV=[^AIhg:[8hIjD2
+R3
+R16
+R17
+R18
+Z28 L0 279
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

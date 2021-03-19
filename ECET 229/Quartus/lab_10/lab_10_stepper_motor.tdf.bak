@@ -1,0 +1,180 @@
+%
+	Author: Alec Derwent
+	Date: 10/29/2020
+	Stepper motor driver for ECET 229 - Lab 10
+	
+	This AHDL functions as a driver for a stepper motor, utilizing a machine to
+	set the output value named out[3..0] to serial values associated with coil directions
+	on said motor. Switch statements were utilized to count through in a clockwise or
+	counterclockwise direction, depending on whether input "dir" is HIGH or LOW respectively.
+	
+	There are five inputs: "coil_disable", "step_enable", "dir", "mode", and "clock".
+	- "coil_disable": An active HIGH input which, when forced LOW, will force all output values to
+						   LOW. When re-enabled, the value before activated will be reassigned to the 
+							"driver" machine.
+	- "step_enable": An active high input that enables the stepper to move. When forced LOW, the
+						  current value of the "driver" machine is held.
+	- "dir": An input which determines the direction of the stepper motor. When HIGH the motor will
+				move clockwise, when LOW the motor will move counter-clockwise
+	- "mode": An input that determines the mode of the stepper motor, between "wave" and "half" as
+				 described in the provided state diagram in the lab 10 document.
+	- "clock": Reads in clock input. This value is associated with two machines.
+	
+	There is one output: "out[3..0]".
+	- "out[3..0]": A serial output that connects to the stepper motor. Can be equal to any values
+						defined as states in the "driver" machine.
+						
+	There are two machines: "driver" and "mem"
+	- "driver": A machine that contains all directions of coils in an associated stepper motor,
+					named after directions on state diagram in lab document. These values are connected
+					to output "out[3..0]", as the machine is defined as a MACHINE OF BITS. Contains an
+					"off" state where output is forced low, which occurs when input "coil_disable" is forced
+					low.
+	- "mem": A machine used to store the current state of the "driver" machine, which is recalled after
+				"coil_disable" is returned HIGH after being set to LOW. All values are arbitrary, as the naming
+				convention is the part referenced for recollection purposes.
+%
+
+SUBDESIGN lab_10_stepper_motor
+(
+	coil_disable, step_enable, dir, mode[1..0], clock		:INPUT;	--listed inputs
+	out[3..0]													:OUTPUT;	--serial output for bits
+)
+VARIABLE
+	driver:	MACHINE OF BITS (out[3..0]) WITH STATES ( --driver machine with serial values for stepper motor 
+					--has output bits attatched to machine (machine w/ bits)
+					
+					--following values are for stepper motor positions. naming convention is based on block diagram in lab document
+					top			=	B"1010",
+					top_right	=	B"1000",
+					right			=	B"1001",
+					bot_right	=	B"0001",
+					bot			=	B"0101",
+					bot_left		=	B"0100",
+					left			=	B"0110",
+					top_left		=	B"0010",
+					off			=	B"0000"
+					
+					--arbitrary values commented out. used for testing purposes
+					%
+					top			=	B"0000",
+					top_right	=	B"0001",
+					right			=	B"0010",
+					bot_right	=	B"0011",
+					bot			=	B"0100",
+					bot_left		=	B"0101",
+					left			=	B"0110",
+					top_left		=	B"0111",
+					off			=	B"0000"
+					%
+				);
+	
+	mem:		MACHINE WITH STATES ( --machine to store value for driver when coil_disable is low
+					--following values are arbitrary. only used to store data for driver machine when needed
+					top2			=	B"0000",
+					top_right2	=	B"0001",
+					right2		=	B"0010",
+					bot_right2	=	B"0011",
+					bot2			=	B"0100",
+					bot_left2	=	B"0101",
+					left2			=	B"0110",
+					top_left2	=	B"0111"
+				);
+	
+BEGIN
+	driver.clk = clock;	--clock input set for driver machine
+	mem.clk = clock;		--clock input set for memory machine
+	IF coil_disable THEN	--if active high coil_disable is high
+		IF driver == off THEN	--if the value for coil_disable was previously low, causing driver to be set to off
+			--switch statement to recall value stored in mem machine
+			CASE mem IS
+				WHEN top2 =>	driver = top;
+				WHEN top_right2 =>	driver = top_right;
+				WHEN right2 =>	driver = right;
+				WHEN bot_right2 =>	driver = bot_right;
+				WHEN bot2 =>	driver = bot;
+				WHEN bot_left2 =>	driver = bot_left;
+				WHEN left2 =>	driver = left;
+				WHEN top_left2 =>	driver = top_left;
+			END CASE;
+			
+		END IF;
+		
+		IF step_enable THEN	--if the stepper driver is enabled
+			IF MODE == 0 THEN	-- MODE = 0 is wave drive, MODE = 1 is half drive, MODE = 2 is a full drive. If in wave drive:
+			
+				IF driver != top_right OR driver != top_left OR driver != bot_right OR driver != bot_left THEN	--if driver is at a position NOT found in the wave drive outputs
+					--switch statement to set driver to nearest wave value, based on direction
+					CASE driver IS
+						--cases go clockwise for dir = high, counter-clockwise for dir = low
+						WHEN top =>	IF dir THEN driver = top_right; ELSE driver = top_left; END IF;
+						WHEN right =>	IF dir THEN driver = bot_right; ELSE driver = top_right; END IF;
+						WHEN bot =>	IF dir THEN driver = bot_left; ELSE driver = bot_right; END IF;
+						WHEN left =>	IF dir THEN driver = top_left; ELSE driver = bot_left; END IF;
+					END CASE;
+				END IF;
+				
+				CASE driver IS	--switch statement to set new driver value in wave drive mode, based on direction
+					--cases go clockwise for dir = high, counter-clockwise for dir = low
+					WHEN top_right =>	IF dir THEN driver = bot_right; ELSE driver = top_left; END IF;
+					WHEN bot_right =>	IF dir THEN driver = bot_left; ELSE driver = top_right; END IF;
+					WHEN bot_left =>	IF dir THEN driver = top_left; ELSE driver = bot_right; END IF;
+					WHEN top_left =>	IF dir THEN driver = top_right; ELSE driver = bot_left; END IF;
+				END CASE;
+				
+			ELSE IF MODE == 1 THEN --if mode is set to half drive
+			
+				CASE driver IS	--switch statement to set new driver value in half drive
+					--cases go clockwise for dir = high, counter-clockwise for dir = low
+					WHEN top =>	IF dir THEN driver = top_right; ELSE driver = top_left; END IF;
+					WHEN top_right =>	IF dir THEN driver = right; ELSE driver = top; END IF;
+					WHEN right =>	IF dir THEN driver = bot_right; ELSE driver = top_right; END IF;
+					WHEN bot_right =>	IF dir THEN driver = bot; ELSE driver = right; END IF;
+					WHEN bot =>	IF dir THEN driver = bot_left; ELSE driver = bot_right; END IF;
+					WHEN bot_left =>	IF dir THEN driver = left; ELSE driver = bot; END IF;
+					WHEN left =>	IF dir THEN driver = top_left; ELSE driver = bot_left; END IF;
+					WHEN top_left =>	IF dir THEN driver = top; ELSE driver = left; END IF;
+				END CASE;
+			
+			ELSE IF MODE == 2 THEN --if mode is set to full drive
+			
+				IF driver == top_right OR driver == top_left OR driver == bot_right OR driver == bot_left THEN	--if driver is at a position NOT found in the wave drive outputs
+					--switch statement to set driver to nearest wave value, based on direction
+					CASE driver IS	--switch statement to set new driver value in wave drive mode, based on direction
+						--cases go clockwise for dir = high, counter-clockwise for dir = low
+						WHEN top_right =>	IF dir THEN driver = right; ELSE driver = top; END IF;
+						WHEN bot_right =>	IF dir THEN driver = bot; ELSE driver = right; END IF;
+						WHEN bot_left =>	IF dir THEN driver = left; ELSE driver = bot; END IF;
+						WHEN top_left =>	IF dir THEN driver = top; ELSE driver = left; END IF;
+					END CASE;
+				END IF;
+				
+				CASE driver IS
+					--cases go clockwise for dir = high, counter-clockwise for dir = low
+					WHEN top =>	IF dir THEN driver = right; ELSE driver = left; END IF;
+					WHEN right =>	IF dir THEN driver = bot; ELSE driver = top; END IF;
+					WHEN bot =>	IF dir THEN driver = left; ELSE driver = right; END IF;
+					WHEN left =>	IF dir THEN driver = top; ELSE driver = bot; END IF;
+				END CASE;
+				
+			END IF;
+		END IF;
+		END IF;
+		
+	ELSE
+	
+		CASE driver IS	--switch statement to send current driver val to memory machine
+			WHEN top =>	mem = top2;
+			WHEN top_right =>	mem = top_right2;
+			WHEN right =>	mem = right2;
+			WHEN bot_right =>	mem = bot_right2;
+			WHEN bot =>	mem = bot2;
+			WHEN bot_left =>	mem = bot_left2;
+			WHEN left =>	mem = left2;
+			WHEN top_left =>	mem = top_left2;
+		END CASE;
+		driver = off;	--set driver value to off
+		
+	END IF;
+	
+END;

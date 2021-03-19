@@ -1,0 +1,17 @@
+%  Latch the random value
+ns widmer
+1/9/14
+%
+SUBDESIGN storeit
+(	 timesupN, hex_in[3..0]			:INPUT;
+	 hex_out[3..0]						:OUTPUT;	)
+VARIABLE
+	reg[3..0] 	:DFF;
+	
+BEGIN	
+	reg[].clk = timesupN;		-- latch it on the rising edge (end of interval)
+	reg[].d = hex_in[];		-- input the random count value
+	hex_out[] = reg[].q;	
+	
+END;
+	

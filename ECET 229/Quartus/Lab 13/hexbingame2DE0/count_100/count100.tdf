@@ -1,0 +1,32 @@
+SUBDESIGN count100
+(	enable, clock, clearn							:INPUT;
+	lsd_bcd[3..0], msd_bcd[3..0], game_over	:OUTPUT;)
+VARIABLE
+		lsd_bcd[3..0], msd_bcd[3..0]			:DFF;
+		game_over									:DFF;
+BEGIN
+game_over.clk = clock;
+game_over.clrn = clearn;
+game_over.d = lsd_bcd[] == 9 & msd_bcd[] == 9;
+lsd_bcd[].clrn = clearn;
+msd_bcd[].clrn = clearn;
+lsd_bcd[].clk = clock;
+msd_bcd[].clk = clock;
+	IF enable == 0	THEN
+			lsd_bcd[].d = lsd_bcd[].q;
+	ELSIF lsd_bcd[].q < 9 THEN	
+			lsd_bcd[].d = lsd_bcd[].q + 1;
+	ELSE 
+			lsd_bcd[].d = 0;
+	END IF;
+	
+	IF !enable # lsd_bcd[].q != 9 THEN
+		msd_bcd[].d = msd_bcd[].q;
+	ELSIF msd_bcd[].q < 9 THEN	
+			msd_bcd[].d = msd_bcd[].q + 1;
+	ELSE 
+			msd_bcd[].d = 0;
+	END IF;	
+
+	
+END;

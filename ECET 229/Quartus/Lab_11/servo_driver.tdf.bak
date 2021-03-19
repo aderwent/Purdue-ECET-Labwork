@@ -1,0 +1,30 @@
+%
+	author: Alec Derwent
+	date: 11/5/2020
+	
+	This file takes an input from the MOD 2550 counter, modifying the output's
+	pulse width as specified by input SDIN[] for a minimum of 64 clock counts.
+	
+	The file takes an input of count[11..0] (from the MOD 2550 counter), an active
+	high enabling input named "EN", and a data input "SDIN[]" to compare determine
+	the new pulse width.
+%
+
+SUBDESIGN servo_driver (
+	count[11..0], EN, SDIN[11..0]			:INPUT;	--input definitions
+	servo_driver								:OUTPUT;	--output definitions
+)
+	
+BEGIN
+	
+	IF EN == 0 THEN	--if active high enable is low
+		servo_driver = GND;	--set output to zero
+	ELSIF count[] < 64 THEN	--for first 64 counts
+		servo_driver = VCC;	--output high for set time
+	ELSIF count[] < SDIN[] THEN	--if count is less than the input signal
+		servo_driver = VCC;	--output high until input signal is reached
+	ELSE
+		servo_driver = GND;	--set output to zero
+	END IF;
+	
+END;

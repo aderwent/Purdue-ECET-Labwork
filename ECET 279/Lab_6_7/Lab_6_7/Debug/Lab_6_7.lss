@@ -1,0 +1,1166 @@
+
+Lab_6_7.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800200  00800200  00000616  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000005c2  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000616  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000648  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000f0  00000000  00000000  00000688  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000142a  00000000  00000000  00000778  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000e55  00000000  00000000  00001ba2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000076a  00000000  00000000  000029f7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001a4  00000000  00000000  00003164  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000006ef  00000000  00000000  00003308  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000045a  00000000  00000000  000039f7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000b0  00000000  00000000  00003e51  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	71 c0       	rjmp	.+226    	; 0xe4 <__ctors_end>
+   2:	00 00       	nop
+   4:	79 c0       	rjmp	.+242    	; 0xf8 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	77 c0       	rjmp	.+238    	; 0xf8 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	75 c0       	rjmp	.+234    	; 0xf8 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	73 c0       	rjmp	.+230    	; 0xf8 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	71 c0       	rjmp	.+226    	; 0xf8 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	6f c0       	rjmp	.+222    	; 0xf8 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	6d c0       	rjmp	.+218    	; 0xf8 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	6b c0       	rjmp	.+214    	; 0xf8 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	69 c0       	rjmp	.+210    	; 0xf8 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	67 c0       	rjmp	.+206    	; 0xf8 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	65 c0       	rjmp	.+202    	; 0xf8 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	63 c0       	rjmp	.+198    	; 0xf8 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	61 c0       	rjmp	.+194    	; 0xf8 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	5f c0       	rjmp	.+190    	; 0xf8 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	5d c0       	rjmp	.+186    	; 0xf8 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	5b c0       	rjmp	.+182    	; 0xf8 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	59 c0       	rjmp	.+178    	; 0xf8 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	57 c0       	rjmp	.+174    	; 0xf8 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	55 c0       	rjmp	.+170    	; 0xf8 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	53 c0       	rjmp	.+166    	; 0xf8 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	51 c0       	rjmp	.+162    	; 0xf8 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	4f c0       	rjmp	.+158    	; 0xf8 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	4d c0       	rjmp	.+154    	; 0xf8 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	4b c0       	rjmp	.+150    	; 0xf8 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	49 c0       	rjmp	.+146    	; 0xf8 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	47 c0       	rjmp	.+142    	; 0xf8 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	45 c0       	rjmp	.+138    	; 0xf8 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	43 c0       	rjmp	.+134    	; 0xf8 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	41 c0       	rjmp	.+130    	; 0xf8 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	3f c0       	rjmp	.+126    	; 0xf8 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	3d c0       	rjmp	.+122    	; 0xf8 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	3b c0       	rjmp	.+118    	; 0xf8 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	39 c0       	rjmp	.+114    	; 0xf8 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	37 c0       	rjmp	.+110    	; 0xf8 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	35 c0       	rjmp	.+106    	; 0xf8 <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	33 c0       	rjmp	.+102    	; 0xf8 <__bad_interrupt>
+  92:	00 00       	nop
+  94:	31 c0       	rjmp	.+98     	; 0xf8 <__bad_interrupt>
+  96:	00 00       	nop
+  98:	2f c0       	rjmp	.+94     	; 0xf8 <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	2d c0       	rjmp	.+90     	; 0xf8 <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	2b c0       	rjmp	.+86     	; 0xf8 <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	29 c0       	rjmp	.+82     	; 0xf8 <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	27 c0       	rjmp	.+78     	; 0xf8 <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	25 c0       	rjmp	.+74     	; 0xf8 <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	23 c0       	rjmp	.+70     	; 0xf8 <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	21 c0       	rjmp	.+66     	; 0xf8 <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	1f c0       	rjmp	.+62     	; 0xf8 <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	1d c0       	rjmp	.+58     	; 0xf8 <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	1b c0       	rjmp	.+54     	; 0xf8 <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	19 c0       	rjmp	.+50     	; 0xf8 <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	17 c0       	rjmp	.+46     	; 0xf8 <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	15 c0       	rjmp	.+42     	; 0xf8 <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	13 c0       	rjmp	.+38     	; 0xf8 <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	11 c0       	rjmp	.+34     	; 0xf8 <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	0f c0       	rjmp	.+30     	; 0xf8 <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	0d c0       	rjmp	.+26     	; 0xf8 <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	0b c0       	rjmp	.+22     	; 0xf8 <__bad_interrupt>
+	...
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+  f4:	61 d1       	rcall	.+706    	; 0x3b8 <main>
+  f6:	63 c2       	rjmp	.+1222   	; 0x5be <_exit>
+
+000000f8 <__bad_interrupt>:
+  f8:	83 cf       	rjmp	.-250    	; 0x0 <__vectors>
+
+000000fa <init_ADC>:
+	
+	value = ADCH;		// get the upper 8-bits
+	ADCSRA = ADCSRA | (1<<ADIF);	// clear the conversion flag
+	
+	return value;			// send back the 8-bit result
+}
+  fa:	ec e7       	ldi	r30, 0x7C	; 124
+  fc:	f0 e0       	ldi	r31, 0x00	; 0
+  fe:	80 e4       	ldi	r24, 0x40	; 64
+ 100:	80 83       	st	Z, r24
+ 102:	80 81       	ld	r24, Z
+ 104:	80 83       	st	Z, r24
+ 106:	ea e7       	ldi	r30, 0x7A	; 122
+ 108:	f0 e0       	ldi	r31, 0x00	; 0
+ 10a:	87 e0       	ldi	r24, 0x07	; 7
+ 10c:	80 83       	st	Z, r24
+ 10e:	80 81       	ld	r24, Z
+ 110:	80 68       	ori	r24, 0x80	; 128
+ 112:	80 83       	st	Z, r24
+ 114:	08 95       	ret
+
+00000116 <read_ADC_channel_10bit>:
+
+uint16_t read_ADC_channel_10bit(uint8_t channel)
+{
+	uint16_t result;			// 16-bit value to hold the result
+	
+	ADMUX = ADMUX & ~0x20;	// set for Left Justified - Only using 8 bit of resolution
+ 116:	ec e7       	ldi	r30, 0x7C	; 124
+ 118:	f0 e0       	ldi	r31, 0x00	; 0
+ 11a:	90 81       	ld	r25, Z
+ 11c:	9f 7d       	andi	r25, 0xDF	; 223
+ 11e:	90 83       	st	Z, r25
+	
+	ADMUX = ADMUX & ~(1<<ADLAR);	// set for Right Justified - using 10 bit resolution
+ 120:	90 81       	ld	r25, Z
+ 122:	9f 7d       	andi	r25, 0xDF	; 223
+ 124:	90 83       	st	Z, r25
+	
+	ADMUX = ADMUX & 0xE0;		// clear the channel data
+ 126:	90 81       	ld	r25, Z
+ 128:	90 7e       	andi	r25, 0xE0	; 224
+ 12a:	90 83       	st	Z, r25
+	
+	ADMUX = ADMUX | channel;	// add desired channel
+ 12c:	90 81       	ld	r25, Z
+ 12e:	89 2b       	or	r24, r25
+ 130:	80 83       	st	Z, r24
+
+	ADCSRA = ADCSRA | (1<<ADSC);	// start a conversion
+ 132:	ea e7       	ldi	r30, 0x7A	; 122
+ 134:	f0 e0       	ldi	r31, 0x00	; 0
+ 136:	80 81       	ld	r24, Z
+ 138:	80 64       	ori	r24, 0x40	; 64
+ 13a:	80 83       	st	Z, r24
+	
+	while( (ADCSRA & (1<<ADIF)) == 0 )	// wait for conversion to be completed
+ 13c:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7c007a>
+ 140:	84 ff       	sbrs	r24, 4
+ 142:	fc cf       	rjmp	.-8      	; 0x13c <read_ADC_channel_10bit+0x26>
+	{
+	}
+	
+	result = ADCL;
+ 144:	30 91 78 00 	lds	r19, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7c0078>
+	result |= (ADCH << 8);
+ 148:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7c0079>
+ 14c:	90 e0       	ldi	r25, 0x00	; 0
+ 14e:	98 2f       	mov	r25, r24
+ 150:	88 27       	eor	r24, r24
+	ADCSRA = ADCSRA | (1<<ADIF);	// clear the conversion flag
+ 152:	ea e7       	ldi	r30, 0x7A	; 122
+ 154:	f0 e0       	ldi	r31, 0x00	; 0
+ 156:	20 81       	ld	r18, Z
+ 158:	20 61       	ori	r18, 0x10	; 16
+ 15a:	20 83       	st	Z, r18
+	
+	return result;			// send back the 16-bit result
+}
+ 15c:	83 2b       	or	r24, r19
+ 15e:	08 95       	ret
+
+00000160 <init_timer0>:
+
+#include "customDelay.h"
+
+void init_timer0(void)
+{
+	TCNT0 = 0;		// begin with no delay set
+ 160:	16 bc       	out	0x26, r1	; 38
+	TCCR0A = 0x00;	//timer in normal mode
+ 162:	14 bc       	out	0x24, r1	; 36
+	TCCR0B = 0x00;	// timer initially off
+ 164:	15 bc       	out	0x25, r1	; 37
+	OCR0A = 0;		// no output setting
+ 166:	17 bc       	out	0x27, r1	; 39
+ 168:	08 95       	ret
+
+0000016a <init_timer1>:
+}
+
+void init_timer1(void)
+{
+	TCNT1 = 0;		// begin with no delay set
+ 16a:	10 92 85 00 	sts	0x0085, r1	; 0x800085 <__TEXT_REGION_LENGTH__+0x7c0085>
+ 16e:	10 92 84 00 	sts	0x0084, r1	; 0x800084 <__TEXT_REGION_LENGTH__+0x7c0084>
+	OCR1A = 0;	// set default duty cycle as 10%
+ 172:	e8 e8       	ldi	r30, 0x88	; 136
+ 174:	f0 e0       	ldi	r31, 0x00	; 0
+ 176:	11 82       	std	Z+1, r1	; 0x01
+ 178:	10 82       	st	Z, r1
+	TCCR1A = (1 << WGM11);	//timer in 9-bit fast pwm mode
+ 17a:	82 e0       	ldi	r24, 0x02	; 2
+ 17c:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7c0080>
+	TCCR1B = (1 << WGM12) | (1 << CS11);	// timer initially off
+ 180:	8a e0       	ldi	r24, 0x0A	; 10
+ 182:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7c0081>
+	OCR1A = 0;	// no duty cycle
+ 186:	11 82       	std	Z+1, r1	; 0x01
+ 188:	10 82       	st	Z, r1
+ 18a:	08 95       	ret
+
+0000018c <init_timer3>:
+}
+
+void init_timer3(void)
+{
+	TCNT3 = 0;	// begin with no delay
+ 18c:	10 92 95 00 	sts	0x0095, r1	; 0x800095 <__TEXT_REGION_LENGTH__+0x7c0095>
+ 190:	10 92 94 00 	sts	0x0094, r1	; 0x800094 <__TEXT_REGION_LENGTH__+0x7c0094>
+	TCCR3A = 0;	// set output to normal pin operation
+ 194:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7c0090>
+	TCCR3B = (1<<WGM32) | (1<<CS32) | (1<<CS30); // CTC operation, 1024 prescaler
+ 198:	8d e0       	ldi	r24, 0x0D	; 13
+ 19a:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <__TEXT_REGION_LENGTH__+0x7c0091>
+	OCR3A = 0;	// no frequency set
+ 19e:	10 92 99 00 	sts	0x0099, r1	; 0x800099 <__TEXT_REGION_LENGTH__+0x7c0099>
+ 1a2:	10 92 98 00 	sts	0x0098, r1	; 0x800098 <__TEXT_REGION_LENGTH__+0x7c0098>
+ 1a6:	08 95       	ret
+
+000001a8 <delay_ms>:
+}
+
+void delay_ms(uint16_t delay)
+{
+ 1a8:	ac 01       	movw	r20, r24
+	// 1 ms delay for each ms desired
+	for (uint16_t i = 0; i < delay; i++)
+ 1aa:	20 e0       	ldi	r18, 0x00	; 0
+ 1ac:	30 e0       	ldi	r19, 0x00	; 0
+ 1ae:	0c c0       	rjmp	.+24     	; 0x1c8 <delay_ms+0x20>
+	{
+		OCR0A = 250;	// 
+ 1b0:	9a ef       	ldi	r25, 0xFA	; 250
+ 1b2:	97 bd       	out	0x27, r25	; 39
+		TCCR0B = (1 << CS01) | (1 << CS00); // prescaler = 64
+ 1b4:	93 e0       	ldi	r25, 0x03	; 3
+ 1b6:	95 bd       	out	0x25, r25	; 37
+		while ((TIFR0 & (1<<OCF0A)) == 0); // begin polling
+ 1b8:	a9 9b       	sbis	0x15, 1	; 21
+ 1ba:	fe cf       	rjmp	.-4      	; 0x1b8 <delay_ms+0x10>
+		TCCR0B = 0;	// stop output when finished
+ 1bc:	15 bc       	out	0x25, r1	; 37
+		TIFR0 = TIFR0 |(1<<OCF0A);	// stop operations
+ 1be:	95 b3       	in	r25, 0x15	; 21
+ 1c0:	92 60       	ori	r25, 0x02	; 2
+ 1c2:	95 bb       	out	0x15, r25	; 21
+}
+
+void delay_ms(uint16_t delay)
+{
+	// 1 ms delay for each ms desired
+	for (uint16_t i = 0; i < delay; i++)
+ 1c4:	2f 5f       	subi	r18, 0xFF	; 255
+ 1c6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1c8:	24 17       	cp	r18, r20
+ 1ca:	35 07       	cpc	r19, r21
+ 1cc:	88 f3       	brcs	.-30     	; 0x1b0 <delay_ms+0x8>
+		TCCR0B = (1 << CS01) | (1 << CS00); // prescaler = 64
+		while ((TIFR0 & (1<<OCF0A)) == 0); // begin polling
+		TCCR0B = 0;	// stop output when finished
+		TIFR0 = TIFR0 |(1<<OCF0A);	// stop operations
+	}
+}
+ 1ce:	08 95       	ret
+
+000001d0 <pwm_ADC_mod>:
+}
+
+void pwm_ADC_mod(uint32_t input, char mode)
+{
+	// mode selector for toggle switch 
+	switch (mode)
+ 1d0:	44 34       	cpi	r20, 0x44	; 68
+ 1d2:	11 f1       	breq	.+68     	; 0x218 <pwm_ADC_mod+0x48>
+ 1d4:	46 34       	cpi	r20, 0x46	; 70
+ 1d6:	21 f0       	breq	.+8      	; 0x1e0 <pwm_ADC_mod+0x10>
+ 1d8:	43 34       	cpi	r20, 0x43	; 67
+ 1da:	09 f0       	breq	.+2      	; 0x1de <pwm_ADC_mod+0xe>
+ 1dc:	47 c0       	rjmp	.+142    	; 0x26c <pwm_ADC_mod+0x9c>
+ 1de:	34 c0       	rjmp	.+104    	; 0x248 <pwm_ADC_mod+0x78>
+	{
+		// frequency change mode
+		case 'F':
+		{
+			TCCR3A |= (1 << COM3A0); // enable output pin
+ 1e0:	e0 e9       	ldi	r30, 0x90	; 144
+ 1e2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e4:	20 81       	ld	r18, Z
+ 1e6:	20 64       	ori	r18, 0x40	; 64
+ 1e8:	20 83       	st	Z, r18
+			OCR3A = ((16000000)/(input*1024)) -1; // calculate OCR3A from frequency
+ 1ea:	9b 01       	movw	r18, r22
+ 1ec:	ac 01       	movw	r20, r24
+ 1ee:	01 2e       	mov	r0, r17
+ 1f0:	1a e0       	ldi	r17, 0x0A	; 10
+ 1f2:	22 0f       	add	r18, r18
+ 1f4:	33 1f       	adc	r19, r19
+ 1f6:	44 1f       	adc	r20, r20
+ 1f8:	55 1f       	adc	r21, r21
+ 1fa:	1a 95       	dec	r17
+ 1fc:	d1 f7       	brne	.-12     	; 0x1f2 <pwm_ADC_mod+0x22>
+ 1fe:	10 2d       	mov	r17, r0
+ 200:	60 e0       	ldi	r22, 0x00	; 0
+ 202:	74 e2       	ldi	r23, 0x24	; 36
+ 204:	84 ef       	ldi	r24, 0xF4	; 244
+ 206:	90 e0       	ldi	r25, 0x00	; 0
+ 208:	a9 d1       	rcall	.+850    	; 0x55c <__udivmodsi4>
+ 20a:	21 50       	subi	r18, 0x01	; 1
+ 20c:	31 09       	sbc	r19, r1
+ 20e:	30 93 99 00 	sts	0x0099, r19	; 0x800099 <__TEXT_REGION_LENGTH__+0x7c0099>
+ 212:	20 93 98 00 	sts	0x0098, r18	; 0x800098 <__TEXT_REGION_LENGTH__+0x7c0098>
+			break;
+ 216:	08 95       	ret
+		}
+		
+		// duty cycle change mode
+		case 'D':
+		{
+			TCCR1A |= (1 << COM1A1); // enable output pin
+ 218:	e0 e8       	ldi	r30, 0x80	; 128
+ 21a:	f0 e0       	ldi	r31, 0x00	; 0
+ 21c:	20 81       	ld	r18, Z
+ 21e:	20 68       	ori	r18, 0x80	; 128
+ 220:	20 83       	st	Z, r18
+			OCR1A = 512*input/100UL; // calculate OCR1A from duty cycle
+ 222:	05 2e       	mov	r0, r21
+ 224:	59 e0       	ldi	r21, 0x09	; 9
+ 226:	66 0f       	add	r22, r22
+ 228:	77 1f       	adc	r23, r23
+ 22a:	88 1f       	adc	r24, r24
+ 22c:	99 1f       	adc	r25, r25
+ 22e:	5a 95       	dec	r21
+ 230:	d1 f7       	brne	.-12     	; 0x226 <pwm_ADC_mod+0x56>
+ 232:	50 2d       	mov	r21, r0
+ 234:	24 e6       	ldi	r18, 0x64	; 100
+ 236:	30 e0       	ldi	r19, 0x00	; 0
+ 238:	40 e0       	ldi	r20, 0x00	; 0
+ 23a:	50 e0       	ldi	r21, 0x00	; 0
+ 23c:	8f d1       	rcall	.+798    	; 0x55c <__udivmodsi4>
+ 23e:	30 93 89 00 	sts	0x0089, r19	; 0x800089 <__TEXT_REGION_LENGTH__+0x7c0089>
+ 242:	20 93 88 00 	sts	0x0088, r18	; 0x800088 <__TEXT_REGION_LENGTH__+0x7c0088>
+			break;
+ 246:	08 95       	ret
+		}
+		
+		// clear outputs
+		case 'C':
+		{
+			TCCR1A &= ~(1 << COM1A1); // disable output pin
+ 248:	e0 e8       	ldi	r30, 0x80	; 128
+ 24a:	f0 e0       	ldi	r31, 0x00	; 0
+ 24c:	80 81       	ld	r24, Z
+ 24e:	8f 77       	andi	r24, 0x7F	; 127
+ 250:	80 83       	st	Z, r24
+			OCR1A = 0;	// clear output of timer1
+ 252:	10 92 89 00 	sts	0x0089, r1	; 0x800089 <__TEXT_REGION_LENGTH__+0x7c0089>
+ 256:	10 92 88 00 	sts	0x0088, r1	; 0x800088 <__TEXT_REGION_LENGTH__+0x7c0088>
+			TCCR3A &= ~(1 << COM3A0); // disable output pin
+ 25a:	e0 e9       	ldi	r30, 0x90	; 144
+ 25c:	f0 e0       	ldi	r31, 0x00	; 0
+ 25e:	80 81       	ld	r24, Z
+ 260:	8f 7b       	andi	r24, 0xBF	; 191
+ 262:	80 83       	st	Z, r24
+			OCR3A = 0; // clear output of timer3
+ 264:	10 92 99 00 	sts	0x0099, r1	; 0x800099 <__TEXT_REGION_LENGTH__+0x7c0099>
+ 268:	10 92 98 00 	sts	0x0098, r1	; 0x800098 <__TEXT_REGION_LENGTH__+0x7c0098>
+ 26c:	08 95       	ret
+
+0000026e <ramp_up_delay_n_steps>:
+	
+}
+
+void ramp_up_delay_n_steps(uint8_t start, uint8_t end, 
+						   uint16_t mS_time, uint8_t num_steps)
+{
+ 26e:	af 92       	push	r10
+ 270:	bf 92       	push	r11
+ 272:	cf 92       	push	r12
+ 274:	df 92       	push	r13
+ 276:	ef 92       	push	r14
+ 278:	ff 92       	push	r15
+ 27a:	0f 93       	push	r16
+ 27c:	1f 93       	push	r17
+ 27e:	cf 93       	push	r28
+ 280:	df 93       	push	r29
+ 282:	c6 2f       	mov	r28, r22
+ 284:	5a 01       	movw	r10, r20
+ 286:	d2 2f       	mov	r29, r18
+	// calculate and set start duty cycle
+	OCR1A = 512*start/100UL; 
+ 288:	08 2f       	mov	r16, r24
+ 28a:	10 e0       	ldi	r17, 0x00	; 0
+ 28c:	b8 01       	movw	r22, r16
+ 28e:	76 2f       	mov	r23, r22
+ 290:	66 27       	eor	r22, r22
+ 292:	77 0f       	add	r23, r23
+ 294:	07 2e       	mov	r0, r23
+ 296:	00 0c       	add	r0, r0
+ 298:	88 0b       	sbc	r24, r24
+ 29a:	99 0b       	sbc	r25, r25
+ 29c:	0f 2e       	mov	r0, r31
+ 29e:	f4 e6       	ldi	r31, 0x64	; 100
+ 2a0:	cf 2e       	mov	r12, r31
+ 2a2:	d1 2c       	mov	r13, r1
+ 2a4:	e1 2c       	mov	r14, r1
+ 2a6:	f1 2c       	mov	r15, r1
+ 2a8:	f0 2d       	mov	r31, r0
+ 2aa:	a7 01       	movw	r20, r14
+ 2ac:	96 01       	movw	r18, r12
+ 2ae:	56 d1       	rcall	.+684    	; 0x55c <__udivmodsi4>
+ 2b0:	30 93 89 00 	sts	0x0089, r19	; 0x800089 <__TEXT_REGION_LENGTH__+0x7c0089>
+ 2b4:	20 93 88 00 	sts	0x0088, r18	; 0x800088 <__TEXT_REGION_LENGTH__+0x7c0088>
+	// find change in duty cycle for each step
+	uint32_t duty_cycle_change = (end-start)/num_steps; 
+ 2b8:	8c 2f       	mov	r24, r28
+ 2ba:	90 e0       	ldi	r25, 0x00	; 0
+ 2bc:	80 1b       	sub	r24, r16
+ 2be:	91 0b       	sbc	r25, r17
+ 2c0:	0d 2f       	mov	r16, r29
+ 2c2:	10 e0       	ldi	r17, 0x00	; 0
+ 2c4:	b8 01       	movw	r22, r16
+ 2c6:	37 d1       	rcall	.+622    	; 0x536 <__divmodhi4>
+ 2c8:	cb 01       	movw	r24, r22
+ 2ca:	77 0f       	add	r23, r23
+ 2cc:	aa 0b       	sbc	r26, r26
+ 2ce:	bb 0b       	sbc	r27, r27
+	// calculate converted duty cycle change each step
+	uint32_t duty_cycle_converted = (duty_cycle_change * 512)/100; 
+ 2d0:	bc 01       	movw	r22, r24
+ 2d2:	cd 01       	movw	r24, r26
+ 2d4:	05 2e       	mov	r0, r21
+ 2d6:	59 e0       	ldi	r21, 0x09	; 9
+ 2d8:	66 0f       	add	r22, r22
+ 2da:	77 1f       	adc	r23, r23
+ 2dc:	88 1f       	adc	r24, r24
+ 2de:	99 1f       	adc	r25, r25
+ 2e0:	5a 95       	dec	r21
+ 2e2:	d1 f7       	brne	.-12     	; 0x2d8 <ramp_up_delay_n_steps+0x6a>
+ 2e4:	50 2d       	mov	r21, r0
+ 2e6:	a7 01       	movw	r20, r14
+ 2e8:	96 01       	movw	r18, r12
+ 2ea:	38 d1       	rcall	.+624    	; 0x55c <__udivmodsi4>
+ 2ec:	69 01       	movw	r12, r18
+ 2ee:	7a 01       	movw	r14, r20
+	// calculate timer per step
+	uint32_t time_per_step = mS_time/num_steps;
+ 2f0:	c5 01       	movw	r24, r10
+ 2f2:	b8 01       	movw	r22, r16
+ 2f4:	0c d1       	rcall	.+536    	; 0x50e <__udivmodhi4>
+ 2f6:	8b 01       	movw	r16, r22
+	
+	// for however many number of steps
+	for (uint8_t i = 0; i < num_steps; i++)
+ 2f8:	c0 e0       	ldi	r28, 0x00	; 0
+ 2fa:	14 c0       	rjmp	.+40     	; 0x324 <ramp_up_delay_n_steps+0xb6>
+	{
+		delay_ms(time_per_step); // delay for time calculated for each step
+ 2fc:	c8 01       	movw	r24, r16
+ 2fe:	54 df       	rcall	.-344    	; 0x1a8 <delay_ms>
+ 300:	80 91 88 00 	lds	r24, 0x0088	; 0x800088 <__TEXT_REGION_LENGTH__+0x7c0088>
+		if(OCR1A <= 512 && OCR1A >= 0) // check if value is within limits
+ 304:	90 91 89 00 	lds	r25, 0x0089	; 0x800089 <__TEXT_REGION_LENGTH__+0x7c0089>
+ 308:	81 30       	cpi	r24, 0x01	; 1
+ 30a:	92 40       	sbci	r25, 0x02	; 2
+ 30c:	50 f4       	brcc	.+20     	; 0x322 <ramp_up_delay_n_steps+0xb4>
+ 30e:	e8 e8       	ldi	r30, 0x88	; 136
+ 310:	f0 e0       	ldi	r31, 0x00	; 0
+ 312:	80 81       	ld	r24, Z
+ 314:	91 81       	ldd	r25, Z+1	; 0x01
+ 316:	80 81       	ld	r24, Z
+		{
+			// increment duty cycle calculated for each step
+			OCR1A += duty_cycle_converted; 
+ 318:	91 81       	ldd	r25, Z+1	; 0x01
+ 31a:	8c 0d       	add	r24, r12
+ 31c:	9d 1d       	adc	r25, r13
+ 31e:	91 83       	std	Z+1, r25	; 0x01
+ 320:	80 83       	st	Z, r24
+ 322:	cf 5f       	subi	r28, 0xFF	; 255
+	uint32_t duty_cycle_converted = (duty_cycle_change * 512)/100; 
+	// calculate timer per step
+	uint32_t time_per_step = mS_time/num_steps;
+	
+	// for however many number of steps
+	for (uint8_t i = 0; i < num_steps; i++)
+ 324:	cd 17       	cp	r28, r29
+ 326:	50 f3       	brcs	.-44     	; 0x2fc <ramp_up_delay_n_steps+0x8e>
+ 328:	df 91       	pop	r29
+		{
+			// increment duty cycle calculated for each step
+			OCR1A += duty_cycle_converted; 
+		}
+	}
+ 32a:	cf 91       	pop	r28
+ 32c:	1f 91       	pop	r17
+ 32e:	0f 91       	pop	r16
+ 330:	ff 90       	pop	r15
+ 332:	ef 90       	pop	r14
+ 334:	df 90       	pop	r13
+ 336:	cf 90       	pop	r12
+ 338:	bf 90       	pop	r11
+ 33a:	af 90       	pop	r10
+ 33c:	08 95       	ret
+
+0000033e <pwm_timer1>:
+ 33e:	82 35       	cpi	r24, 0x52	; 82
+}
+
+void pwm_timer1(char mode)
+{
+	// mode selector for timer1
+	switch (mode)
+ 340:	19 f0       	breq	.+6      	; 0x348 <pwm_timer1+0xa>
+ 342:	83 35       	cpi	r24, 0x53	; 83
+ 344:	79 f0       	breq	.+30     	; 0x364 <pwm_timer1+0x26>
+ 346:	14 c0       	rjmp	.+40     	; 0x370 <pwm_timer1+0x32>
+	{
+		// run mode
+		case 'R':
+		{
+			TCCR1A |= (1 << COM1A1); // enable output pin
+ 348:	e0 e8       	ldi	r30, 0x80	; 128
+ 34a:	f0 e0       	ldi	r31, 0x00	; 0
+ 34c:	80 81       	ld	r24, Z
+ 34e:	80 68       	ori	r24, 0x80	; 128
+ 350:	80 83       	st	Z, r24
+			TCCR1B = (1 << WGM12) | (1 << CS11); // ensure prescaler and 9-bit 
+ 352:	8a e0       	ldi	r24, 0x0A	; 10
+ 354:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7c0081>
+												 // operation
+			ramp_up_delay_n_steps(10, 90, 8000, 8); // begin ramping up duty cycle
+ 358:	28 e0       	ldi	r18, 0x08	; 8
+ 35a:	40 e4       	ldi	r20, 0x40	; 64
+ 35c:	5f e1       	ldi	r21, 0x1F	; 31
+ 35e:	6a e5       	ldi	r22, 0x5A	; 90
+ 360:	86 cf       	rjmp	.-244    	; 0x26e <ramp_up_delay_n_steps>
+			break;
+ 362:	08 95       	ret
+		}
+		
+		// stop mode
+		case 'S':
+		{
+			TCCR1A &= ~(1 << COM1A1); // change output back to regular I/O
+ 364:	e0 e8       	ldi	r30, 0x80	; 128
+ 366:	f0 e0       	ldi	r31, 0x00	; 0
+ 368:	80 81       	ld	r24, Z
+ 36a:	8f 77       	andi	r24, 0x7F	; 127
+ 36c:	80 83       	st	Z, r24
+			break;
+ 36e:	08 95       	ret
+		}
+		
+		// default mode (stops on default)
+		default:
+		{
+			TCCR1A &= ~(1 << COM1A1); // change output back to regular I/O
+ 370:	e0 e8       	ldi	r30, 0x80	; 128
+ 372:	f0 e0       	ldi	r31, 0x00	; 0
+ 374:	80 81       	ld	r24, Z
+ 376:	8f 77       	andi	r24, 0x7F	; 127
+ 378:	80 83       	st	Z, r24
+ 37a:	08 95       	ret
+
+0000037c <io_init>:
+}
+
+void io_init(void)
+{
+	// call external init functions
+	shield_io_init();
+ 37c:	a1 d0       	rcall	.+322    	; 0x4c0 <shield_io_init>
+	init_timer0();
+ 37e:	f0 de       	rcall	.-544    	; 0x160 <init_timer0>
+	init_timer1();
+ 380:	f4 de       	rcall	.-536    	; 0x16a <init_timer1>
+	init_timer3();
+ 382:	04 df       	rcall	.-504    	; 0x18c <init_timer3>
+ 384:	ba de       	rcall	.-652    	; 0xfa <init_ADC>
+	init_ADC();
+ 386:	8f ef       	ldi	r24, 0xFF	; 255
+ 388:	81 b9       	out	0x01, r24	; 1
+	
+	// set LED output
+	DDRA = 0xFF;
+ 38a:	12 b8       	out	0x02, r1	; 2
+ 38c:	80 e2       	ldi	r24, 0x20	; 32
+	PORTA = 0x00;
+ 38e:	84 b9       	out	0x04, r24	; 4
+	
+	// set pin to output for TIMER1
+	DDRB = (1 << PB5);
+ 390:	8f ed       	ldi	r24, 0xDF	; 223
+ 392:	85 b9       	out	0x05, r24	; 5
+	PORTB = ~(1 << PB5);
+ 394:	88 e0       	ldi	r24, 0x08	; 8
+ 396:	8d b9       	out	0x0d, r24	; 13
+	
+	// set pin to output for TIMER3
+	DDRE = (1 << PE3);
+ 398:	87 ef       	ldi	r24, 0xF7	; 247
+ 39a:	8e b9       	out	0x0e, r24	; 14
+	PORTE = ~(1 << PE3);
+ 39c:	08 95       	ret
+
+0000039e <flash_LED>:
+ 39e:	82 b1       	in	r24, 0x02	; 2
+ 3a0:	81 60       	ori	r24, 0x01	; 1
+}
+
+void flash_LED(void)
+{
+	// turn on LED1
+	PORTA |= 0x01;
+ 3a2:	82 b9       	out	0x02, r24	; 2
+	
+	// delay 500 ms
+	delay_ms(500);
+ 3a4:	84 ef       	ldi	r24, 0xF4	; 244
+ 3a6:	91 e0       	ldi	r25, 0x01	; 1
+ 3a8:	ff de       	rcall	.-514    	; 0x1a8 <delay_ms>
+	
+	// turn off LED1
+	PORTA &= ~0x01;
+ 3aa:	82 b1       	in	r24, 0x02	; 2
+ 3ac:	8e 7f       	andi	r24, 0xFE	; 254
+ 3ae:	82 b9       	out	0x02, r24	; 2
+	
+	// delay 500 ms
+	delay_ms(500);
+ 3b0:	84 ef       	ldi	r24, 0xF4	; 244
+ 3b2:	91 e0       	ldi	r25, 0x01	; 1
+ 3b4:	f9 ce       	rjmp	.-526    	; 0x1a8 <delay_ms>
+ 3b6:	08 95       	ret
+
+000003b8 <main>:
+void io_init(void);
+void flash_LED(void);
+
+int main(void)
+{
+    io_init();	// run initialization function
+ 3b8:	e1 df       	rcall	.-62     	; 0x37c <io_init>
+    while (1) 
+    {
+		// check if Pushbutton 1 is pressed
+		uint8_t pushbutton1 = CHECK_BIT(Read_PB(), 0);
+ 3ba:	8d d0       	rcall	.+282    	; 0x4d6 <Read_PB>
+ 3bc:	80 ff       	sbrs	r24, 0
+		if (pushbutton1 == 1)
+ 3be:	07 c0       	rjmp	.+14     	; 0x3ce <main+0x16>
+ 3c0:	43 e4       	ldi	r20, 0x43	; 67
+		{
+			// clear the timer if not clear, start ramping up function
+			pwm_ADC_mod(0, 'C');
+ 3c2:	60 e0       	ldi	r22, 0x00	; 0
+ 3c4:	70 e0       	ldi	r23, 0x00	; 0
+ 3c6:	cb 01       	movw	r24, r22
+ 3c8:	03 df       	rcall	.-506    	; 0x1d0 <pwm_ADC_mod>
+			pwm_timer1('R');
+ 3ca:	82 e5       	ldi	r24, 0x52	; 82
+ 3cc:	b8 df       	rcall	.-144    	; 0x33e <pwm_timer1>
+ 3ce:	83 d0       	rcall	.+262    	; 0x4d6 <Read_PB>
+			// wipe pushbutton input
+			pushbutton1 = 0;
+		}
+		
+		// check if Pushbutton 2 is pressed
+		uint8_t pushbutton2 = CHECK_BIT(Read_PB(), 1);
+ 3d0:	81 ff       	sbrs	r24, 1
+		if (pushbutton2 == 1)
+ 3d2:	02 c0       	rjmp	.+4      	; 0x3d8 <main+0x20>
+ 3d4:	83 e5       	ldi	r24, 0x53	; 83
+		{
+			// turn off the timer and change port to normal
+			pwm_timer1('S');
+ 3d6:	b3 df       	rcall	.-154    	; 0x33e <pwm_timer1>
+ 3d8:	7e d0       	rcall	.+252    	; 0x4d6 <Read_PB>
+ 3da:	82 ff       	sbrs	r24, 2
+			pushbutton2 = 0;
+		}
+		
+		// check if Pushbutton 3 is pressed
+		uint8_t pushbutton3 = CHECK_BIT(Read_PB(), 2);
+ 3dc:	06 c0       	rjmp	.+12     	; 0x3ea <main+0x32>
+ 3de:	46 e4       	ldi	r20, 0x46	; 70
+		if (pushbutton3 == 1)
+ 3e0:	61 e0       	ldi	r22, 0x01	; 1
+		{
+			// set output of timer 3 to 1 Hz
+			pwm_ADC_mod(1, 'F');
+ 3e2:	70 e0       	ldi	r23, 0x00	; 0
+ 3e4:	80 e0       	ldi	r24, 0x00	; 0
+ 3e6:	90 e0       	ldi	r25, 0x00	; 0
+ 3e8:	f3 de       	rcall	.-538    	; 0x1d0 <pwm_ADC_mod>
+ 3ea:	75 d0       	rcall	.+234    	; 0x4d6 <Read_PB>
+ 3ec:	83 ff       	sbrs	r24, 3
+ 3ee:	06 c0       	rjmp	.+12     	; 0x3fc <main+0x44>
+			pushbutton3 = 0;
+		}
+		
+		// check if Pushbutton 4 is pressed
+		uint8_t pushbutton4 = CHECK_BIT(Read_PB(), 3);
+ 3f0:	46 e4       	ldi	r20, 0x46	; 70
+		if (pushbutton4 == 1)
+ 3f2:	6a e0       	ldi	r22, 0x0A	; 10
+ 3f4:	70 e0       	ldi	r23, 0x00	; 0
+		{
+			// set output of timer 3 to 10 Hz
+			pwm_ADC_mod(10, 'F');
+ 3f6:	80 e0       	ldi	r24, 0x00	; 0
+ 3f8:	90 e0       	ldi	r25, 0x00	; 0
+ 3fa:	ea de       	rcall	.-556    	; 0x1d0 <pwm_ADC_mod>
+ 3fc:	70 d0       	rcall	.+224    	; 0x4de <Read_TS>
+ 3fe:	81 fb       	bst	r24, 1
+ 400:	cc 27       	eor	r28, r28
+			pushbutton4 = 0;
+		}
+		
+		// update toggle switch carrier variables
+		uint8_t toggleSwitch1 = CHECK_BIT(Read_TS(), 1);
+ 402:	c0 f9       	bld	r28, 0
+ 404:	6c d0       	rcall	.+216    	; 0x4de <Read_TS>
+ 406:	82 fb       	bst	r24, 2
+ 408:	dd 27       	eor	r29, r29
+		uint8_t toggleSwitch2 = CHECK_BIT(Read_TS(), 2);
+ 40a:	d0 f9       	bld	r29, 0
+ 40c:	c1 30       	cpi	r28, 0x01	; 1
+ 40e:	f9 f4       	brne	.+62     	; 0x44e <__LOCK_REGION_LENGTH__+0x4e>
+ 410:	dd 23       	and	r29, r29
+		
+		// if only toggle switch 1 is toggled
+		if (toggleSwitch1 == 1 && toggleSwitch2 == 0)
+ 412:	b1 f0       	breq	.+44     	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
+ 414:	1c c0       	rjmp	.+56     	; 0x44e <__LOCK_REGION_LENGTH__+0x4e>
+ 416:	80 e0       	ldi	r24, 0x00	; 0
+ 418:	7e de       	rcall	.-772    	; 0x116 <read_ADC_channel_10bit>
+		{
+			// latch in this function until switch is turned off
+			while(toggleSwitch1 == 1)
+			{
+				// read ADC0 value
+				uint16_t ADC_value = read_ADC_channel_10bit(0);
+ 41a:	9c 01       	movw	r18, r24
+ 41c:	a3 e6       	ldi	r26, 0x63	; 99
+ 41e:	b0 e0       	ldi	r27, 0x00	; 0
+				
+				// convert ADC_value to between 0-99, output as duty cycle on TIMER1
+				// bugs occurred with 1-100 with unexpected value over 100 causing overflow
+				uint16_t ADC_converted = (ADC_value * 99UL)/1023;
+ 420:	bf d0       	rcall	.+382    	; 0x5a0 <__umulhisi3>
+ 422:	2f ef       	ldi	r18, 0xFF	; 255
+ 424:	33 e0       	ldi	r19, 0x03	; 3
+ 426:	40 e0       	ldi	r20, 0x00	; 0
+ 428:	50 e0       	ldi	r21, 0x00	; 0
+ 42a:	98 d0       	rcall	.+304    	; 0x55c <__udivmodsi4>
+ 42c:	ca 01       	movw	r24, r20
+ 42e:	b9 01       	movw	r22, r18
+ 430:	88 27       	eor	r24, r24
+				pwm_ADC_mod(ADC_converted, 'D');
+ 432:	99 27       	eor	r25, r25
+ 434:	44 e4       	ldi	r20, 0x44	; 68
+ 436:	cc de       	rcall	.-616    	; 0x1d0 <pwm_ADC_mod>
+ 438:	52 d0       	rcall	.+164    	; 0x4de <Read_TS>
+ 43a:	81 fb       	bst	r24, 1
+ 43c:	cc 27       	eor	r28, r28
+				
+				// update toggle switch 1 variable
+				toggleSwitch1 = CHECK_BIT(Read_TS(), 1);
+ 43e:	c0 f9       	bld	r28, 0
+ 440:	c1 30       	cpi	r28, 0x01	; 1
+ 442:	49 f3       	breq	.-46     	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
+ 444:	43 e4       	ldi	r20, 0x43	; 67
+		
+		// if only toggle switch 1 is toggled
+		if (toggleSwitch1 == 1 && toggleSwitch2 == 0)
+		{
+			// latch in this function until switch is turned off
+			while(toggleSwitch1 == 1)
+ 446:	60 e0       	ldi	r22, 0x00	; 0
+ 448:	70 e0       	ldi	r23, 0x00	; 0
+				
+				// update toggle switch 1 variable
+				toggleSwitch1 = CHECK_BIT(Read_TS(), 1);
+			}
+			// clear output
+			pwm_ADC_mod(0, 'C');
+ 44a:	cb 01       	movw	r24, r22
+ 44c:	c1 de       	rcall	.-638    	; 0x1d0 <pwm_ADC_mod>
+ 44e:	c1 11       	cpse	r28, r1
+ 450:	35 c0       	rjmp	.+106    	; 0x4bc <__LOCK_REGION_LENGTH__+0xbc>
+ 452:	d1 30       	cpi	r29, 0x01	; 1
+ 454:	99 f5       	brne	.+102    	; 0x4bc <__LOCK_REGION_LENGTH__+0xbc>
+		}
+		
+		// if only toggle switch 2 is toggled
+		if (toggleSwitch1 == 0 && toggleSwitch2 == 1)
+ 456:	2b c0       	rjmp	.+86     	; 0x4ae <__LOCK_REGION_LENGTH__+0xae>
+ 458:	81 e0       	ldi	r24, 0x01	; 1
+ 45a:	5d de       	rcall	.-838    	; 0x116 <read_ADC_channel_10bit>
+ 45c:	ac 01       	movw	r20, r24
+ 45e:	60 e0       	ldi	r22, 0x00	; 0
+		{
+			// latch in this function until switch is turned off
+			while(toggleSwitch2 == 1)
+			{
+				// read ADC1 value
+				uint16_t ADC_value = read_ADC_channel_10bit(1);
+ 460:	70 e0       	ldi	r23, 0x00	; 0
+ 462:	db 01       	movw	r26, r22
+ 464:	ca 01       	movw	r24, r20
+				
+				// convert ADC_value to between 1-10, output as frequency on TIMER3
+				uint16_t ADC_converted = (ADC_value * 9UL)/1023 + 1;
+ 466:	88 0f       	add	r24, r24
+ 468:	99 1f       	adc	r25, r25
+ 46a:	aa 1f       	adc	r26, r26
+ 46c:	bb 1f       	adc	r27, r27
+ 46e:	88 0f       	add	r24, r24
+ 470:	99 1f       	adc	r25, r25
+ 472:	aa 1f       	adc	r26, r26
+ 474:	bb 1f       	adc	r27, r27
+ 476:	88 0f       	add	r24, r24
+ 478:	99 1f       	adc	r25, r25
+ 47a:	aa 1f       	adc	r26, r26
+ 47c:	bb 1f       	adc	r27, r27
+ 47e:	8c 01       	movw	r16, r24
+ 480:	9d 01       	movw	r18, r26
+ 482:	04 0f       	add	r16, r20
+ 484:	15 1f       	adc	r17, r21
+ 486:	26 1f       	adc	r18, r22
+ 488:	37 1f       	adc	r19, r23
+ 48a:	c9 01       	movw	r24, r18
+ 48c:	b8 01       	movw	r22, r16
+ 48e:	2f ef       	ldi	r18, 0xFF	; 255
+ 490:	33 e0       	ldi	r19, 0x03	; 3
+ 492:	40 e0       	ldi	r20, 0x00	; 0
+ 494:	50 e0       	ldi	r21, 0x00	; 0
+ 496:	62 d0       	rcall	.+196    	; 0x55c <__udivmodsi4>
+ 498:	2f 5f       	subi	r18, 0xFF	; 255
+ 49a:	3f 4f       	sbci	r19, 0xFF	; 255
+ 49c:	b9 01       	movw	r22, r18
+ 49e:	80 e0       	ldi	r24, 0x00	; 0
+				pwm_ADC_mod(ADC_converted, 'F');
+ 4a0:	90 e0       	ldi	r25, 0x00	; 0
+ 4a2:	46 e4       	ldi	r20, 0x46	; 70
+ 4a4:	95 de       	rcall	.-726    	; 0x1d0 <pwm_ADC_mod>
+ 4a6:	1b d0       	rcall	.+54     	; 0x4de <Read_TS>
+ 4a8:	82 fb       	bst	r24, 2
+ 4aa:	dd 27       	eor	r29, r29
+				
+				// update toggle switch 2 variable
+				toggleSwitch2 = CHECK_BIT(Read_TS(), 2);
+ 4ac:	d0 f9       	bld	r29, 0
+ 4ae:	d1 30       	cpi	r29, 0x01	; 1
+ 4b0:	99 f2       	breq	.-90     	; 0x458 <__LOCK_REGION_LENGTH__+0x58>
+ 4b2:	43 e4       	ldi	r20, 0x43	; 67
+ 4b4:	60 e0       	ldi	r22, 0x00	; 0
+		
+		// if only toggle switch 2 is toggled
+		if (toggleSwitch1 == 0 && toggleSwitch2 == 1)
+		{
+			// latch in this function until switch is turned off
+			while(toggleSwitch2 == 1)
+ 4b6:	70 e0       	ldi	r23, 0x00	; 0
+ 4b8:	cb 01       	movw	r24, r22
+				
+				// update toggle switch 2 variable
+				toggleSwitch2 = CHECK_BIT(Read_TS(), 2);
+			}
+			// clear output
+			pwm_ADC_mod(0, 'C');
+ 4ba:	8a de       	rcall	.-748    	; 0x1d0 <pwm_ADC_mod>
+ 4bc:	70 df       	rcall	.-288    	; 0x39e <flash_LED>
+ 4be:	7d cf       	rjmp	.-262    	; 0x3ba <main+0x2>
+
+000004c0 <shield_io_init>:
+
+
+void shield_io_init(void)
+{
+	// PushButton Initializations
+	DDRB = (1<<PB3) | (1<<PB2) | (1<<PB1) | (1<<PB0);
+ 4c0:	8f e0       	ldi	r24, 0x0F	; 15
+ 4c2:	84 b9       	out	0x04, r24	; 4
+	PORTB = (1<<PB3) | (1<<PB2) | (1<<PB1) | (1<<PB0);
+ 4c4:	85 b9       	out	0x05, r24	; 5
+	
+	// TS Initializations
+	DDRE = 0x00;
+ 4c6:	1d b8       	out	0x0d, r1	; 13
+	PORTE = 0xFF;
+ 4c8:	8f ef       	ldi	r24, 0xFF	; 255
+ 4ca:	8e b9       	out	0x0e, r24	; 14
+	DDRG = 0x00;
+ 4cc:	13 ba       	out	0x13, r1	; 19
+	PORTG = 0xFF;
+ 4ce:	84 bb       	out	0x14, r24	; 20
+	
+	
+	// LED Initializations
+	DDRA = 0xFF;
+ 4d0:	81 b9       	out	0x01, r24	; 1
+	PORTA = 0x00;
+ 4d2:	12 b8       	out	0x02, r1	; 2
+ 4d4:	08 95       	ret
+
+000004d6 <Read_PB>:
+}
+
+uint8_t Read_PB(void)
+{
+	// read in inputs from pushbuttons to variable "data"
+	uint8_t data = ~(PINB & ( (1<<PB3) | (1<<PB2) | (1<<PB1) | (1<<PB0)));
+ 4d6:	83 b1       	in	r24, 0x03	; 3
+ 4d8:	8f 70       	andi	r24, 0x0F	; 15
+	return data;
+}
+ 4da:	80 95       	com	r24
+ 4dc:	08 95       	ret
+
+000004de <Read_TS>:
+
+uint8_t Read_TS(void)
+{
+	// read in PINE.3 to variable "data". Shift "data" left one bit
+	uint8_t data = CHECK_BITIO(PINE, 3);
+ 4de:	9c b1       	in	r25, 0x0c	; 12
+ 4e0:	93 fb       	bst	r25, 3
+ 4e2:	99 27       	eor	r25, r25
+ 4e4:	90 f9       	bld	r25, 0
+	data = data << 1;
+ 4e6:	89 2f       	mov	r24, r25
+ 4e8:	88 0f       	add	r24, r24
+	
+	// read in PING.5 to bit 0 of "data". Shift "data" left one bit
+	data = data | CHECK_BITIO(PING, 5);
+ 4ea:	92 b3       	in	r25, 0x12	; 18
+ 4ec:	95 fb       	bst	r25, 5
+ 4ee:	99 27       	eor	r25, r25
+ 4f0:	90 f9       	bld	r25, 0
+ 4f2:	98 2b       	or	r25, r24
+	data = data << 1;
+ 4f4:	29 2f       	mov	r18, r25
+ 4f6:	22 0f       	add	r18, r18
+	
+	// read in PINE.5 to bit 0 of "data". Shift "data" left one bit
+	data = data | CHECK_BITIO(PINE, 5);
+ 4f8:	9c b1       	in	r25, 0x0c	; 12
+ 4fa:	95 fb       	bst	r25, 5
+ 4fc:	99 27       	eor	r25, r25
+ 4fe:	90 f9       	bld	r25, 0
+ 500:	92 2b       	or	r25, r18
+	data = data << 1;
+ 502:	99 0f       	add	r25, r25
+	
+	// read in PINE.4 to bit 0 of "data". Return "data"
+	data = data | CHECK_BITIO(PINE, 4);
+ 504:	8c b1       	in	r24, 0x0c	; 12
+ 506:	82 95       	swap	r24
+ 508:	81 70       	andi	r24, 0x01	; 1
+	return data;
+}
+ 50a:	89 2b       	or	r24, r25
+ 50c:	08 95       	ret
+
+0000050e <__udivmodhi4>:
+ 50e:	aa 1b       	sub	r26, r26
+ 510:	bb 1b       	sub	r27, r27
+ 512:	51 e1       	ldi	r21, 0x11	; 17
+ 514:	07 c0       	rjmp	.+14     	; 0x524 <__udivmodhi4_ep>
+
+00000516 <__udivmodhi4_loop>:
+ 516:	aa 1f       	adc	r26, r26
+ 518:	bb 1f       	adc	r27, r27
+ 51a:	a6 17       	cp	r26, r22
+ 51c:	b7 07       	cpc	r27, r23
+ 51e:	10 f0       	brcs	.+4      	; 0x524 <__udivmodhi4_ep>
+ 520:	a6 1b       	sub	r26, r22
+ 522:	b7 0b       	sbc	r27, r23
+
+00000524 <__udivmodhi4_ep>:
+ 524:	88 1f       	adc	r24, r24
+ 526:	99 1f       	adc	r25, r25
+ 528:	5a 95       	dec	r21
+ 52a:	a9 f7       	brne	.-22     	; 0x516 <__udivmodhi4_loop>
+ 52c:	80 95       	com	r24
+ 52e:	90 95       	com	r25
+ 530:	bc 01       	movw	r22, r24
+ 532:	cd 01       	movw	r24, r26
+ 534:	08 95       	ret
+
+00000536 <__divmodhi4>:
+ 536:	97 fb       	bst	r25, 7
+ 538:	07 2e       	mov	r0, r23
+ 53a:	16 f4       	brtc	.+4      	; 0x540 <__divmodhi4+0xa>
+ 53c:	00 94       	com	r0
+ 53e:	06 d0       	rcall	.+12     	; 0x54c <__divmodhi4_neg1>
+ 540:	77 fd       	sbrc	r23, 7
+ 542:	08 d0       	rcall	.+16     	; 0x554 <__divmodhi4_neg2>
+ 544:	e4 df       	rcall	.-56     	; 0x50e <__udivmodhi4>
+ 546:	07 fc       	sbrc	r0, 7
+ 548:	05 d0       	rcall	.+10     	; 0x554 <__divmodhi4_neg2>
+ 54a:	3e f4       	brtc	.+14     	; 0x55a <__divmodhi4_exit>
+
+0000054c <__divmodhi4_neg1>:
+ 54c:	90 95       	com	r25
+ 54e:	81 95       	neg	r24
+ 550:	9f 4f       	sbci	r25, 0xFF	; 255
+ 552:	08 95       	ret
+
+00000554 <__divmodhi4_neg2>:
+ 554:	70 95       	com	r23
+ 556:	61 95       	neg	r22
+ 558:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000055a <__divmodhi4_exit>:
+ 55a:	08 95       	ret
+
+0000055c <__udivmodsi4>:
+ 55c:	a1 e2       	ldi	r26, 0x21	; 33
+ 55e:	1a 2e       	mov	r1, r26
+ 560:	aa 1b       	sub	r26, r26
+ 562:	bb 1b       	sub	r27, r27
+ 564:	fd 01       	movw	r30, r26
+ 566:	0d c0       	rjmp	.+26     	; 0x582 <__udivmodsi4_ep>
+
+00000568 <__udivmodsi4_loop>:
+ 568:	aa 1f       	adc	r26, r26
+ 56a:	bb 1f       	adc	r27, r27
+ 56c:	ee 1f       	adc	r30, r30
+ 56e:	ff 1f       	adc	r31, r31
+ 570:	a2 17       	cp	r26, r18
+ 572:	b3 07       	cpc	r27, r19
+ 574:	e4 07       	cpc	r30, r20
+ 576:	f5 07       	cpc	r31, r21
+ 578:	20 f0       	brcs	.+8      	; 0x582 <__udivmodsi4_ep>
+ 57a:	a2 1b       	sub	r26, r18
+ 57c:	b3 0b       	sbc	r27, r19
+ 57e:	e4 0b       	sbc	r30, r20
+ 580:	f5 0b       	sbc	r31, r21
+
+00000582 <__udivmodsi4_ep>:
+ 582:	66 1f       	adc	r22, r22
+ 584:	77 1f       	adc	r23, r23
+ 586:	88 1f       	adc	r24, r24
+ 588:	99 1f       	adc	r25, r25
+ 58a:	1a 94       	dec	r1
+ 58c:	69 f7       	brne	.-38     	; 0x568 <__udivmodsi4_loop>
+ 58e:	60 95       	com	r22
+ 590:	70 95       	com	r23
+ 592:	80 95       	com	r24
+ 594:	90 95       	com	r25
+ 596:	9b 01       	movw	r18, r22
+ 598:	ac 01       	movw	r20, r24
+ 59a:	bd 01       	movw	r22, r26
+ 59c:	cf 01       	movw	r24, r30
+ 59e:	08 95       	ret
+
+000005a0 <__umulhisi3>:
+ 5a0:	a2 9f       	mul	r26, r18
+ 5a2:	b0 01       	movw	r22, r0
+ 5a4:	b3 9f       	mul	r27, r19
+ 5a6:	c0 01       	movw	r24, r0
+ 5a8:	a3 9f       	mul	r26, r19
+ 5aa:	70 0d       	add	r23, r0
+ 5ac:	81 1d       	adc	r24, r1
+ 5ae:	11 24       	eor	r1, r1
+ 5b0:	91 1d       	adc	r25, r1
+ 5b2:	b2 9f       	mul	r27, r18
+ 5b4:	70 0d       	add	r23, r0
+ 5b6:	81 1d       	adc	r24, r1
+ 5b8:	11 24       	eor	r1, r1
+ 5ba:	91 1d       	adc	r25, r1
+ 5bc:	08 95       	ret
+
+000005be <_exit>:
+ 5be:	f8 94       	cli
+
+000005c0 <__stop_program>:
+ 5c0:	ff cf       	rjmp	.-2      	; 0x5c0 <__stop_program>

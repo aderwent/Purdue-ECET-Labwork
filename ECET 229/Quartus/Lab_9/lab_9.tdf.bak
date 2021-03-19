@@ -1,0 +1,38 @@
+/*
+	Author: Alec Derwent
+	Date: 10/22/2020
+	MOD 800 Counter
+	
+	This program is a counter that will begin at 0 and count up
+	to 799, an increment of 800, then output a serial value from an output
+	bus. This counter was created in order to count through the 800
+	columns found on a 800 x 526 pixel display via a VGA cable. There
+	are two inputs and two outputs. For inputs, EN functions as an enable
+	pin where the counter will pause when not high, and clock is a clock
+	input that determines the counting speed. For outputs, CO is used as
+	a clock input on a MOD 525 counter to switch rows, and counter[] is
+	an output array that increases as the counter counts up.
+*/
+SUBDESIGN lab_9
+(
+	EN, clock				:INPUT;
+	CO, counter[9..0]		:OUTPUT;
+)
+
+VARIABLE
+	ff[9..0]					:DFF;
+
+BEGIN
+	ff[].clk = clock;
+	
+	IF EN == 0 THEN 
+		ff[].d = ff[].q;
+	ELSEIF ff[].q < 799 THEN
+		ff[].d = ff[].q + 1;
+	ELSEIF ff[].q == 799 THEN
+		CO = VCC;
+	ELSE
+		ff[].d = 0;
+	END IF;
+	counter[] = ff[].q;
+END;

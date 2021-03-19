@@ -1,0 +1,13 @@
+|random
+clk24M => mod16[3].CLK
+clk24M => mod16[2].CLK
+clk24M => mod16[1].CLK
+clk24M => mod16[0].CLK
+mod16N => _.IN0
+hexN_bcd => _.IN0
+hex[0] <= mod16[0].DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= mod16[1].DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= mod16[2].DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= mod16[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

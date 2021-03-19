@@ -1,0 +1,35 @@
+%	This code creates a counter that holds at 40 until triggered.
+It then counts up to 550 and holds until trigger is inactive before 
+recycling to 40. 
+This block serves at the "speeding bullet" in a video game. 
+
+NS Widmer
+ECET 22900
+Fall 2020.
+%
+SUBDESIGN gun
+(
+	triggern, clock					:INPUT;
+	shot[9..0]						:OUTPUT;  )
+	
+VARIABLE	
+	count[9..0]			:DFF;
+	
+BEGIN
+	count[].clk = clock;
+--	IF count[].q < 40  THEN count[].d = 40;	-- Load the gun
+	IF count[].q < 144  THEN count[].d = 144;	-- Load the gun
+--	ELSIF count[].q == 40 THEN
+	ELSIF count[].q == 144 THEN
+		IF triggern==1 THEN count[].d = count[].q;	-- hold your fire
+		ELSE count[].d = count[].q + 1;					-- shoot
+		END IF;
+	ELSIF count[].q == 550 THEN							-- bullet spent
+		--IF triggern == 1 THEN count[].d = 40;		-- reload
+		IF triggern == 1 THEN count[].d = 144;		-- reload
+		ELSE count[].d = count[].q;					-- wait to let go of trigger
+		END IF;
+	ELSE count[].d = count[].q + 1;			-- bullet in flight
+	END IF;	
+	shot[] = count[].q;
+END;

@@ -1,0 +1,35 @@
+|MODN
+clock => ff[9].CLK
+clock => ff[8].CLK
+clock => ff[7].CLK
+clock => ff[6].CLK
+clock => ff[5].CLK
+clock => ff[4].CLK
+clock => ff[3].CLK
+clock => ff[2].CLK
+clock => ff[1].CLK
+clock => ff[0].CLK
+N[0] => _.IN1
+N[0] => _.IN1
+N[1] => _.IN1
+N[1] => _.IN1
+N[2] => _.IN1
+N[2] => _.IN1
+N[3] => _.IN1
+N[3] => _.IN1
+N[4] => _.IN1
+N[4] => _.IN1
+N[5] => _.IN1
+N[5] => _.IN1
+N[6] => _.IN1
+N[6] => _.IN1
+N[7] => _.IN1
+N[7] => _.IN1
+N[8] => _.IN1
+N[8] => _.IN1
+N[9] => _.IN1
+N[9] => _.IN1
+EN => _.IN0
+Fout <= Fout.DB_MAX_OUTPUT_PORT_TYPE
+
+

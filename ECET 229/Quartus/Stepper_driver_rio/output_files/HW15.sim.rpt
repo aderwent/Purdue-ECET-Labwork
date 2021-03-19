@@ -1,0 +1,351 @@
+Simulator report for HW15
+Mon Mar 07 23:04:25 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 50.0 us      ;
+; Simulation Netlist Size     ; 160 nodes    ;
+; Simulation Coverage         ;      77.50 % ;
+; Total Number of Transitions ; 1438         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                               ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                             ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                          ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                 ;               ;
+; Vector input source                                                                        ; C:/Users/nwidmer/Documents/quartus/HW/HW13/HW13.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                  ; On            ;
+; Check outputs                                                                              ; Off                                                 ; Off           ;
+; Report simulation coverage                                                                 ; On                                                  ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                  ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                  ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                  ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                 ; Off           ;
+; Detect glitches                                                                            ; Off                                                 ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                 ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                 ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                 ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                 ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                  ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                          ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                 ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                 ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                ; Auto          ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      77.50 % ;
+; Total nodes checked                                 ; 160          ;
+; Total output ports checked                          ; 160          ;
+; Total output ports with complete 1/0-value coverage ; 124          ;
+; Total output ports with no 1/0-value coverage       ; 27           ;
+; Total output ports with no 1-value coverage         ; 35           ;
+; Total output ports with no 0-value coverage         ; 28           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------+
+; Complete 1/0-Value Coverage                          ;
++----------------+------------------+------------------+
+; Node Name      ; Output Port Name ; Output Port Type ;
++----------------+------------------+------------------+
+; |hw13|clock    ; |hw13|clock      ; out              ;
+; |hw13|M[0]     ; |hw13|M[0]       ; out              ;
+; |hw13|cw       ; |hw13|cw         ; out              ;
+; |hw13|QA       ; |hw13|QA         ; pin_out          ;
+; |hw13|QAN      ; |hw13|QAN        ; pin_out          ;
+; |hw13|QB       ; |hw13|QB         ; pin_out          ;
+; |hw13|QBN      ; |hw13|QBN        ; pin_out          ;
+; |hw13|_~0      ; |hw13|_~0        ; out0             ;
+; |hw13|S0       ; |hw13|S0         ; regout           ;
+; |hw13|S0~0     ; |hw13|S0~0       ; out0             ;
+; |hw13|S1       ; |hw13|S1         ; regout           ;
+; |hw13|S1~0     ; |hw13|S1~0       ; out0             ;
+; |hw13|_~2      ; |hw13|_~2        ; out0             ;
+; |hw13|S2       ; |hw13|S2         ; regout           ;
+; |hw13|S2~0     ; |hw13|S2~0       ; out0             ;
+; |hw13|_~3      ; |hw13|_~3        ; out0             ;
+; |hw13|S3       ; |hw13|S3         ; regout           ;
+; |hw13|S3~0     ; |hw13|S3~0       ; out0             ;
+; |hw13|_~4      ; |hw13|_~4        ; out0             ;
+; |hw13|S4       ; |hw13|S4         ; regout           ;
+; |hw13|S4~0     ; |hw13|S4~0       ; out0             ;
+; |hw13|_~5      ; |hw13|_~5        ; out0             ;
+; |hw13|S5       ; |hw13|S5         ; regout           ;
+; |hw13|S5~0     ; |hw13|S5~0       ; out0             ;
+; |hw13|_~6      ; |hw13|_~6        ; out0             ;
+; |hw13|S6       ; |hw13|S6         ; regout           ;
+; |hw13|S6~0     ; |hw13|S6~0       ; out0             ;
+; |hw13|_~7      ; |hw13|_~7        ; out0             ;
+; |hw13|S7       ; |hw13|S7         ; regout           ;
+; |hw13|S7~0     ; |hw13|S7~0       ; out0             ;
+; |hw13|_~8      ; |hw13|_~8        ; out0             ;
+; |hw13|_~12     ; |hw13|_~12       ; out0             ;
+; |hw13|_~13     ; |hw13|_~13       ; out0             ;
+; |hw13|_~15     ; |hw13|_~15       ; out0             ;
+; |hw13|_~16     ; |hw13|_~16       ; out0             ;
+; |hw13|_~18     ; |hw13|_~18       ; out0             ;
+; |hw13|_~19     ; |hw13|_~19       ; out0             ;
+; |hw13|_~21     ; |hw13|_~21       ; out0             ;
+; |hw13|_~22     ; |hw13|_~22       ; out0             ;
+; |hw13|_~29     ; |hw13|_~29       ; out0             ;
+; |hw13|_~37     ; |hw13|_~37       ; out0             ;
+; |hw13|_~39     ; |hw13|_~39       ; out0             ;
+; |hw13|_~40     ; |hw13|_~40       ; out0             ;
+; |hw13|_~42     ; |hw13|_~42       ; out0             ;
+; |hw13|_~43     ; |hw13|_~43       ; out0             ;
+; |hw13|_~45     ; |hw13|_~45       ; out0             ;
+; |hw13|_~46     ; |hw13|_~46       ; out0             ;
+; |hw13|_~48     ; |hw13|_~48       ; out0             ;
+; |hw13|_~50     ; |hw13|_~50       ; out0             ;
+; |hw13|_~51     ; |hw13|_~51       ; out0             ;
+; |hw13|_~55     ; |hw13|_~55       ; out0             ;
+; |hw13|_~56     ; |hw13|_~56       ; out0             ;
+; |hw13|_~58     ; |hw13|_~58       ; out0             ;
+; |hw13|_~59     ; |hw13|_~59       ; out0             ;
+; |hw13|_~61     ; |hw13|_~61       ; out0             ;
+; |hw13|_~62     ; |hw13|_~62       ; out0             ;
+; |hw13|_~64     ; |hw13|_~64       ; out0             ;
+; |hw13|_~65     ; |hw13|_~65       ; out0             ;
+; |hw13|_~72     ; |hw13|_~72       ; out0             ;
+; |hw13|_~73     ; |hw13|_~73       ; out0             ;
+; |hw13|_~81     ; |hw13|_~81       ; out0             ;
+; |hw13|_~83     ; |hw13|_~83       ; out0             ;
+; |hw13|_~84     ; |hw13|_~84       ; out0             ;
+; |hw13|_~86     ; |hw13|_~86       ; out0             ;
+; |hw13|_~87     ; |hw13|_~87       ; out0             ;
+; |hw13|_~89     ; |hw13|_~89       ; out0             ;
+; |hw13|_~90     ; |hw13|_~90       ; out0             ;
+; |hw13|_~92     ; |hw13|_~92       ; out0             ;
+; |hw13|_~94     ; |hw13|_~94       ; out0             ;
+; |hw13|_~95     ; |hw13|_~95       ; out0             ;
+; |hw13|_~99     ; |hw13|_~99       ; out0             ;
+; |hw13|_~100    ; |hw13|_~100      ; out0             ;
+; |hw13|_~102    ; |hw13|_~102      ; out0             ;
+; |hw13|_~103    ; |hw13|_~103      ; out0             ;
+; |hw13|_~105    ; |hw13|_~105      ; out0             ;
+; |hw13|_~106    ; |hw13|_~106      ; out0             ;
+; |hw13|_~108    ; |hw13|_~108      ; out0             ;
+; |hw13|_~109    ; |hw13|_~109      ; out0             ;
+; |hw13|_~111    ; |hw13|_~111      ; out0             ;
+; |hw13|_~114    ; |hw13|_~114      ; out0             ;
+; |hw13|_~116    ; |hw13|_~116      ; out0             ;
+; |hw13|_~117    ; |hw13|_~117      ; out0             ;
+; |hw13|_~125    ; |hw13|_~125      ; out0             ;
+; |hw13|_~127    ; |hw13|_~127      ; out0             ;
+; |hw13|_~128    ; |hw13|_~128      ; out0             ;
+; |hw13|_~130    ; |hw13|_~130      ; out0             ;
+; |hw13|_~131    ; |hw13|_~131      ; out0             ;
+; |hw13|_~133    ; |hw13|_~133      ; out0             ;
+; |hw13|_~134    ; |hw13|_~134      ; out0             ;
+; |hw13|_~136    ; |hw13|_~136      ; out0             ;
+; |hw13|_~138    ; |hw13|_~138      ; out0             ;
+; |hw13|_~139    ; |hw13|_~139      ; out0             ;
+; |hw13|_~143    ; |hw13|_~143      ; out0             ;
+; |hw13|_~144    ; |hw13|_~144      ; out0             ;
+; |hw13|_~146    ; |hw13|_~146      ; out0             ;
+; |hw13|_~147    ; |hw13|_~147      ; out0             ;
+; |hw13|_~149    ; |hw13|_~149      ; out0             ;
+; |hw13|_~150    ; |hw13|_~150      ; out0             ;
+; |hw13|_~152    ; |hw13|_~152      ; out0             ;
+; |hw13|_~153    ; |hw13|_~153      ; out0             ;
+; |hw13|_~160    ; |hw13|_~160      ; out0             ;
+; |hw13|_~161    ; |hw13|_~161      ; out0             ;
+; |hw13|_~169    ; |hw13|_~169      ; out0             ;
+; |hw13|_~171    ; |hw13|_~171      ; out0             ;
+; |hw13|_~172    ; |hw13|_~172      ; out0             ;
+; |hw13|_~174    ; |hw13|_~174      ; out0             ;
+; |hw13|_~175    ; |hw13|_~175      ; out0             ;
+; |hw13|_~177    ; |hw13|_~177      ; out0             ;
+; |hw13|_~178    ; |hw13|_~178      ; out0             ;
+; |hw13|_~180    ; |hw13|_~180      ; out0             ;
+; |hw13|step~2   ; |hw13|step~2     ; out0             ;
+; |hw13|S0~2     ; |hw13|S0~2       ; out0             ;
+; |hw13|S1~2     ; |hw13|S1~2       ; out0             ;
+; |hw13|S2~2     ; |hw13|S2~2       ; out0             ;
+; |hw13|S3~2     ; |hw13|S3~2       ; out0             ;
+; |hw13|S4~2     ; |hw13|S4~2       ; out0             ;
+; |hw13|S5~2     ; |hw13|S5~2       ; out0             ;
+; |hw13|S6~2     ; |hw13|S6~2       ; out0             ;
+; |hw13|S7~2     ; |hw13|S7~2       ; out0             ;
+; |hw13|step~6   ; |hw13|step~6     ; out0             ;
+; |hw13|step$QBN ; |hw13|step$QBN   ; out0             ;
+; |hw13|step$QB  ; |hw13|step$QB    ; out0             ;
+; |hw13|step$QAN ; |hw13|step$QAN   ; out0             ;
+; |hw13|step$QA  ; |hw13|step$QA    ; out0             ;
++----------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------+
+; Missing 1-Value Coverage                           ;
++--------------+------------------+------------------+
+; Node Name    ; Output Port Name ; Output Port Type ;
++--------------+------------------+------------------+
+; |hw13|enable ; |hw13|enable     ; out              ;
+; |hw13|_~1    ; |hw13|_~1        ; out0             ;
+; |hw13|_~9    ; |hw13|_~9        ; out0             ;
+; |hw13|_~24   ; |hw13|_~24       ; out0             ;
+; |hw13|_~25   ; |hw13|_~25       ; out0             ;
+; |hw13|_~27   ; |hw13|_~27       ; out0             ;
+; |hw13|_~30   ; |hw13|_~30       ; out0             ;
+; |hw13|_~33   ; |hw13|_~33       ; out0             ;
+; |hw13|_~34   ; |hw13|_~34       ; out0             ;
+; |hw13|_~36   ; |hw13|_~36       ; out0             ;
+; |hw13|_~52   ; |hw13|_~52       ; out0             ;
+; |hw13|_~67   ; |hw13|_~67       ; out0             ;
+; |hw13|_~68   ; |hw13|_~68       ; out0             ;
+; |hw13|_~70   ; |hw13|_~70       ; out0             ;
+; |hw13|_~74   ; |hw13|_~74       ; out0             ;
+; |hw13|_~77   ; |hw13|_~77       ; out0             ;
+; |hw13|_~78   ; |hw13|_~78       ; out0             ;
+; |hw13|_~80   ; |hw13|_~80       ; out0             ;
+; |hw13|_~96   ; |hw13|_~96       ; out0             ;
+; |hw13|_~112  ; |hw13|_~112      ; out0             ;
+; |hw13|_~118  ; |hw13|_~118      ; out0             ;
+; |hw13|_~121  ; |hw13|_~121      ; out0             ;
+; |hw13|_~122  ; |hw13|_~122      ; out0             ;
+; |hw13|_~124  ; |hw13|_~124      ; out0             ;
+; |hw13|_~140  ; |hw13|_~140      ; out0             ;
+; |hw13|_~155  ; |hw13|_~155      ; out0             ;
+; |hw13|_~156  ; |hw13|_~156      ; out0             ;
+; |hw13|_~158  ; |hw13|_~158      ; out0             ;
+; |hw13|_~162  ; |hw13|_~162      ; out0             ;
+; |hw13|_~165  ; |hw13|_~165      ; out0             ;
+; |hw13|_~166  ; |hw13|_~166      ; out0             ;
+; |hw13|_~168  ; |hw13|_~168      ; out0             ;
+; |hw13|step~3 ; |hw13|step~3     ; out0             ;
+; |hw13|step~4 ; |hw13|step~4     ; out0             ;
+; |hw13|step~9 ; |hw13|step~9     ; out0             ;
++--------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------+
+; Missing 0-Value Coverage                           ;
++--------------+------------------+------------------+
+; Node Name    ; Output Port Name ; Output Port Type ;
++--------------+------------------+------------------+
+; |hw13|M[1]   ; |hw13|M[1]       ; out              ;
+; |hw13|enable ; |hw13|enable     ; out              ;
+; |hw13|_~1    ; |hw13|_~1        ; out0             ;
+; |hw13|_~24   ; |hw13|_~24       ; out0             ;
+; |hw13|_~25   ; |hw13|_~25       ; out0             ;
+; |hw13|_~27   ; |hw13|_~27       ; out0             ;
+; |hw13|_~33   ; |hw13|_~33       ; out0             ;
+; |hw13|_~34   ; |hw13|_~34       ; out0             ;
+; |hw13|_~36   ; |hw13|_~36       ; out0             ;
+; |hw13|_~67   ; |hw13|_~67       ; out0             ;
+; |hw13|_~68   ; |hw13|_~68       ; out0             ;
+; |hw13|_~70   ; |hw13|_~70       ; out0             ;
+; |hw13|_~77   ; |hw13|_~77       ; out0             ;
+; |hw13|_~78   ; |hw13|_~78       ; out0             ;
+; |hw13|_~80   ; |hw13|_~80       ; out0             ;
+; |hw13|_~112  ; |hw13|_~112      ; out0             ;
+; |hw13|_~121  ; |hw13|_~121      ; out0             ;
+; |hw13|_~122  ; |hw13|_~122      ; out0             ;
+; |hw13|_~124  ; |hw13|_~124      ; out0             ;
+; |hw13|_~155  ; |hw13|_~155      ; out0             ;
+; |hw13|_~156  ; |hw13|_~156      ; out0             ;
+; |hw13|_~158  ; |hw13|_~158      ; out0             ;
+; |hw13|_~165  ; |hw13|_~165      ; out0             ;
+; |hw13|_~166  ; |hw13|_~166      ; out0             ;
+; |hw13|_~168  ; |hw13|_~168      ; out0             ;
+; |hw13|step~3 ; |hw13|step~3     ; out0             ;
+; |hw13|step~4 ; |hw13|step~4     ; out0             ;
+; |hw13|step~9 ; |hw13|step~9     ; out0             ;
++--------------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Mar 07 23:04:25 2016
+Info: Command: quartus_sim --simulation_results_format=VWF HW15 -c HW15
+Info (324025): Using vector source file "C:/Users/nwidmer/Documents/quartus/HW/HW13/HW13.vwf"
+Warning (328016): Wrong node type and/or width for node "|hw13|step" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
+Warning (328018): Signal name "|hw13|step" changed to enum type
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      77.50 %
+Info (328052): Number of transitions in simulation is 1438
+Info (324045): Vector file HW15.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 310 megabytes
+    Info: Processing ended: Mon Mar 07 23:04:25 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,22 @@
+
+SUBDESIGN MODN
+(	clock, N[9..0], EN		:INPUT;
+
+	Fout				:OUTPUT;	)
+	
+	VARIABLE
+		ff[9..0]		:DFF;
+
+BEGIN
+	ff[].clk = clock;
+	IF ff[].q == 0 THEN
+		ff[].d = N[];
+	ELSIF EN == 0 THEN 
+		ff[].d = ff[].q;
+	ELSIF ff[].q == 1 THEN
+		Fout = VCC;
+		ff[].d = N[];
+	ELSE
+		ff[].d = ff[].q - 1;
+	END IF;
+END;

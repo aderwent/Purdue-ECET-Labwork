@@ -1,0 +1,34 @@
+%  Generate random numbers 
+	Three modes:  IF MOD_16N = 0  count 0-15
+					  ELSE IF hexN  count A - F
+					  ELSE IF bcd 	count 0 - 9
+					  
+ns widmer
+1/9/14
+%
+SUBDESIGN random
+(	clk24M, mod16N, hexN_bcd								 	:INPUT;
+	hex[3..0]														:OUTPUT;	)
+VARIABLE
+	mod16[3..0]
+	
+BEGIN
+	mod16[].clk = clk24M;
+	
+	IF mod16N == 0 THEN
+		mod16[].d = mod16[].q + 1;
+	ELSIF hexN_bcd == 0 THEN	
+		IF mod16[].q == 15 THEN	
+			mod16[].d = 10;		-- start over at A
+		ELSE mod16[].d = mod16[].q + 1;	
+		END IF;
+	ELSE 
+		IF mod16[].q == 9 THEN	
+			mod16[].d = 0;		-- start over at 0
+		ELSE mod16[].d = mod16[].q + 1;
+		END IF; 
+	END IF;
+	hex[] = mod16[];	
+	
+END;
+	

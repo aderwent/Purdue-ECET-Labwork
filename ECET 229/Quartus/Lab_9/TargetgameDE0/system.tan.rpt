@@ -1,0 +1,944 @@
+Classic Timing Analyzer report for system
+Tue Feb 26 12:25:53 2013
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clock'
+  7. Clock Hold: 'clock'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                  ; To                    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 0.567 ns                         ; triggern              ; gun:inst8|count[9]    ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 26.251 ns                        ; gun:inst8|count[4]    ; r[1]                  ; clock      ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 4.830 ns                         ; triggern              ; gun:inst8|count[3]    ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; N/A                                      ; None          ; 142.65 MHz ( period = 7.010 ns ) ; gun:inst8|count[2]    ; gun:inst8|count[9]    ; clock      ; clock    ; 0            ;
+; Clock Hold: 'clock'          ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; target:inst2|count[0] ; target:inst2|count[0] ; clock      ; clock    ; 191          ;
+; Total number of failed paths ;                                          ;               ;                                  ;                       ;                       ;            ;          ; 191          ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                  ; To                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 142.65 MHz ( period = 7.010 ns )                    ; gun:inst8|count[2]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 3.504 ns                ;
+; N/A                                     ; 144.30 MHz ( period = 6.930 ns )                    ; target:inst2|count[5] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.424 ns                ;
+; N/A                                     ; 144.70 MHz ( period = 6.911 ns )                    ; target:inst2|count[2] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.405 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; target:inst2|count[9] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.393 ns                ;
+; N/A                                     ; 145.24 MHz ( period = 6.885 ns )                    ; target:inst2|count[1] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.379 ns                ;
+; N/A                                     ; 145.37 MHz ( period = 6.879 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 3.373 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 145.39 MHz ( period = 6.878 ns )                    ; target:inst2|count[4] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.372 ns                ;
+; N/A                                     ; 146.33 MHz ( period = 6.834 ns )                    ; target:inst2|count[5] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.328 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.54 MHz ( period = 6.824 ns )                    ; target:inst2|count[8] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 146.74 MHz ( period = 6.815 ns )                    ; target:inst2|count[2] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.309 ns                ;
+; N/A                                     ; 147.30 MHz ( period = 6.789 ns )                    ; target:inst2|count[1] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.283 ns                ;
+; N/A                                     ; 147.32 MHz ( period = 6.788 ns )                    ; target:inst2|count[3] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.282 ns                ;
+; N/A                                     ; 147.34 MHz ( period = 6.787 ns )                    ; gun:inst8|count[9]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 3.281 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 147.49 MHz ( period = 6.780 ns )                    ; target:inst2|count[2] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.274 ns                ;
+; N/A                                     ; 148.19 MHz ( period = 6.748 ns )                    ; target:inst2|count[0] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.242 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 148.70 MHz ( period = 6.725 ns )                    ; target:inst2|count[6] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; target:inst2|count[3] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.204 ns                ;
+; N/A                                     ; 149.08 MHz ( period = 6.708 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 3.202 ns                ;
+; N/A                                     ; 149.90 MHz ( period = 6.671 ns )                    ; target:inst2|count[5] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.165 ns                ;
+; N/A                                     ; 150.33 MHz ( period = 6.652 ns )                    ; target:inst2|count[0] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 3.146 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.44 MHz ( period = 6.647 ns )                    ; target:inst2|count[0] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.141 ns                ;
+; N/A                                     ; 150.74 MHz ( period = 6.634 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 3.128 ns                ;
+; N/A                                     ; 150.92 MHz ( period = 6.626 ns )                    ; target:inst2|count[1] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 3.120 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; target:inst2|count[5] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.108 ns                ;
+; N/A                                     ; 151.31 MHz ( period = 6.609 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[3]       ; clock      ; clock    ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 151.35 MHz ( period = 6.607 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[2]       ; clock      ; clock    ; None                        ; None                      ; 5.899 ns                ;
+; N/A                                     ; 151.42 MHz ( period = 6.604 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 3.098 ns                ;
+; N/A                                     ; 152.07 MHz ( period = 6.576 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[4]       ; clock      ; clock    ; None                        ; None                      ; 5.868 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; target:inst2|count[1] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; target:inst2|count[1] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; target:inst2|count[1] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; target:inst2|count[1] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; target:inst2|count[1] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 152.14 MHz ( period = 6.573 ns )                    ; target:inst2|count[1] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 153.00 MHz ( period = 6.536 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[3]       ; clock      ; clock    ; None                        ; None                      ; 5.828 ns                ;
+; N/A                                     ; 153.00 MHz ( period = 6.536 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 3.030 ns                ;
+; N/A                                     ; 153.05 MHz ( period = 6.534 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[2]       ; clock      ; clock    ; None                        ; None                      ; 5.826 ns                ;
+; N/A                                     ; 153.14 MHz ( period = 6.530 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 3.024 ns                ;
+; N/A                                     ; 153.33 MHz ( period = 6.522 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 3.016 ns                ;
+; N/A                                     ; 153.35 MHz ( period = 6.521 ns )                    ; target:inst2|count[5] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 3.015 ns                ;
+; N/A                                     ; 153.35 MHz ( period = 6.521 ns )                    ; target:inst2|count[5] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 3.015 ns                ;
+; N/A                                     ; 153.35 MHz ( period = 6.521 ns )                    ; target:inst2|count[5] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 3.015 ns                ;
+; N/A                                     ; 153.35 MHz ( period = 6.521 ns )                    ; target:inst2|count[5] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 3.015 ns                ;
+; N/A                                     ; 153.35 MHz ( period = 6.521 ns )                    ; target:inst2|count[5] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 3.015 ns                ;
+; N/A                                     ; 153.61 MHz ( period = 6.510 ns )                    ; target:inst2|count[7] ; target:inst2|count[9] ; clock      ; clock    ; None                        ; None                      ; 3.004 ns                ;
+; N/A                                     ; 153.78 MHz ( period = 6.503 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[4]       ; clock      ; clock    ; None                        ; None                      ; 5.795 ns                ;
+; N/A                                     ; 154.58 MHz ( period = 6.469 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 2.963 ns                ;
+; N/A                                     ; 154.99 MHz ( period = 6.452 ns )                    ; gun:inst8|count[8]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.946 ns                ;
+; N/A                                     ; 155.18 MHz ( period = 6.444 ns )                    ; gun:inst8|count[8]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 2.938 ns                ;
+; N/A                                     ; 155.21 MHz ( period = 6.443 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[5]       ; clock      ; clock    ; None                        ; None                      ; 6.105 ns                ;
+; N/A                                     ; 155.47 MHz ( period = 6.432 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.926 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; target:inst2|count[7] ; target:inst2|count[8] ; clock      ; clock    ; None                        ; None                      ; 2.908 ns                ;
+; N/A                                     ; 155.93 MHz ( period = 6.413 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.907 ns                ;
+; N/A                                     ; 156.40 MHz ( period = 6.394 ns )                    ; modN:inst4|q[5]       ; modN:inst4|q[5]       ; clock      ; clock    ; None                        ; None                      ; 6.155 ns                ;
+; N/A                                     ; 156.54 MHz ( period = 6.388 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[7]       ; clock      ; clock    ; None                        ; None                      ; 5.649 ns                ;
+; N/A                                     ; 156.76 MHz ( period = 6.379 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.873 ns                ;
+; N/A                                     ; 156.79 MHz ( period = 6.378 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.872 ns                ;
+; N/A                                     ; 156.99 MHz ( period = 6.370 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[5]       ; clock      ; clock    ; None                        ; None                      ; 6.032 ns                ;
+; N/A                                     ; 157.06 MHz ( period = 6.367 ns )                    ; gun:inst8|count[9]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.861 ns                ;
+; N/A                                     ; 157.58 MHz ( period = 6.346 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                        ; None                      ; 2.840 ns                ;
+; N/A                                     ; 157.65 MHz ( period = 6.343 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.837 ns                ;
+; N/A                                     ; 157.80 MHz ( period = 6.337 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.831 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[0]       ; clock      ; clock    ; None                        ; None                      ; 5.109 ns                ;
+; N/A                                     ; 158.25 MHz ( period = 6.319 ns )                    ; gun:inst8|count[7]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.813 ns                ;
+; N/A                                     ; 158.35 MHz ( period = 6.315 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[7]       ; clock      ; clock    ; None                        ; None                      ; 5.576 ns                ;
+; N/A                                     ; 158.45 MHz ( period = 6.311 ns )                    ; gun:inst8|count[7]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 2.805 ns                ;
+; N/A                                     ; 159.11 MHz ( period = 6.285 ns )                    ; gun:inst8|count[9]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.779 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                        ; None                      ; 2.765 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                        ; None                      ; 2.765 ns                ;
+; N/A                                     ; 159.67 MHz ( period = 6.263 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                        ; None                      ; 2.757 ns                ;
+; N/A                                     ; 159.72 MHz ( period = 6.261 ns )                    ; gun:inst8|count[2]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.755 ns                ;
+; N/A                                     ; 160.00 MHz ( period = 6.250 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[0]       ; clock      ; clock    ; None                        ; None                      ; 5.036 ns                ;
+; N/A                                     ; 160.54 MHz ( period = 6.229 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[6]       ; clock      ; clock    ; None                        ; None                      ; 5.490 ns                ;
+; N/A                                     ; 161.03 MHz ( period = 6.210 ns )                    ; gun:inst8|count[6]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.704 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[3] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[2] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[5] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[7] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[6] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[1] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; target:inst2|count[7] ; target:inst2|count[4] ; clock      ; clock    ; None                        ; None                      ; 2.700 ns                ;
+; N/A                                     ; 161.19 MHz ( period = 6.204 ns )                    ; gun:inst8|count[6]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                        ; None                      ; 2.698 ns                ;
+; N/A                                     ; 161.26 MHz ( period = 6.201 ns )                    ; gun:inst8|count[8]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.695 ns                ;
+; N/A                                     ; 161.39 MHz ( period = 6.196 ns )                    ; gun:inst8|count[6]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.690 ns                ;
+; N/A                                     ; 161.42 MHz ( period = 6.195 ns )                    ; gun:inst8|count[9]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.689 ns                ;
+; N/A                                     ; 161.52 MHz ( period = 6.191 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                        ; None                      ; 2.685 ns                ;
+; N/A                                     ; 161.76 MHz ( period = 6.182 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.676 ns                ;
+; N/A                                     ; 161.81 MHz ( period = 6.180 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.674 ns                ;
+; N/A                                     ; 161.84 MHz ( period = 6.179 ns )                    ; gun:inst8|count[2]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.673 ns                ;
+; N/A                                     ; 161.92 MHz ( period = 6.176 ns )                    ; gun:inst8|count[9]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.670 ns                ;
+; N/A                                     ; 162.28 MHz ( period = 6.162 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.656 ns                ;
+; N/A                                     ; 162.44 MHz ( period = 6.156 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[6]       ; clock      ; clock    ; None                        ; None                      ; 5.417 ns                ;
+; N/A                                     ; 162.68 MHz ( period = 6.147 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[9]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 162.92 MHz ( period = 6.138 ns )                    ; modN:inst4|q[5]       ; modN:inst4|q[3]       ; clock      ; clock    ; None                        ; None                      ; 5.529 ns                ;
+; N/A                                     ; 163.08 MHz ( period = 6.132 ns )                    ; gun:inst8|count[8]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.626 ns                ;
+; N/A                                     ; 163.16 MHz ( period = 6.129 ns )                    ; modN:inst4|q[5]       ; modN:inst4|q[2]       ; clock      ; clock    ; None                        ; None                      ; 5.520 ns                ;
+; N/A                                     ; 163.93 MHz ( period = 6.100 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.594 ns                ;
+; N/A                                     ; 163.99 MHz ( period = 6.098 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                        ; None                      ; 2.592 ns                ;
+; N/A                                     ; 164.02 MHz ( period = 6.097 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                        ; None                      ; 2.591 ns                ;
+; N/A                                     ; 164.07 MHz ( period = 6.095 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.589 ns                ;
+; N/A                                     ; 164.15 MHz ( period = 6.092 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.586 ns                ;
+; N/A                                     ; 164.23 MHz ( period = 6.089 ns )                    ; gun:inst8|count[2]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.583 ns                ;
+; N/A                                     ; 164.64 MHz ( period = 6.074 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[9]       ; clock      ; clock    ; None                        ; None                      ; 5.332 ns                ;
+; N/A                                     ; 164.74 MHz ( period = 6.070 ns )                    ; gun:inst8|count[2]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.564 ns                ;
+; N/A                                     ; 164.80 MHz ( period = 6.068 ns )                    ; gun:inst8|count[7]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.562 ns                ;
+; N/A                                     ; 165.21 MHz ( period = 6.053 ns )                    ; gun:inst8|count[6]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.547 ns                ;
+; N/A                                     ; 165.23 MHz ( period = 6.052 ns )                    ; gun:inst8|count[6]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.546 ns                ;
+; N/A                                     ; 165.29 MHz ( period = 6.050 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                        ; None                      ; 2.544 ns                ;
+; N/A                                     ; 165.45 MHz ( period = 6.044 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                        ; None                      ; 2.538 ns                ;
+; N/A                                     ; 165.51 MHz ( period = 6.042 ns )                    ; gun:inst8|count[7]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                        ; None                      ; 2.536 ns                ;
+; N/A                                     ; 165.76 MHz ( period = 6.033 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[8]       ; clock      ; clock    ; None                        ; None                      ; 5.291 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[2] ; clock      ; clock    ; None                        ; None                      ; 4.799 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[1] ; clock      ; clock    ; None                        ; None                      ; 4.799 ns                ;
+; N/A                                     ; 165.92 MHz ( period = 6.027 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[3] ; clock      ; clock    ; None                        ; None                      ; 4.805 ns                ;
+; N/A                                     ; 165.92 MHz ( period = 6.027 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[6] ; clock      ; clock    ; None                        ; None                      ; 4.805 ns                ;
+; N/A                                     ; 166.39 MHz ( period = 6.010 ns )                    ; gun:inst8|count[8]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.504 ns                ;
+; N/A                                     ; 166.53 MHz ( period = 6.005 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.499 ns                ;
+; N/A                                     ; 166.78 MHz ( period = 5.996 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[8] ; clock      ; clock    ; None                        ; None                      ; 4.766 ns                ;
+; N/A                                     ; 166.78 MHz ( period = 5.996 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[4] ; clock      ; clock    ; None                        ; None                      ; 4.766 ns                ;
+; N/A                                     ; 166.78 MHz ( period = 5.996 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[5] ; clock      ; clock    ; None                        ; None                      ; 4.766 ns                ;
+; N/A                                     ; 166.78 MHz ( period = 5.996 ns )                    ; MOD800:inst5|count[4] ; MOD525:inst6|count[7] ; clock      ; clock    ; None                        ; None                      ; 4.766 ns                ;
+; N/A                                     ; 167.00 MHz ( period = 5.988 ns )                    ; MOD800:inst5|count[4] ; modN:inst4|q[1]       ; clock      ; clock    ; None                        ; None                      ; 5.246 ns                ;
+; N/A                                     ; 167.36 MHz ( period = 5.975 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                        ; None                      ; 2.469 ns                ;
+; N/A                                     ; 167.36 MHz ( period = 5.975 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                        ; None                      ; 2.469 ns                ;
+; N/A                                     ; 167.53 MHz ( period = 5.969 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 167.53 MHz ( period = 5.969 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 167.59 MHz ( period = 5.967 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                        ; None                      ; 2.461 ns                ;
+; N/A                                     ; 167.76 MHz ( period = 5.961 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                        ; None                      ; 2.455 ns                ;
+; N/A                                     ; 167.79 MHz ( period = 5.960 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[8]       ; clock      ; clock    ; None                        ; None                      ; 5.218 ns                ;
+; N/A                                     ; 167.87 MHz ( period = 5.957 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[2] ; clock      ; clock    ; None                        ; None                      ; 4.726 ns                ;
+; N/A                                     ; 167.87 MHz ( period = 5.957 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[1] ; clock      ; clock    ; None                        ; None                      ; 4.726 ns                ;
+; N/A                                     ; 167.95 MHz ( period = 5.954 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[3] ; clock      ; clock    ; None                        ; None                      ; 4.732 ns                ;
+; N/A                                     ; 167.95 MHz ( period = 5.954 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[6] ; clock      ; clock    ; None                        ; None                      ; 4.732 ns                ;
+; N/A                                     ; 168.24 MHz ( period = 5.944 ns )                    ; gun:inst8|count[0]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                        ; None                      ; 2.438 ns                ;
+; N/A                                     ; 168.61 MHz ( period = 5.931 ns )                    ; modN:inst4|q[5]       ; modN:inst4|q[4]       ; clock      ; clock    ; None                        ; None                      ; 5.322 ns                ;
+; N/A                                     ; 168.83 MHz ( period = 5.923 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[8] ; clock      ; clock    ; None                        ; None                      ; 4.693 ns                ;
+; N/A                                     ; 168.83 MHz ( period = 5.923 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[4] ; clock      ; clock    ; None                        ; None                      ; 4.693 ns                ;
+; N/A                                     ; 168.83 MHz ( period = 5.923 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[5] ; clock      ; clock    ; None                        ; None                      ; 4.693 ns                ;
+; N/A                                     ; 168.83 MHz ( period = 5.923 ns )                    ; MOD800:inst5|count[5] ; MOD525:inst6|count[7] ; clock      ; clock    ; None                        ; None                      ; 4.693 ns                ;
+; N/A                                     ; 169.06 MHz ( period = 5.915 ns )                    ; MOD800:inst5|count[5] ; modN:inst4|q[1]       ; clock      ; clock    ; None                        ; None                      ; 5.173 ns                ;
+; N/A                                     ; 169.32 MHz ( period = 5.906 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                        ; None                      ; 2.400 ns                ;
+; N/A                                     ; 169.52 MHz ( period = 5.899 ns )                    ; gun:inst8|count[3]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 169.64 MHz ( period = 5.895 ns )                    ; gun:inst8|count[1]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                        ; None                      ; 2.389 ns                ;
+; N/A                                     ; 169.92 MHz ( period = 5.885 ns )                    ; gun:inst8|count[7]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                        ; None                      ; 2.379 ns                ;
+; N/A                                     ; 170.21 MHz ( period = 5.875 ns )                    ; gun:inst8|count[2]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                        ; None                      ; 2.369 ns                ;
+; N/A                                     ; 170.33 MHz ( period = 5.871 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                        ; None                      ; 2.365 ns                ;
+; N/A                                     ; 170.56 MHz ( period = 5.863 ns )                    ; gun:inst8|count[4]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                        ; None                      ; 2.357 ns                ;
+; N/A                                     ; 170.62 MHz ( period = 5.861 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                        ; None                      ; 2.355 ns                ;
+; N/A                                     ; 170.85 MHz ( period = 5.853 ns )                    ; gun:inst8|count[5]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                        ; None                      ; 2.347 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                       ;                       ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clock'                                                                                                                                                                                   ;
++------------------------------------------+-----------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                  ; To                    ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[0] ; clock      ; clock    ; None                       ; None                       ; 0.454 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 0.454 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 0.454 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 0.664 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 0.972 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 0.979 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 0.980 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 0.988 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 1.017 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 1.017 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.018 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 1.049 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 1.054 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 1.057 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 1.062 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 1.291 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 1.291 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 1.324 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 1.441 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 1.442 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.450 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.450 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 1.466 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 1.484 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 1.487 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 1.492 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 1.509 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 1.521 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 1.522 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.530 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 1.535 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.564 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 1.567 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 1.572 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 1.601 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.602 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 1.615 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 1.615 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.644 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 1.647 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 1.652 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 1.657 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 1.659 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 1.663 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 1.664 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 1.681 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 1.695 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 1.708 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 1.712 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 1.727 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 1.731 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 1.731 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.732 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 1.752 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.761 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 1.775 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 1.777 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 1.798 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 1.802 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 1.807 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.812 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 1.821 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[9]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 1.821 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 1.828 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 1.833 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.841 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 1.842 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 1.855 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 1.867 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 1.872 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 1.876 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 1.887 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 1.897 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 1.898 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 1.903 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 1.906 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 1.913 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 1.920 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 1.935 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 1.935 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 1.938 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 1.967 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 1.970 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 1.993 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 1.996 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 2.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 2.015 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.018 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 2.026 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.040 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 2.044 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 2.047 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.059 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.059 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 2.072 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 2.073 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 2.074 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 2.088 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[1] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 2.095 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.118 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.142 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 2.153 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.188 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 2.202 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.214 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.217 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.218 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.231 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 2.233 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.248 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.267 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.267 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 2.271 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.285 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 2.286 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.293 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 2.294 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.294 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 2.313 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 2.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 2.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 2.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[6] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 2.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[0]    ; clock      ; clock    ; None                       ; None                       ; 2.346 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[4]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.365 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[8] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 2.366 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 2.369 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.371 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.378 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.389 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.390 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[7]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.390 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.392 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[0] ; target:inst2|count[9] ; clock      ; clock    ; None                       ; None                       ; 2.393 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.395 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.414 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.414 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[6]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.439 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 2.461 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.468 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.469 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 2.469 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.469 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.470 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.485 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[5]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.498 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.504 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[8]    ; gun:inst8|count[3]    ; clock      ; clock    ; None                       ; None                       ; 2.523 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 2.544 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[1]    ; clock      ; clock    ; None                       ; None                       ; 2.564 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[2]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.583 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[3]    ; gun:inst8|count[2]    ; clock      ; clock    ; None                       ; None                       ; 2.673 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 2.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 2.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 2.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 2.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[7] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 2.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[7]    ; clock      ; clock    ; None                       ; None                       ; 2.685 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[6]    ; clock      ; clock    ; None                       ; None                       ; 2.757 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[5]    ; clock      ; clock    ; None                       ; None                       ; 2.765 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[8]    ; clock      ; clock    ; None                       ; None                       ; 2.765 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 2.814 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[3] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.814 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 2.837 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 2.837 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[4] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.837 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[0]    ; gun:inst8|count[4]    ; clock      ; clock    ; None                       ; None                       ; 2.840 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 2.918 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 2.918 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.918 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[5] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 2.918 ns                 ;
+; Not operational: Clock Skew > Data Delay ; gun:inst8|count[1]    ; gun:inst8|count[9]    ; clock      ; clock    ; None                       ; None                       ; 2.926 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[2] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 2.977 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[3] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[2] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[5] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[7] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[6] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[8] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[1] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; target:inst2|count[9] ; target:inst2|count[4] ; clock      ; clock    ; None                       ; None                       ; 3.003 ns                 ;
++------------------------------------------+-----------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++------------------------------------------------------------------------------+
+; tsu                                                                          ;
++-------+--------------+------------+----------+--------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From     ; To                 ; To Clock ;
++-------+--------------+------------+----------+--------------------+----------+
+; N/A   ; None         ; 0.567 ns   ; triggern ; gun:inst8|count[9] ; clock    ;
+; N/A   ; None         ; 0.454 ns   ; n[5]     ; modN:inst4|q[5]    ; clock    ;
+; N/A   ; None         ; 0.322 ns   ; n[9]     ; modN:inst4|q[9]    ; clock    ;
+; N/A   ; None         ; 0.293 ns   ; n[0]     ; modN:inst4|q[0]    ; clock    ;
+; N/A   ; None         ; 0.062 ns   ; n[1]     ; modN:inst4|q[1]    ; clock    ;
+; N/A   ; None         ; 0.061 ns   ; n[7]     ; modN:inst4|q[7]    ; clock    ;
+; N/A   ; None         ; 0.050 ns   ; n[8]     ; modN:inst4|q[8]    ; clock    ;
+; N/A   ; None         ; 0.019 ns   ; n[3]     ; modN:inst4|q[3]    ; clock    ;
+; N/A   ; None         ; -0.020 ns  ; n[4]     ; modN:inst4|q[4]    ; clock    ;
+; N/A   ; None         ; -0.359 ns  ; n[6]     ; modN:inst4|q[6]    ; clock    ;
+; N/A   ; None         ; -0.554 ns  ; n[2]     ; modN:inst4|q[2]    ; clock    ;
+; N/A   ; None         ; -0.591 ns  ; triggern ; gun:inst8|count[0] ; clock    ;
+; N/A   ; None         ; -1.085 ns  ; triggern ; gun:inst8|count[2] ; clock    ;
+; N/A   ; None         ; -1.088 ns  ; triggern ; gun:inst8|count[1] ; clock    ;
+; N/A   ; None         ; -1.315 ns  ; triggern ; gun:inst8|count[3] ; clock    ;
++-------+--------------+------------+----------+--------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------------+------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                  ; To   ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------------+------+------------+
+; N/A                                     ; None                                                ; 26.251 ns  ; gun:inst8|count[4]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 26.145 ns  ; gun:inst8|count[3]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 26.106 ns  ; target:inst2|count[1] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 26.106 ns  ; target:inst2|count[1] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 26.098 ns  ; target:inst2|count[1] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 26.008 ns  ; gun:inst8|count[4]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.984 ns  ; gun:inst8|count[4]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.978 ns  ; gun:inst8|count[4]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.902 ns  ; gun:inst8|count[3]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.878 ns  ; gun:inst8|count[3]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.872 ns  ; gun:inst8|count[3]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.858 ns  ; gun:inst8|count[2]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.830 ns  ; target:inst2|count[0] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.830 ns  ; target:inst2|count[0] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.822 ns  ; target:inst2|count[0] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.772 ns  ; target:inst2|count[1] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.739 ns  ; target:inst2|count[2] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.739 ns  ; target:inst2|count[2] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.731 ns  ; target:inst2|count[2] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.710 ns  ; gun:inst8|count[5]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.615 ns  ; gun:inst8|count[2]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.591 ns  ; gun:inst8|count[2]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.585 ns  ; gun:inst8|count[6]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.585 ns  ; gun:inst8|count[2]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.562 ns  ; gun:inst8|count[4]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.535 ns  ; target:inst2|count[3] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.535 ns  ; target:inst2|count[3] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.527 ns  ; target:inst2|count[3] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.496 ns  ; target:inst2|count[0] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.491 ns  ; gun:inst8|count[7]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.467 ns  ; gun:inst8|count[5]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.456 ns  ; gun:inst8|count[3]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.443 ns  ; gun:inst8|count[5]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.437 ns  ; gun:inst8|count[5]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.405 ns  ; target:inst2|count[2] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.386 ns  ; target:inst2|count[4] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.386 ns  ; target:inst2|count[4] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.378 ns  ; target:inst2|count[4] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.342 ns  ; gun:inst8|count[6]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.318 ns  ; gun:inst8|count[6]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.312 ns  ; gun:inst8|count[6]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.296 ns  ; gun:inst8|count[2]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.282 ns  ; target:inst2|count[5] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.282 ns  ; target:inst2|count[5] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.274 ns  ; target:inst2|count[5] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.272 ns  ; gun:inst8|count[4]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.248 ns  ; gun:inst8|count[7]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.232 ns  ; gun:inst8|count[4]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.224 ns  ; gun:inst8|count[7]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.218 ns  ; gun:inst8|count[7]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.201 ns  ; target:inst2|count[3] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.166 ns  ; gun:inst8|count[3]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.126 ns  ; gun:inst8|count[3]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.071 ns  ; target:inst2|count[7] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.071 ns  ; target:inst2|count[7] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 25.063 ns  ; target:inst2|count[7] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 25.059 ns  ; gun:inst8|count[8]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.052 ns  ; target:inst2|count[4] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 25.021 ns  ; gun:inst8|count[5]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 25.006 ns  ; gun:inst8|count[2]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.966 ns  ; gun:inst8|count[4]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.966 ns  ; gun:inst8|count[2]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.948 ns  ; target:inst2|count[5] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.896 ns  ; gun:inst8|count[6]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 24.860 ns  ; gun:inst8|count[3]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.830 ns  ; target:inst2|count[6] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 24.830 ns  ; target:inst2|count[6] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.822 ns  ; target:inst2|count[6] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.816 ns  ; gun:inst8|count[8]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.802 ns  ; gun:inst8|count[7]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 24.792 ns  ; gun:inst8|count[8]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 24.786 ns  ; gun:inst8|count[8]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.737 ns  ; target:inst2|count[7] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.731 ns  ; gun:inst8|count[5]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.700 ns  ; gun:inst8|count[2]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.691 ns  ; gun:inst8|count[5]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.672 ns  ; target:inst2|count[8] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 24.672 ns  ; target:inst2|count[8] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.664 ns  ; target:inst2|count[8] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.606 ns  ; gun:inst8|count[6]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.566 ns  ; gun:inst8|count[6]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.512 ns  ; gun:inst8|count[7]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.496 ns  ; target:inst2|count[6] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.472 ns  ; gun:inst8|count[7]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 24.425 ns  ; gun:inst8|count[5]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.370 ns  ; gun:inst8|count[8]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 24.338 ns  ; target:inst2|count[8] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.300 ns  ; gun:inst8|count[6]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.206 ns  ; gun:inst8|count[7]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.087 ns  ; gun:inst8|count[9]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 24.080 ns  ; gun:inst8|count[8]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 24.040 ns  ; gun:inst8|count[8]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.894 ns  ; gun:inst8|count[0]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 23.844 ns  ; gun:inst8|count[9]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.840 ns  ; gun:inst8|count[1]    ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 23.820 ns  ; gun:inst8|count[9]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.814 ns  ; gun:inst8|count[9]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.774 ns  ; gun:inst8|count[8]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 23.712 ns  ; target:inst2|count[9] ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.712 ns  ; target:inst2|count[9] ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.704 ns  ; target:inst2|count[9] ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.651 ns  ; gun:inst8|count[0]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.627 ns  ; gun:inst8|count[0]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.621 ns  ; gun:inst8|count[0]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.597 ns  ; gun:inst8|count[1]    ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.573 ns  ; gun:inst8|count[1]    ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.567 ns  ; gun:inst8|count[1]    ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.554 ns  ; gun:inst8|count[9]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.407 ns  ; gun:inst8|count[3]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.407 ns  ; gun:inst8|count[3]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.399 ns  ; gun:inst8|count[3]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.378 ns  ; target:inst2|count[9] ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 23.361 ns  ; gun:inst8|count[0]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.312 ns  ; target:inst2|count[5] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 23.264 ns  ; gun:inst8|count[9]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.239 ns  ; gun:inst8|count[1]    ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.224 ns  ; gun:inst8|count[9]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.089 ns  ; gun:inst8|count[1]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.089 ns  ; gun:inst8|count[1]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.081 ns  ; gun:inst8|count[1]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.073 ns  ; gun:inst8|count[3]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 23.071 ns  ; gun:inst8|count[0]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.069 ns  ; target:inst2|count[5] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 23.045 ns  ; target:inst2|count[5] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 23.039 ns  ; target:inst2|count[5] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 23.031 ns  ; gun:inst8|count[0]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.958 ns  ; gun:inst8|count[9]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.949 ns  ; gun:inst8|count[1]    ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.909 ns  ; gun:inst8|count[1]    ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.905 ns  ; gun:inst8|count[0]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.905 ns  ; gun:inst8|count[0]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.897 ns  ; gun:inst8|count[0]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.765 ns  ; gun:inst8|count[0]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.755 ns  ; gun:inst8|count[1]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.739 ns  ; gun:inst8|count[2]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.739 ns  ; gun:inst8|count[2]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.731 ns  ; gun:inst8|count[2]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.643 ns  ; gun:inst8|count[1]    ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.629 ns  ; target:inst2|count[2] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.571 ns  ; gun:inst8|count[0]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.526 ns  ; target:inst2|count[4] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.525 ns  ; target:inst2|count[5] ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.523 ns  ; target:inst2|count[1] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.515 ns  ; gun:inst8|count[8]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.515 ns  ; gun:inst8|count[8]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.508 ns  ; gun:inst8|count[6]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.508 ns  ; gun:inst8|count[6]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.507 ns  ; gun:inst8|count[8]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.500 ns  ; gun:inst8|count[6]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.471 ns  ; gun:inst8|count[7]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.471 ns  ; gun:inst8|count[7]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.463 ns  ; gun:inst8|count[7]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.411 ns  ; gun:inst8|count[9]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.411 ns  ; gun:inst8|count[9]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.405 ns  ; gun:inst8|count[2]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.403 ns  ; gun:inst8|count[9]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.386 ns  ; target:inst2|count[2] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.362 ns  ; target:inst2|count[2] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.356 ns  ; target:inst2|count[2] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.283 ns  ; target:inst2|count[4] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.280 ns  ; target:inst2|count[1] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.259 ns  ; target:inst2|count[4] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.256 ns  ; target:inst2|count[1] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 22.253 ns  ; target:inst2|count[4] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.250 ns  ; target:inst2|count[1] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.235 ns  ; target:inst2|count[5] ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 22.198 ns  ; target:inst2|count[3] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.195 ns  ; target:inst2|count[5] ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 22.181 ns  ; gun:inst8|count[8]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.174 ns  ; gun:inst8|count[6]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.146 ns  ; target:inst2|count[0] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.137 ns  ; gun:inst8|count[7]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.077 ns  ; gun:inst8|count[9]    ; g[1] ; clock      ;
+; N/A                                     ; None                                                ; 22.044 ns  ; target:inst2|count[9] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 21.955 ns  ; target:inst2|count[3] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.931 ns  ; target:inst2|count[3] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.929 ns  ; target:inst2|count[5] ; b[1] ; clock      ;
+; N/A                                     ; None                                                ; 21.925 ns  ; target:inst2|count[3] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 21.903 ns  ; target:inst2|count[0] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.879 ns  ; target:inst2|count[0] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.873 ns  ; target:inst2|count[0] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 21.842 ns  ; target:inst2|count[2] ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.801 ns  ; target:inst2|count[9] ; r[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.777 ns  ; target:inst2|count[9] ; r[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.771 ns  ; target:inst2|count[9] ; r[3] ; clock      ;
+; N/A                                     ; None                                                ; 21.751 ns  ; gun:inst8|count[5]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.751 ns  ; gun:inst8|count[5]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 21.743 ns  ; gun:inst8|count[5]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.739 ns  ; target:inst2|count[4] ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.736 ns  ; target:inst2|count[1] ; b[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.669 ns  ; target:inst2|count[7] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 21.612 ns  ; target:inst2|count[6] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 21.573 ns  ; gun:inst8|count[4]    ; g[0] ; clock      ;
+; N/A                                     ; None                                                ; 21.573 ns  ; gun:inst8|count[4]    ; g[3] ; clock      ;
+; N/A                                     ; None                                                ; 21.565 ns  ; gun:inst8|count[4]    ; g[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.552 ns  ; target:inst2|count[2] ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.532 ns  ; target:inst2|count[8] ; r[1] ; clock      ;
+; N/A                                     ; None                                                ; 21.512 ns  ; target:inst2|count[2] ; b[3] ; clock      ;
+; N/A                                     ; None                                                ; 21.449 ns  ; target:inst2|count[4] ; b[2] ; clock      ;
+; N/A                                     ; None                                                ; 21.446 ns  ; target:inst2|count[1] ; b[2] ; clock      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                       ;      ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------------+------+------------+
+
+
++------------------------------------------------------------------------------------+
+; th                                                                                 ;
++---------------+-------------+-----------+----------+--------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From     ; To                 ; To Clock ;
++---------------+-------------+-----------+----------+--------------------+----------+
+; N/A           ; None        ; 4.830 ns  ; triggern ; gun:inst8|count[3] ; clock    ;
+; N/A           ; None        ; 4.603 ns  ; triggern ; gun:inst8|count[1] ; clock    ;
+; N/A           ; None        ; 4.600 ns  ; triggern ; gun:inst8|count[2] ; clock    ;
+; N/A           ; None        ; 4.106 ns  ; triggern ; gun:inst8|count[0] ; clock    ;
+; N/A           ; None        ; 2.948 ns  ; triggern ; gun:inst8|count[9] ; clock    ;
+; N/A           ; None        ; 0.802 ns  ; n[2]     ; modN:inst4|q[2]    ; clock    ;
+; N/A           ; None        ; 0.607 ns  ; n[6]     ; modN:inst4|q[6]    ; clock    ;
+; N/A           ; None        ; 0.268 ns  ; n[4]     ; modN:inst4|q[4]    ; clock    ;
+; N/A           ; None        ; 0.229 ns  ; n[3]     ; modN:inst4|q[3]    ; clock    ;
+; N/A           ; None        ; 0.198 ns  ; n[8]     ; modN:inst4|q[8]    ; clock    ;
+; N/A           ; None        ; 0.187 ns  ; n[7]     ; modN:inst4|q[7]    ; clock    ;
+; N/A           ; None        ; 0.186 ns  ; n[1]     ; modN:inst4|q[1]    ; clock    ;
+; N/A           ; None        ; -0.045 ns ; n[0]     ; modN:inst4|q[0]    ; clock    ;
+; N/A           ; None        ; -0.074 ns ; n[9]     ; modN:inst4|q[9]    ; clock    ;
+; N/A           ; None        ; -0.206 ns ; n[5]     ; modN:inst4|q[5]    ; clock    ;
++---------------+-------------+-----------+----------+--------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Feb 26 12:25:53 2013
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off system -c system --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "target:inst2|direction~latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+Warning: Found 27 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "MOD800:inst5|count[3]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[2]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[1]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[0]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[5]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[4]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[6]" as buffer
+    Info: Detected gated clock "VGA_driverLab8:inst|_~9" as buffer
+    Info: Detected ripple clock "modN:inst4|q[7]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[6]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[8]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[9]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[4]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[3]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[5]" as buffer
+    Info: Detected ripple clock "modN:inst4|q[2]" as buffer
+    Info: Detected gated clock "MOD800:inst5|op_1~0" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[7]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[8]" as buffer
+    Info: Detected ripple clock "MOD800:inst5|count[9]" as buffer
+    Info: Detected gated clock "modN:inst4|op_1~0" as buffer
+    Info: Detected gated clock "modN:inst4|op_1~1" as buffer
+    Info: Detected ripple clock "modN:inst4|q[1]" as buffer
+    Info: Detected gated clock "MOD800:inst5|op_1~1" as buffer
+    Info: Detected gated clock "modN:inst4|op_1~2" as buffer
+    Info: Detected ripple clock "inst3" as buffer
+    Info: Detected gated clock "modN:inst4|decode_1" as buffer
+Info: Clock "clock" has Internal fmax of 142.65 MHz between source register "gun:inst8|count[2]" and destination register "gun:inst8|count[9]" (period= 7.01 ns)
+    Info: + Longest register to register delay is 3.504 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X37_Y25_N9; Fanout = 11; REG Node = 'gun:inst8|count[2]'
+        Info: 2: + IC(0.659 ns) + CELL(0.455 ns) = 1.114 ns; Loc. = LCCOMB_X38_Y25_N16; Fanout = 2; COMB Node = 'gun:inst8|_~4'
+        Info: 3: + IC(0.332 ns) + CELL(0.322 ns) = 1.768 ns; Loc. = LCCOMB_X38_Y25_N28; Fanout = 1; COMB Node = 'gun:inst8|count[9]~9'
+        Info: 4: + IC(0.299 ns) + CELL(0.521 ns) = 2.588 ns; Loc. = LCCOMB_X38_Y25_N14; Fanout = 1; COMB Node = 'gun:inst8|count[9]~10'
+        Info: 5: + IC(0.335 ns) + CELL(0.485 ns) = 3.408 ns; Loc. = LCCOMB_X38_Y25_N4; Fanout = 1; COMB Node = 'gun:inst8|count[9]~11'
+        Info: 6: + IC(0.000 ns) + CELL(0.096 ns) = 3.504 ns; Loc. = LCFF_X38_Y25_N5; Fanout = 16; REG Node = 'gun:inst8|count[9]'
+        Info: Total cell delay = 1.879 ns ( 53.62 % )
+        Info: Total interconnect delay = 1.625 ns ( 46.38 % )
+    Info: - Smallest clock skew is -3.267 ns
+        Info: + Shortest clock path from clock "clock" to destination register is 8.719 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+            Info: 2: + IC(1.699 ns) + CELL(0.879 ns) = 3.604 ns; Loc. = LCFF_X27_Y15_N15; Fanout = 4; REG Node = 'modN:inst4|q[1]'
+            Info: 3: + IC(0.380 ns) + CELL(0.521 ns) = 4.505 ns; Loc. = LCCOMB_X27_Y15_N20; Fanout = 11; COMB Node = 'modN:inst4|op_1~2'
+            Info: 4: + IC(0.349 ns) + CELL(0.322 ns) = 5.176 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+            Info: 5: + IC(1.943 ns) + CELL(0.000 ns) = 7.119 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+            Info: 6: + IC(0.998 ns) + CELL(0.602 ns) = 8.719 ns; Loc. = LCFF_X38_Y25_N5; Fanout = 16; REG Node = 'gun:inst8|count[9]'
+            Info: Total cell delay = 3.350 ns ( 38.42 % )
+            Info: Total interconnect delay = 5.369 ns ( 61.58 % )
+        Info: - Longest clock path from clock "clock" to source register is 11.986 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+            Info: 2: + IC(2.202 ns) + CELL(0.879 ns) = 4.107 ns; Loc. = LCFF_X27_Y25_N29; Fanout = 9; REG Node = 'MOD800:inst5|count[4]'
+            Info: 3: + IC(1.861 ns) + CELL(0.319 ns) = 6.287 ns; Loc. = LCCOMB_X33_Y17_N30; Fanout = 1; COMB Node = 'MOD800:inst5|op_1~0'
+            Info: 4: + IC(0.285 ns) + CELL(0.178 ns) = 6.750 ns; Loc. = LCCOMB_X33_Y17_N10; Fanout = 32; COMB Node = 'MOD800:inst5|op_1~1'
+            Info: 5: + IC(1.516 ns) + CELL(0.177 ns) = 8.443 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+            Info: 6: + IC(1.943 ns) + CELL(0.000 ns) = 10.386 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+            Info: 7: + IC(0.998 ns) + CELL(0.602 ns) = 11.986 ns; Loc. = LCFF_X37_Y25_N9; Fanout = 11; REG Node = 'gun:inst8|count[2]'
+            Info: Total cell delay = 3.181 ns ( 26.54 % )
+            Info: Total interconnect delay = 8.805 ns ( 73.46 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Warning: Circuit may not operate. Detected 191 non-operational path(s) clocked by clock "clock" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "target:inst2|count[0]" and destination pin or register "target:inst2|count[0]" for clock "clock" (Hold time is 2.822 ns)
+    Info: + Largest clock skew is 3.267 ns
+        Info: + Longest clock path from clock "clock" to destination register is 11.970 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+            Info: 2: + IC(2.202 ns) + CELL(0.879 ns) = 4.107 ns; Loc. = LCFF_X27_Y25_N29; Fanout = 9; REG Node = 'MOD800:inst5|count[4]'
+            Info: 3: + IC(1.861 ns) + CELL(0.319 ns) = 6.287 ns; Loc. = LCCOMB_X33_Y17_N30; Fanout = 1; COMB Node = 'MOD800:inst5|op_1~0'
+            Info: 4: + IC(0.285 ns) + CELL(0.178 ns) = 6.750 ns; Loc. = LCCOMB_X33_Y17_N10; Fanout = 32; COMB Node = 'MOD800:inst5|op_1~1'
+            Info: 5: + IC(1.516 ns) + CELL(0.177 ns) = 8.443 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+            Info: 6: + IC(1.943 ns) + CELL(0.000 ns) = 10.386 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+            Info: 7: + IC(0.982 ns) + CELL(0.602 ns) = 11.970 ns; Loc. = LCFF_X36_Y21_N25; Fanout = 11; REG Node = 'target:inst2|count[0]'
+            Info: Total cell delay = 3.181 ns ( 26.57 % )
+            Info: Total interconnect delay = 8.789 ns ( 73.43 % )
+        Info: - Shortest clock path from clock "clock" to source register is 8.703 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+            Info: 2: + IC(1.699 ns) + CELL(0.879 ns) = 3.604 ns; Loc. = LCFF_X27_Y15_N15; Fanout = 4; REG Node = 'modN:inst4|q[1]'
+            Info: 3: + IC(0.380 ns) + CELL(0.521 ns) = 4.505 ns; Loc. = LCCOMB_X27_Y15_N20; Fanout = 11; COMB Node = 'modN:inst4|op_1~2'
+            Info: 4: + IC(0.349 ns) + CELL(0.322 ns) = 5.176 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+            Info: 5: + IC(1.943 ns) + CELL(0.000 ns) = 7.119 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+            Info: 6: + IC(0.982 ns) + CELL(0.602 ns) = 8.703 ns; Loc. = LCFF_X36_Y21_N25; Fanout = 11; REG Node = 'target:inst2|count[0]'
+            Info: Total cell delay = 3.350 ns ( 38.49 % )
+            Info: Total interconnect delay = 5.353 ns ( 61.51 % )
+    Info: - Micro clock to output delay of source is 0.277 ns
+    Info: - Shortest register to register delay is 0.454 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X36_Y21_N25; Fanout = 11; REG Node = 'target:inst2|count[0]'
+        Info: 2: + IC(0.000 ns) + CELL(0.358 ns) = 0.358 ns; Loc. = LCCOMB_X36_Y21_N24; Fanout = 1; COMB Node = 'target:inst2|count[0]~29'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 0.454 ns; Loc. = LCFF_X36_Y21_N25; Fanout = 11; REG Node = 'target:inst2|count[0]'
+        Info: Total cell delay = 0.454 ns ( 100.00 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+Info: tsu for register "gun:inst8|count[9]" (data pin = "triggern", clock pin = "clock") is 0.567 ns
+    Info: + Longest pin to register delay is 9.324 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.874 ns) = 0.874 ns; Loc. = PIN_T22; Fanout = 5; PIN Node = 'triggern'
+        Info: 2: + IC(6.169 ns) + CELL(0.545 ns) = 7.588 ns; Loc. = LCCOMB_X38_Y25_N28; Fanout = 1; COMB Node = 'gun:inst8|count[9]~9'
+        Info: 3: + IC(0.299 ns) + CELL(0.521 ns) = 8.408 ns; Loc. = LCCOMB_X38_Y25_N14; Fanout = 1; COMB Node = 'gun:inst8|count[9]~10'
+        Info: 4: + IC(0.335 ns) + CELL(0.485 ns) = 9.228 ns; Loc. = LCCOMB_X38_Y25_N4; Fanout = 1; COMB Node = 'gun:inst8|count[9]~11'
+        Info: 5: + IC(0.000 ns) + CELL(0.096 ns) = 9.324 ns; Loc. = LCFF_X38_Y25_N5; Fanout = 16; REG Node = 'gun:inst8|count[9]'
+        Info: Total cell delay = 2.521 ns ( 27.04 % )
+        Info: Total interconnect delay = 6.803 ns ( 72.96 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 8.719 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+        Info: 2: + IC(1.699 ns) + CELL(0.879 ns) = 3.604 ns; Loc. = LCFF_X27_Y15_N15; Fanout = 4; REG Node = 'modN:inst4|q[1]'
+        Info: 3: + IC(0.380 ns) + CELL(0.521 ns) = 4.505 ns; Loc. = LCCOMB_X27_Y15_N20; Fanout = 11; COMB Node = 'modN:inst4|op_1~2'
+        Info: 4: + IC(0.349 ns) + CELL(0.322 ns) = 5.176 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+        Info: 5: + IC(1.943 ns) + CELL(0.000 ns) = 7.119 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+        Info: 6: + IC(0.998 ns) + CELL(0.602 ns) = 8.719 ns; Loc. = LCFF_X38_Y25_N5; Fanout = 16; REG Node = 'gun:inst8|count[9]'
+        Info: Total cell delay = 3.350 ns ( 38.42 % )
+        Info: Total interconnect delay = 5.369 ns ( 61.58 % )
+Info: tco from clock "clock" to destination pin "r[1]" through register "gun:inst8|count[4]" is 26.251 ns
+    Info: + Longest clock path from clock "clock" to source register is 11.986 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+        Info: 2: + IC(2.202 ns) + CELL(0.879 ns) = 4.107 ns; Loc. = LCFF_X27_Y25_N29; Fanout = 9; REG Node = 'MOD800:inst5|count[4]'
+        Info: 3: + IC(1.861 ns) + CELL(0.319 ns) = 6.287 ns; Loc. = LCCOMB_X33_Y17_N30; Fanout = 1; COMB Node = 'MOD800:inst5|op_1~0'
+        Info: 4: + IC(0.285 ns) + CELL(0.178 ns) = 6.750 ns; Loc. = LCCOMB_X33_Y17_N10; Fanout = 32; COMB Node = 'MOD800:inst5|op_1~1'
+        Info: 5: + IC(1.516 ns) + CELL(0.177 ns) = 8.443 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+        Info: 6: + IC(1.943 ns) + CELL(0.000 ns) = 10.386 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+        Info: 7: + IC(0.998 ns) + CELL(0.602 ns) = 11.986 ns; Loc. = LCFF_X38_Y25_N9; Fanout = 10; REG Node = 'gun:inst8|count[4]'
+        Info: Total cell delay = 3.181 ns ( 26.54 % )
+        Info: Total interconnect delay = 8.805 ns ( 73.46 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 13.988 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X38_Y25_N9; Fanout = 10; REG Node = 'gun:inst8|count[4]'
+        Info: 2: + IC(2.295 ns) + CELL(0.495 ns) = 2.790 ns; Loc. = LCCOMB_X27_Y24_N4; Fanout = 2; COMB Node = 'VGA_driverLab8:inst|op_21~3'
+        Info: 3: + IC(0.000 ns) + CELL(0.080 ns) = 2.870 ns; Loc. = LCCOMB_X27_Y24_N6; Fanout = 2; COMB Node = 'VGA_driverLab8:inst|op_21~5'
+        Info: 4: + IC(0.000 ns) + CELL(0.080 ns) = 2.950 ns; Loc. = LCCOMB_X27_Y24_N8; Fanout = 2; COMB Node = 'VGA_driverLab8:inst|op_21~7'
+        Info: 5: + IC(0.000 ns) + CELL(0.080 ns) = 3.030 ns; Loc. = LCCOMB_X27_Y24_N10; Fanout = 2; COMB Node = 'VGA_driverLab8:inst|op_21~9'
+        Info: 6: + IC(0.000 ns) + CELL(0.458 ns) = 3.488 ns; Loc. = LCCOMB_X27_Y24_N12; Fanout = 1; COMB Node = 'VGA_driverLab8:inst|op_21~10'
+        Info: 7: + IC(1.162 ns) + CELL(0.517 ns) = 5.167 ns; Loc. = LCCOMB_X29_Y23_N26; Fanout = 1; COMB Node = 'VGA_driverLab8:inst|op_22~17'
+        Info: 8: + IC(0.000 ns) + CELL(0.458 ns) = 5.625 ns; Loc. = LCCOMB_X29_Y23_N28; Fanout = 2; COMB Node = 'VGA_driverLab8:inst|op_22~18'
+        Info: 9: + IC(1.175 ns) + CELL(0.512 ns) = 7.312 ns; Loc. = LCCOMB_X32_Y21_N6; Fanout = 1; COMB Node = 'VGA_driverLab8:inst|r[3]~5'
+        Info: 10: + IC(0.290 ns) + CELL(0.178 ns) = 7.780 ns; Loc. = LCCOMB_X32_Y21_N12; Fanout = 1; COMB Node = 'VGA_driverLab8:inst|r[3]~6'
+        Info: 11: + IC(0.290 ns) + CELL(0.178 ns) = 8.248 ns; Loc. = LCCOMB_X32_Y21_N22; Fanout = 4; COMB Node = 'VGA_driverLab8:inst|r[3]~7'
+        Info: 12: + IC(2.754 ns) + CELL(2.986 ns) = 13.988 ns; Loc. = PIN_C9; Fanout = 0; PIN Node = 'r[1]'
+        Info: Total cell delay = 6.022 ns ( 43.05 % )
+        Info: Total interconnect delay = 7.966 ns ( 56.95 % )
+Info: th for register "gun:inst8|count[3]" (data pin = "triggern", clock pin = "clock") is 4.830 ns
+    Info: + Longest clock path from clock "clock" to destination register is 11.986 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 21; CLK Node = 'clock'
+        Info: 2: + IC(2.202 ns) + CELL(0.879 ns) = 4.107 ns; Loc. = LCFF_X27_Y25_N29; Fanout = 9; REG Node = 'MOD800:inst5|count[4]'
+        Info: 3: + IC(1.861 ns) + CELL(0.319 ns) = 6.287 ns; Loc. = LCCOMB_X33_Y17_N30; Fanout = 1; COMB Node = 'MOD800:inst5|op_1~0'
+        Info: 4: + IC(0.285 ns) + CELL(0.178 ns) = 6.750 ns; Loc. = LCCOMB_X33_Y17_N10; Fanout = 32; COMB Node = 'MOD800:inst5|op_1~1'
+        Info: 5: + IC(1.516 ns) + CELL(0.177 ns) = 8.443 ns; Loc. = LCCOMB_X27_Y15_N16; Fanout = 12; COMB Node = 'modN:inst4|decode_1'
+        Info: 6: + IC(1.943 ns) + CELL(0.000 ns) = 10.386 ns; Loc. = CLKCTRL_G13; Fanout = 20; COMB Node = 'modN:inst4|decode_1~clkctrl'
+        Info: 7: + IC(0.998 ns) + CELL(0.602 ns) = 11.986 ns; Loc. = LCFF_X38_Y25_N25; Fanout = 11; REG Node = 'gun:inst8|count[3]'
+        Info: Total cell delay = 3.181 ns ( 26.54 % )
+        Info: Total interconnect delay = 8.805 ns ( 73.46 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 7.442 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.874 ns) = 0.874 ns; Loc. = PIN_T22; Fanout = 5; PIN Node = 'triggern'
+        Info: 2: + IC(6.153 ns) + CELL(0.319 ns) = 7.346 ns; Loc. = LCCOMB_X38_Y25_N24; Fanout = 1; COMB Node = 'gun:inst8|count[3]~2'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.442 ns; Loc. = LCFF_X38_Y25_N25; Fanout = 11; REG Node = 'gun:inst8|count[3]'
+        Info: Total cell delay = 1.289 ns ( 17.32 % )
+        Info: Total interconnect delay = 6.153 ns ( 82.68 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 129 megabytes
+    Info: Processing ended: Tue Feb 26 12:25:54 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,23 @@
+SUBDESIGN gun
+(
+	triggern, clock					:INPUT;
+	shot[9..0]						:OUTPUT;  )
+	
+VARIABLE	
+	count[9..0]			:DFF;
+	
+BEGIN
+	count[].clk = clock;
+	IF count[].q < 40  THEN count[].d = 40;
+	ELSIF count[].q == 40 THEN
+		IF triggern==0 THEN count[].d = count[].q;	--hold
+		ELSE count[].d = count[].q + 1;
+		END IF;
+	ELSIF count[].q == 550 THEN
+		IF triggern == 1 THEN count[].d = 40;		--load 40
+		ELSE count[].d = count[].q;					--hold
+		END IF;
+	ELSE count[].d = count[].q + 1;			-- increment
+	END IF;	
+	shot[] = count[].q;
+END;

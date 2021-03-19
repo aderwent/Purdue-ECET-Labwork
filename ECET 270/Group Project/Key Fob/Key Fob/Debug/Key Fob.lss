@@ -1,0 +1,549 @@
+
+Key Fob.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000066  00800200  000002ae  00000342  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002ae  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000006  00800266  00800266  000003a8  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000003a8  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000003d8  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000038  00000000  00000000  00000418  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000f71  00000000  00000000  00000450  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000d4e  00000000  00000000  000013c1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000004af  00000000  00000000  0000210f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000054  00000000  00000000  000025c0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000005d8  00000000  00000000  00002614  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000000ba  00000000  00000000  00002bec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000028  00000000  00000000  00002ca6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	7a c0       	rjmp	.+244    	; 0xf6 <__ctors_end>
+   2:	00 00       	nop
+   4:	97 c0       	rjmp	.+302    	; 0x134 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	95 c0       	rjmp	.+298    	; 0x134 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	93 c0       	rjmp	.+294    	; 0x134 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	91 c0       	rjmp	.+290    	; 0x134 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	8f c0       	rjmp	.+286    	; 0x134 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	8d c0       	rjmp	.+282    	; 0x134 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	8b c0       	rjmp	.+278    	; 0x134 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	89 c0       	rjmp	.+274    	; 0x134 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	87 c0       	rjmp	.+270    	; 0x134 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	85 c0       	rjmp	.+266    	; 0x134 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	83 c0       	rjmp	.+262    	; 0x134 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	81 c0       	rjmp	.+258    	; 0x134 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	7f c0       	rjmp	.+254    	; 0x134 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	7d c0       	rjmp	.+250    	; 0x134 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	7b c0       	rjmp	.+246    	; 0x134 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	79 c0       	rjmp	.+242    	; 0x134 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	77 c0       	rjmp	.+238    	; 0x134 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	75 c0       	rjmp	.+234    	; 0x134 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	73 c0       	rjmp	.+230    	; 0x134 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	71 c0       	rjmp	.+226    	; 0x134 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	6f c0       	rjmp	.+222    	; 0x134 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	6d c0       	rjmp	.+218    	; 0x134 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	6b c0       	rjmp	.+214    	; 0x134 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	69 c0       	rjmp	.+210    	; 0x134 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	67 c0       	rjmp	.+206    	; 0x134 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	65 c0       	rjmp	.+202    	; 0x134 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	63 c0       	rjmp	.+198    	; 0x134 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	61 c0       	rjmp	.+194    	; 0x134 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	5f c0       	rjmp	.+190    	; 0x134 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	5d c0       	rjmp	.+186    	; 0x134 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	5b c0       	rjmp	.+182    	; 0x134 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	59 c0       	rjmp	.+178    	; 0x134 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	57 c0       	rjmp	.+174    	; 0x134 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	55 c0       	rjmp	.+170    	; 0x134 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	53 c0       	rjmp	.+166    	; 0x134 <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	51 c0       	rjmp	.+162    	; 0x134 <__bad_interrupt>
+  92:	00 00       	nop
+  94:	4f c0       	rjmp	.+158    	; 0x134 <__bad_interrupt>
+  96:	00 00       	nop
+  98:	4d c0       	rjmp	.+154    	; 0x134 <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	4b c0       	rjmp	.+150    	; 0x134 <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	49 c0       	rjmp	.+146    	; 0x134 <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	47 c0       	rjmp	.+142    	; 0x134 <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	45 c0       	rjmp	.+138    	; 0x134 <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	43 c0       	rjmp	.+134    	; 0x134 <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	41 c0       	rjmp	.+130    	; 0x134 <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	3f c0       	rjmp	.+126    	; 0x134 <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	3d c0       	rjmp	.+122    	; 0x134 <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	3b c0       	rjmp	.+118    	; 0x134 <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	39 c0       	rjmp	.+114    	; 0x134 <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	37 c0       	rjmp	.+110    	; 0x134 <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	35 c0       	rjmp	.+106    	; 0x134 <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	33 c0       	rjmp	.+102    	; 0x134 <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	31 c0       	rjmp	.+98     	; 0x134 <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	2f c0       	rjmp	.+94     	; 0x134 <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	2d c0       	rjmp	.+90     	; 0x134 <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	2b c0       	rjmp	.+86     	; 0x134 <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	29 c0       	rjmp	.+82     	; 0x134 <__bad_interrupt>
+  e2:	00 00       	nop
+  e4:	f6 00       	.word	0x00f6	; ????
+  e6:	fb 00       	.word	0x00fb	; ????
+  e8:	00 01       	movw	r0, r0
+  ea:	05 01       	movw	r0, r10
+  ec:	18 01       	movw	r2, r16
+  ee:	0a 01       	movw	r0, r20
+  f0:	18 01       	movw	r2, r16
+  f2:	0f 01       	movw	r0, r30
+  f4:	14 01       	movw	r2, r8
+
+000000f6 <__ctors_end>:
+  f6:	11 24       	eor	r1, r1
+  f8:	1f be       	out	0x3f, r1	; 63
+  fa:	cf ef       	ldi	r28, 0xFF	; 255
+  fc:	d1 e2       	ldi	r29, 0x21	; 33
+  fe:	de bf       	out	0x3e, r29	; 62
+ 100:	cd bf       	out	0x3d, r28	; 61
+ 102:	00 e0       	ldi	r16, 0x00	; 0
+ 104:	0c bf       	out	0x3c, r16	; 60
+
+00000106 <__do_copy_data>:
+ 106:	12 e0       	ldi	r17, 0x02	; 2
+ 108:	a0 e0       	ldi	r26, 0x00	; 0
+ 10a:	b2 e0       	ldi	r27, 0x02	; 2
+ 10c:	ee ea       	ldi	r30, 0xAE	; 174
+ 10e:	f2 e0       	ldi	r31, 0x02	; 2
+ 110:	00 e0       	ldi	r16, 0x00	; 0
+ 112:	0b bf       	out	0x3b, r16	; 59
+ 114:	02 c0       	rjmp	.+4      	; 0x11a <__do_copy_data+0x14>
+ 116:	07 90       	elpm	r0, Z+
+ 118:	0d 92       	st	X+, r0
+ 11a:	a6 36       	cpi	r26, 0x66	; 102
+ 11c:	b1 07       	cpc	r27, r17
+ 11e:	d9 f7       	brne	.-10     	; 0x116 <__do_copy_data+0x10>
+
+00000120 <__do_clear_bss>:
+ 120:	22 e0       	ldi	r18, 0x02	; 2
+ 122:	a6 e6       	ldi	r26, 0x66	; 102
+ 124:	b2 e0       	ldi	r27, 0x02	; 2
+ 126:	01 c0       	rjmp	.+2      	; 0x12a <.do_clear_bss_start>
+
+00000128 <.do_clear_bss_loop>:
+ 128:	1d 92       	st	X+, r1
+
+0000012a <.do_clear_bss_start>:
+ 12a:	ac 36       	cpi	r26, 0x6C	; 108
+ 12c:	b2 07       	cpc	r27, r18
+ 12e:	e1 f7       	brne	.-8      	; 0x128 <.do_clear_bss_loop>
+ 130:	2b d0       	rcall	.+86     	; 0x188 <main>
+ 132:	bb c0       	rjmp	.+374    	; 0x2aa <_exit>
+
+00000134 <__bad_interrupt>:
+ 134:	65 cf       	rjmp	.-310    	; 0x0 <__vectors>
+
+00000136 <uart_putchar>:
+
+// the following function sends a single character out of the serial port
+static int uart_putchar(char ch, FILE *stream)
+{
+
+    while ( (UCSR0A & (1 << UDRE0)) == 0 )		// wait until there is room in the transmit buffer
+ 136:	e0 ec       	ldi	r30, 0xC0	; 192
+ 138:	f0 e0       	ldi	r31, 0x00	; 0
+ 13a:	90 81       	ld	r25, Z
+ 13c:	95 ff       	sbrs	r25, 5
+ 13e:	fd cf       	rjmp	.-6      	; 0x13a <uart_putchar+0x4>
+	{
+	}
+
+    UDR0 = ch;									// load the character into the UART data register
+ 140:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7000c6>
+
+    return 0;
+}
+ 144:	80 e0       	ldi	r24, 0x00	; 0
+ 146:	90 e0       	ldi	r25, 0x00	; 0
+ 148:	08 95       	ret
+
+0000014a <uart_getch>:
+// the following function waits for a serial character to be received
+static int uart_getch(FILE *stream)
+{
+   unsigned char ch;   							// create a variable to hold the received value
+   
+   while ( (UCSR0A & (1<<RXC0)) == 0 )			// wait until the received character flag is set
+ 14a:	e0 ec       	ldi	r30, 0xC0	; 192
+ 14c:	f0 e0       	ldi	r31, 0x00	; 0
+ 14e:	80 81       	ld	r24, Z
+ 150:	88 23       	and	r24, r24
+ 152:	ec f7       	brge	.-6      	; 0x14e <uart_getch+0x4>
+   {
+   }
+   
+   ch=UDR0;  									// load the received character into the local variable
+ 154:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7000c6>
+
+
+   return ch;									// return the value
+}
+ 158:	90 e0       	ldi	r25, 0x00	; 0
+ 15a:	08 95       	ret
+
+0000015c <init_UART>:
+
+
+void init_UART(void)
+{
+
+	UCSR0A = 0x00;			
+ 15c:	10 92 c0 00 	sts	0x00C0, r1	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7000c0>
+	UCSR0B = 0x18;			// enable UART TX and RX
+ 160:	88 e1       	ldi	r24, 0x18	; 24
+ 162:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7000c1>
+	UCSR0C = 0x06;			// set the UART for N, 8, 1
+ 166:	86 e0       	ldi	r24, 0x06	; 6
+ 168:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7000c2>
+	UBRR0L = 103;			// set BAUD Rate for 9600 with 16MHz clock
+ 16c:	87 e6       	ldi	r24, 0x67	; 103
+ 16e:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7000c4>
+	UBRR0H = 0;
+ 172:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7000c5>
+
+	stdout = &mystdout;		// define the output stream
+ 176:	e6 e6       	ldi	r30, 0x66	; 102
+ 178:	f2 e0       	ldi	r31, 0x02	; 2
+ 17a:	80 e0       	ldi	r24, 0x00	; 0
+ 17c:	92 e0       	ldi	r25, 0x02	; 2
+ 17e:	93 83       	std	Z+3, r25	; 0x03
+ 180:	82 83       	std	Z+2, r24	; 0x02
+	stdin = &mystdout;		// define the input stream	
+ 182:	91 83       	std	Z+1, r25	; 0x01
+ 184:	80 83       	st	Z, r24
+ 186:	08 95       	ret
+
+00000188 <main>:
+
+
+int main(void)
+{
+    /* Replace with your application code */
+	init_UART();
+ 188:	e9 df       	rcall	.-46     	; 0x15c <init_UART>
+	DDRA = 0xFF;
+ 18a:	8f ef       	ldi	r24, 0xFF	; 255
+ 18c:	81 b9       	out	0x01, r24	; 1
+	
+	DDRC = 0x00;
+ 18e:	17 b8       	out	0x07, r1	; 7
+	PORTC = 0x1F;		// turn on the pullup resistors
+ 190:	8f e1       	ldi	r24, 0x1F	; 31
+ 192:	88 b9       	out	0x08, r24	; 8
+					PORTA = input;
+				break;
+			
+				case 0x09:
+					printf("A+D is pressed.\n");
+					PORTA = input;
+ 194:	0f 2e       	mov	r0, r31
+ 196:	f9 e0       	ldi	r31, 0x09	; 9
+ 198:	df 2e       	mov	r13, r31
+ 19a:	f0 2d       	mov	r31, r0
+					PORTA = input;
+				break;
+			
+				case 0x08:
+					printf("D is pressed.\n");
+					PORTA = input;
+ 19c:	68 94       	set
+ 19e:	ee 24       	eor	r14, r14
+ 1a0:	e3 f8       	bld	r14, 3
+					PORTA = input;
+				break;
+			
+				case 0x06:
+					printf("C+B is pressed.\n");
+					PORTA = input;
+ 1a2:	0f 2e       	mov	r0, r31
+ 1a4:	f6 e0       	ldi	r31, 0x06	; 6
+ 1a6:	ff 2e       	mov	r15, r31
+ 1a8:	f0 2d       	mov	r31, r0
+					PORTA = input;
+				break;
+			
+				case 0x04:
+					printf("C is pressed.\n");
+					PORTA = input;
+ 1aa:	04 e0       	ldi	r16, 0x04	; 4
+					PORTA = input;
+				break;
+			
+				case 0x03:
+					printf("A+B is pressed.\n");
+					PORTA = input;
+ 1ac:	13 e0       	ldi	r17, 0x03	; 3
+					PORTA = input;
+				break;
+			
+				case 0x02:
+					printf("B is pressed.\n");
+					PORTA = input;
+ 1ae:	d2 e0       	ldi	r29, 0x02	; 2
+		
+			switch (input)
+			{
+				case 0x01:
+					printf("A is pressed.\n");
+					PORTA = input;
+ 1b0:	c1 e0       	ldi	r28, 0x01	; 1
+	DDRC = 0x00;
+	PORTC = 0x1F;		// turn on the pullup resistors
+    while (1) 
+    {	
+		
+		while((PINC & 0x10) == 0)
+ 1b2:	34 9b       	sbis	0x06, 4	; 6
+ 1b4:	fe cf       	rjmp	.-4      	; 0x1b2 <main+0x2a>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1b6:	2f e7       	ldi	r18, 0x7F	; 127
+ 1b8:	88 e3       	ldi	r24, 0x38	; 56
+ 1ba:	91 e0       	ldi	r25, 0x01	; 1
+ 1bc:	21 50       	subi	r18, 0x01	; 1
+ 1be:	80 40       	sbci	r24, 0x00	; 0
+ 1c0:	90 40       	sbci	r25, 0x00	; 0
+ 1c2:	e1 f7       	brne	.-8      	; 0x1bc <main+0x34>
+ 1c4:	00 c0       	rjmp	.+0      	; 0x1c6 <main+0x3e>
+ 1c6:	00 00       	nop
+		{
+			//printf("Waiting for input...\n");
+		}
+		_delay_ms(25);
+		printf("input found\n");
+ 1c8:	8e e0       	ldi	r24, 0x0E	; 14
+ 1ca:	92 e0       	ldi	r25, 0x02	; 2
+ 1cc:	3e d0       	rcall	.+124    	; 0x24a <puts>
+		uint8_t input = (PINC & 0x0F);
+ 1ce:	86 b1       	in	r24, 0x06	; 6
+		
+			switch (input)
+ 1d0:	e8 2f       	mov	r30, r24
+ 1d2:	ef 70       	andi	r30, 0x0F	; 15
+ 1d4:	8e 2f       	mov	r24, r30
+ 1d6:	90 e0       	ldi	r25, 0x00	; 0
+ 1d8:	fc 01       	movw	r30, r24
+ 1da:	31 97       	sbiw	r30, 0x01	; 1
+ 1dc:	e9 30       	cpi	r30, 0x09	; 9
+ 1de:	f1 05       	cpc	r31, r1
+ 1e0:	38 f5       	brcc	.+78     	; 0x230 <main+0xa8>
+ 1e2:	88 27       	eor	r24, r24
+ 1e4:	ee 58       	subi	r30, 0x8E	; 142
+ 1e6:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1e8:	8f 4f       	sbci	r24, 0xFF	; 255
+ 1ea:	27 c0       	rjmp	.+78     	; 0x23a <__tablejump2__>
+			{
+				case 0x01:
+					printf("A is pressed.\n");
+ 1ec:	8a e1       	ldi	r24, 0x1A	; 26
+ 1ee:	92 e0       	ldi	r25, 0x02	; 2
+ 1f0:	2c d0       	rcall	.+88     	; 0x24a <puts>
+ 1f2:	c2 b9       	out	0x02, r28	; 2
+					PORTA = input;
+				break;
+ 1f4:	1d c0       	rjmp	.+58     	; 0x230 <main+0xa8>
+			
+				case 0x02:
+					printf("B is pressed.\n");
+ 1f6:	8a e2       	ldi	r24, 0x2A	; 42
+ 1f8:	92 e0       	ldi	r25, 0x02	; 2
+ 1fa:	27 d0       	rcall	.+78     	; 0x24a <puts>
+					PORTA = input;
+ 1fc:	d2 b9       	out	0x02, r29	; 2
+				break;
+ 1fe:	18 c0       	rjmp	.+48     	; 0x230 <main+0xa8>
+			
+				case 0x03:
+					printf("A+B is pressed.\n");
+ 200:	88 e2       	ldi	r24, 0x28	; 40
+ 202:	92 e0       	ldi	r25, 0x02	; 2
+ 204:	22 d0       	rcall	.+68     	; 0x24a <puts>
+					PORTA = input;
+ 206:	12 b9       	out	0x02, r17	; 2
+				break;
+ 208:	13 c0       	rjmp	.+38     	; 0x230 <main+0xa8>
+			
+				case 0x04:
+					printf("C is pressed.\n");
+ 20a:	88 e3       	ldi	r24, 0x38	; 56
+ 20c:	92 e0       	ldi	r25, 0x02	; 2
+ 20e:	1d d0       	rcall	.+58     	; 0x24a <puts>
+					PORTA = input;
+ 210:	02 b9       	out	0x02, r16	; 2
+				break;
+ 212:	0e c0       	rjmp	.+28     	; 0x230 <main+0xa8>
+			
+				case 0x06:
+					printf("C+B is pressed.\n");
+ 214:	86 e4       	ldi	r24, 0x46	; 70
+ 216:	92 e0       	ldi	r25, 0x02	; 2
+ 218:	18 d0       	rcall	.+48     	; 0x24a <puts>
+					PORTA = input;
+ 21a:	f2 b8       	out	0x02, r15	; 2
+				break;
+			
+				case 0x08:
+					printf("D is pressed.\n");
+ 21c:	09 c0       	rjmp	.+18     	; 0x230 <main+0xa8>
+ 21e:	88 e5       	ldi	r24, 0x58	; 88
+ 220:	92 e0       	ldi	r25, 0x02	; 2
+ 222:	13 d0       	rcall	.+38     	; 0x24a <puts>
+					PORTA = input;
+ 224:	e2 b8       	out	0x02, r14	; 2
+				break;
+ 226:	04 c0       	rjmp	.+8      	; 0x230 <main+0xa8>
+			
+				case 0x09:
+					printf("A+D is pressed.\n");
+ 228:	86 e5       	ldi	r24, 0x56	; 86
+ 22a:	92 e0       	ldi	r25, 0x02	; 2
+ 22c:	0e d0       	rcall	.+28     	; 0x24a <puts>
+ 22e:	d2 b8       	out	0x02, r13	; 2
+					PORTA = input;
+ 230:	86 b1       	in	r24, 0x06	; 6
+				break;
+			}
+		
+		while((PINC & 0x1F) != 0)
+ 232:	8f 71       	andi	r24, 0x1F	; 31
+ 234:	e9 f7       	brne	.-6      	; 0x230 <main+0xa8>
+ 236:	12 b8       	out	0x02, r1	; 2
+		{
+		}
+		PORTA = 0x00;
+ 238:	bc cf       	rjmp	.-136    	; 0x1b2 <main+0x2a>
+
+0000023a <__tablejump2__>:
+    }
+ 23a:	ee 0f       	add	r30, r30
+ 23c:	ff 1f       	adc	r31, r31
+ 23e:	88 1f       	adc	r24, r24
+ 240:	8b bf       	out	0x3b, r24	; 59
+ 242:	07 90       	elpm	r0, Z+
+ 244:	f6 91       	elpm	r31, Z
+ 246:	e0 2d       	mov	r30, r0
+ 248:	19 94       	eijmp
+
+0000024a <puts>:
+ 24a:	0f 93       	push	r16
+ 24c:	1f 93       	push	r17
+ 24e:	cf 93       	push	r28
+ 250:	df 93       	push	r29
+ 252:	e0 91 68 02 	lds	r30, 0x0268	; 0x800268 <__data_end+0x2>
+ 256:	f0 91 69 02 	lds	r31, 0x0269	; 0x800269 <__data_end+0x3>
+ 25a:	23 81       	ldd	r18, Z+3	; 0x03
+ 25c:	21 ff       	sbrs	r18, 1
+ 25e:	1b c0       	rjmp	.+54     	; 0x296 <puts+0x4c>
+ 260:	8c 01       	movw	r16, r24
+ 262:	d0 e0       	ldi	r29, 0x00	; 0
+ 264:	c0 e0       	ldi	r28, 0x00	; 0
+ 266:	f8 01       	movw	r30, r16
+ 268:	81 91       	ld	r24, Z+
+ 26a:	8f 01       	movw	r16, r30
+ 26c:	60 91 68 02 	lds	r22, 0x0268	; 0x800268 <__data_end+0x2>
+ 270:	70 91 69 02 	lds	r23, 0x0269	; 0x800269 <__data_end+0x3>
+ 274:	db 01       	movw	r26, r22
+ 276:	18 96       	adiw	r26, 0x08	; 8
+ 278:	ed 91       	ld	r30, X+
+ 27a:	fc 91       	ld	r31, X
+ 27c:	19 97       	sbiw	r26, 0x09	; 9
+ 27e:	88 23       	and	r24, r24
+ 280:	31 f0       	breq	.+12     	; 0x28e <puts+0x44>
+ 282:	19 95       	eicall
+ 284:	89 2b       	or	r24, r25
+ 286:	79 f3       	breq	.-34     	; 0x266 <puts+0x1c>
+ 288:	df ef       	ldi	r29, 0xFF	; 255
+ 28a:	cf ef       	ldi	r28, 0xFF	; 255
+ 28c:	ec cf       	rjmp	.-40     	; 0x266 <puts+0x1c>
+ 28e:	8a e0       	ldi	r24, 0x0A	; 10
+ 290:	19 95       	eicall
+ 292:	89 2b       	or	r24, r25
+ 294:	19 f0       	breq	.+6      	; 0x29c <puts+0x52>
+ 296:	8f ef       	ldi	r24, 0xFF	; 255
+ 298:	9f ef       	ldi	r25, 0xFF	; 255
+ 29a:	02 c0       	rjmp	.+4      	; 0x2a0 <puts+0x56>
+ 29c:	8d 2f       	mov	r24, r29
+ 29e:	9c 2f       	mov	r25, r28
+ 2a0:	df 91       	pop	r29
+ 2a2:	cf 91       	pop	r28
+ 2a4:	1f 91       	pop	r17
+ 2a6:	0f 91       	pop	r16
+ 2a8:	08 95       	ret
+
+000002aa <_exit>:
+ 2aa:	f8 94       	cli
+
+000002ac <__stop_program>:
+ 2ac:	ff cf       	rjmp	.-2      	; 0x2ac <__stop_program>

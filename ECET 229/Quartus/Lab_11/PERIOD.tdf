@@ -1,0 +1,34 @@
+%
+	author: Alec Derwent
+	date: 11/5/2020
+	
+	This file includes a MOD 2550 counter, which counts up from 0 to 2550 before
+	resetting. It operates on a clock input, and is utilized to separate each
+	pulse between 0.5-2.5 ms for file servo_driver.
+	
+	The file operates on clock input "clock", active high enable input "EN",
+	and D input "position[11..0]". The file also outputs an array of values counting 
+	up to 2550, named "periodOut[11..0]".
+%
+
+SUBDESIGN PERIOD (
+	clock, EN								:INPUT; --input definitions
+	periodOut[11..0]						:OUTPUT; --output definitions
+)
+
+VARIABLE
+	ffp[11..0]							:DFF; --single ff used for counter
+	
+BEGIN
+	ffp[].clk = clock; --connect clock
+	
+	IF EN == 0 THEN	--if active high enable is low
+		ffp[].d = ffp[].q;	--hold value
+	ELSIF ffp[].q < 2550 THEN	--MOD 2550 counter
+		ffp[].d = ffp[].q + 1;		--count up
+	ELSE					
+		ffp[].d = 0;		--reset counter if ff output = 2550
+	END IF;
+	
+	periodOut = ffp[].q;	--output count value
+END;

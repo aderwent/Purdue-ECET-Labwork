@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, W:/Classes/ECET 229/Quartus/Example6_1/twobit_compare.tdf
+source_file = 1, W:/Classes/ECET 229/Quartus/Example6_1/Waveform.vwf
+source_file = 1, W:/Classes/ECET 229/Quartus/Example6_1/db/twobit_compare.cbx.xml
+design_name = twobit_compare
+instance = comp, \gt~output , gt~output, twobit_compare, 1
+instance = comp, \lt~output , lt~output, twobit_compare, 1
+instance = comp, \eq~output , eq~output, twobit_compare, 1
+instance = comp, \a[0]~input , a[0]~input, twobit_compare, 1
+instance = comp, \b[0]~input , b[0]~input, twobit_compare, 1
+instance = comp, \a[1]~input , a[1]~input, twobit_compare, 1
+instance = comp, \b[1]~input , b[1]~input, twobit_compare, 1
+instance = comp, \op_1~0 , op_1~0, twobit_compare, 1
+instance = comp, \op_2~0 , op_2~0, twobit_compare, 1
+instance = comp, \eq~0 , eq~0, twobit_compare, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, twobit_compare, 1

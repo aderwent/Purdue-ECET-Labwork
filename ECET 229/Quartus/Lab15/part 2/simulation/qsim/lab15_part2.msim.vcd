@@ -1,0 +1,747 @@
+$comment
+	File created using the following command:
+		vcd file lab15_part2.msim.vcd -direction
+$end
+$date
+	Thu Dec 03 21:20:39 2020
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab15_part2_vlg_vec_tst $end
+$var reg 5 ! address [4:0] $end
+$var reg 1 " clock $end
+$var wire 1 # q [7] $end
+$var wire 1 $ q [6] $end
+$var wire 1 % q [5] $end
+$var wire 1 & q [4] $end
+$var wire 1 ' q [3] $end
+$var wire 1 ( q [2] $end
+$var wire 1 ) q [1] $end
+$var wire 1 * q [0] $end
+$var wire 1 + sampler $end
+$scope module i1 $end
+$var wire 1 , gnd $end
+$var wire 1 - vcc $end
+$var wire 1 . unknown $end
+$var tri1 1 / devclrn $end
+$var tri1 1 0 devpor $end
+$var tri1 1 1 devoe $end
+$var wire 1 2 clock~combout $end
+$var wire 1 3 clock~clkctrl_outclk $end
+$var wire 1 4 inst|altsyncram_component|auto_generated|q_a [7] $end
+$var wire 1 5 inst|altsyncram_component|auto_generated|q_a [6] $end
+$var wire 1 6 inst|altsyncram_component|auto_generated|q_a [5] $end
+$var wire 1 7 inst|altsyncram_component|auto_generated|q_a [4] $end
+$var wire 1 8 inst|altsyncram_component|auto_generated|q_a [3] $end
+$var wire 1 9 inst|altsyncram_component|auto_generated|q_a [2] $end
+$var wire 1 : inst|altsyncram_component|auto_generated|q_a [1] $end
+$var wire 1 ; inst|altsyncram_component|auto_generated|q_a [0] $end
+$var wire 1 < address~combout [4] $end
+$var wire 1 = address~combout [3] $end
+$var wire 1 > address~combout [2] $end
+$var wire 1 ? address~combout [1] $end
+$var wire 1 @ address~combout [0] $end
+$var wire 1 A inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [7] $end
+$var wire 1 B inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [6] $end
+$var wire 1 C inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [5] $end
+$var wire 1 D inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [4] $end
+$var wire 1 E inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [3] $end
+$var wire 1 F inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [2] $end
+$var wire 1 G inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [1] $end
+$var wire 1 H inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+0"
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+x+
+0,
+1-
+x.
+1/
+10
+11
+02
+03
+0;
+0:
+09
+08
+07
+06
+05
+04
+0@
+0?
+0>
+0=
+0<
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+$end
+#500000
+1"
+12
+13
+0+
+#1000000
+b1 !
+0"
+1@
+02
+03
+1+
+#1500000
+1"
+12
+13
+0+
+1H
+1B
+1;
+15
+1*
+1$
+#2000000
+b11 !
+b10 !
+0"
+0@
+1?
+02
+03
+1+
+#2500000
+1"
+12
+13
+0+
+0H
+1F
+1E
+1C
+0;
+19
+18
+16
+0*
+1(
+1'
+1%
+#3000000
+b11 !
+0"
+1@
+02
+03
+1+
+#3500000
+1"
+12
+13
+0+
+1H
+0E
+1;
+08
+1*
+0'
+#4000000
+b111 !
+b101 !
+b100 !
+0"
+0@
+0?
+1>
+02
+03
+1+
+#4500000
+1"
+12
+13
+0+
+0H
+0F
+1E
+1D
+0;
+09
+18
+17
+0*
+0(
+1'
+1&
+#5000000
+b101 !
+0"
+1@
+02
+03
+1+
+#5500000
+1"
+12
+13
+0+
+1H
+0E
+0D
+1;
+08
+07
+1*
+0'
+0&
+#6000000
+b111 !
+b110 !
+0"
+0@
+1?
+02
+03
+1+
+#6500000
+1"
+12
+13
+0+
+0H
+1G
+1F
+1E
+0;
+1:
+19
+18
+0*
+1)
+1(
+1'
+#7000000
+b111 !
+0"
+1@
+02
+03
+1+
+#7500000
+1"
+12
+13
+0+
+0G
+0E
+0:
+08
+0)
+0'
+#8000000
+b1111 !
+b1011 !
+b1001 !
+b1000 !
+0"
+0@
+0?
+0>
+1=
+02
+03
+1+
+#8500000
+1"
+12
+13
+0+
+1H
+1;
+1*
+#9000000
+b1001 !
+0"
+1@
+02
+03
+1+
+#9500000
+1"
+12
+13
+0+
+0H
+1G
+0F
+1D
+0;
+1:
+09
+17
+0*
+1)
+0(
+1&
+#10000000
+b1011 !
+b1010 !
+0"
+0@
+1?
+02
+03
+1+
+#10500000
+1"
+12
+13
+0+
+0G
+0D
+0C
+0B
+0:
+07
+06
+05
+0)
+0&
+0%
+0$
+#11000000
+b1011 !
+0"
+1@
+02
+03
+1+
+#11500000
+1"
+12
+13
+0+
+1F
+1D
+1B
+19
+17
+15
+1(
+1&
+1$
+#12000000
+b1111 !
+b1101 !
+b1100 !
+0"
+0@
+0?
+1>
+02
+03
+1+
+#12500000
+1"
+12
+13
+0+
+0F
+1E
+0D
+1C
+09
+18
+07
+16
+0(
+1'
+0&
+1%
+#13000000
+b1101 !
+0"
+1@
+02
+03
+1+
+#13500000
+1"
+12
+13
+0+
+1H
+1G
+1F
+1;
+1:
+19
+1*
+1)
+1(
+#14000000
+b1111 !
+b1110 !
+0"
+0@
+1?
+02
+03
+1+
+#14500000
+1"
+12
+13
+0+
+0G
+0:
+0)
+#15000000
+b1111 !
+0"
+1@
+02
+03
+1+
+#15500000
+1"
+12
+13
+0+
+0F
+0E
+09
+08
+0(
+0'
+#16000000
+b11111 !
+b10111 !
+b10011 !
+b10001 !
+b10000 !
+0"
+0@
+0?
+0>
+0=
+1<
+02
+03
+1+
+#16500000
+1"
+12
+13
+0+
+1G
+1D
+1:
+17
+1)
+1&
+#17000000
+b10001 !
+0"
+1@
+02
+03
+1+
+#17500000
+1"
+12
+13
+0+
+0H
+0G
+0D
+0C
+0B
+0;
+0:
+07
+06
+05
+0*
+0)
+0&
+0%
+0$
+#18000000
+b10011 !
+b10010 !
+0"
+0@
+1?
+02
+03
+1+
+#18500000
+1"
+12
+13
+0+
+1F
+1B
+19
+15
+1(
+1$
+#19000000
+b10011 !
+0"
+1@
+02
+03
+1+
+#19500000
+1"
+12
+13
+0+
+1H
+1C
+1;
+16
+1*
+1%
+#20000000
+b10111 !
+b10101 !
+b10100 !
+0"
+0@
+0?
+1>
+02
+03
+1+
+#20500000
+1"
+12
+13
+0+
+0H
+1G
+0F
+1D
+0;
+1:
+09
+17
+0*
+1)
+0(
+1&
+#21000000
+b10101 !
+0"
+1@
+02
+03
+1+
+#21500000
+1"
+12
+13
+0+
+1H
+1F
+1;
+19
+1*
+1(
+#22000000
+b10111 !
+b10110 !
+0"
+0@
+1?
+02
+03
+1+
+#22500000
+1"
+12
+13
+0+
+0G
+0D
+0:
+07
+0)
+0&
+#23000000
+b10111 !
+0"
+1@
+02
+03
+1+
+#23500000
+1"
+12
+13
+0+
+0H
+1G
+1E
+0;
+1:
+18
+0*
+1)
+1'
+#24000000
+b11111 !
+b11011 !
+b11001 !
+b11000 !
+0"
+0@
+0?
+0>
+1=
+02
+03
+1+
+#24500000
+1"
+12
+13
+0+
+0G
+0E
+1D
+0:
+08
+17
+0)
+0'
+1&
+#25000000
+b11001 !
+0"
+1@
+02
+03
+1+
+#25500000
+1"
+12
+13
+0+
+0F
+0D
+0C
+0B
+09
+07
+06
+05
+0(
+0&
+0%
+0$
+#26000000
+b11011 !
+b11010 !
+0"
+0@
+1?
+02
+03
+1+
+#26500000
+1"
+12
+13
+0+
+#27000000
+b11011 !
+0"
+1@
+02
+03
+1+
+#27500000
+1"
+12
+13
+0+
+#28000000
+b11111 !
+b11101 !
+b11100 !
+0"
+0@
+0?
+1>
+02
+03
+1+
+#28500000
+1"
+12
+13
+0+
+#29000000
+b11101 !
+0"
+1@
+02
+03
+1+
+#29500000
+1"
+12
+13
+0+
+#30000000
+b11111 !
+b11110 !
+0"
+0@
+1?
+02
+03
+1+
+#30500000
+1"
+12
+13
+0+
+#31000000
+b11111 !
+0"
+1@
+02
+03
+1+
+#31500000
+1"
+12
+13
+0+
+#32000000

@@ -1,0 +1,22 @@
+%	Decode the 3-bit binary up count to produce a count down on the 7-seg.
+NS widmer
+October 22, 2020
+%
+SUBDESIGN decode_octal
+(  bin[2..0] 						:INPUT;
+	bar_graph[6..0]				:OUTPUT;		)
+BEGIN
+
+TABLE
+	bin[]		=>		bar_graph[];
+	0				=>		(1,1,1,1,0,0,0);	--7
+	1				=>		(0,0,0,0,0,1,0);	--6
+	2				=>		(0,0,1,0,0,1,0);	--5
+	3				=>		(0,0,1,1,0,0,1);	--4
+	4				=>		(0,1,1,0,0,0,0);	--3
+	5				=>		(0,1,0,0,1,0,0);	--2
+	6				=>		(1,1,1,1,0,0,1);	--1
+	7				=>		(1,0,0,0,0,0,0);	--0
+END TABLE;
+END;
+

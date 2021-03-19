@@ -1,0 +1,18 @@
+
+SUBDESIGN regs
+(	clock, N[9..0], Enable		:INPUT;
+
+	Fout[9..0]				:OUTPUT;	)
+	
+	VARIABLE
+		flips[9..0]		:DFF;
+
+BEGIN
+	flips[].clk = clock;
+	IF flips[].q < N[] THEN
+		flips[].d = flips[].q + 1;
+	ELSE
+		flips[].d = 0;
+	END IF;
+	qs[] = flips[].q;
+END;

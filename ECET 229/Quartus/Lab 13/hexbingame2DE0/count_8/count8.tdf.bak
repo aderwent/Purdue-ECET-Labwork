@@ -1,0 +1,53 @@
+%	Divide by N
+N is a 4-bit integer
+NS widmer
+January 9, 2014
+%
+SUBDESIGN divN
+( 	enable, clock, n[3..0], entern		:INPUT;
+	bar_graph[7..0], timesupN	:OUTPUT;		)
+	
+VARIABLE
+	divide[3..0]		:DFF;
+	mod8[2..0]			:DFF;
+	
+BEGIN
+DEFAULTS 
+	timesupN = VCC;
+END DEFAULTS;
+divide[].clk = clock;
+mod8[].clk = clock;
+mod8[].prn = entern # mod8[].q == 7;
+
+IF enable THEN
+	IF divide[] == 1 THEN		-- create a divide by N coutner to scale frequency
+		divide[].d = n[];		-- losd
+	ELSE divide[].d = divide[].q - 1;		--decrement
+	END IF;
+ELSE divide[].d = divide[].q;		-- hold
+END IF;
+--bar_graph[7] = divide[] == 1;
+--bar_graph[3..0] = divide[];
+--bar_graph[6..4] = gnd;
+	
+	IF divide[].q == 1 & enable & clock == 0 THEN
+		mod8[].d = mod8[].q + 1;		-- always count up
+		timesupN = !(mod8[] == 7);
+	ELSE 	mod8[].d = mod8[].q;
+	END IF;
+TABLE
+	mod8[]		=>		bar_graph[];
+	0				=>		1;
+	1				=>		3;
+	2				=>		7;
+	3				=>		H"F";
+	4				=>		H"1F";
+	5				=>		H"3F";
+	6				=>		H"7F";
+	7				=>		H"FF";
+END TABLE;
+
+--IF divide[].q == 1 & enable & clock == 0 THEN	
+	
+END;
+

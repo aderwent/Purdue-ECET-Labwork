@@ -1,0 +1,22 @@
+%	compare
+compares the contestants answer with the random value.
+Outputs a HIGH if correct
+enabled when time is up.
+ns widmer
+spring 2014
+%
+SUBDESIGN compare
+	(	enablen, answer[3..0], hex[3..0]		:INPUT;
+		correct										:OUTPUT;	)
+	
+	BEGIN
+		IF enablen == 0 THEN
+			IF answer[] == hex[] THEN	
+				correct = vcc;
+			ELSE 
+				correct = gnd;
+			END IF;
+		END IF;
+	END;
+	
+		

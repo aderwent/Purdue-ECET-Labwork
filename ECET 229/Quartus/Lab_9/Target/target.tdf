@@ -1,0 +1,40 @@
+%	This code module creates and up/down counter that
+continually counts up to 400 and then down to 100 and 
+repeats. It creates the moving target for a video game. 
+
+N S Widmer
+ECET 22900
+Fall 2020
+%
+
+SUBDESIGN target
+(	clock						:INPUT;
+	position[9..0]				:OUTPUT;
+)
+VARIABLE
+	count[9..0]		:DFF;
+	direction		:DFF;
+		
+BEGIN
+DEFAULTS
+	direction.prn = vcc;
+	direction.clrn = vcc;
+END DEFAULTS;
+
+	direction.d = gnd;		-- synch inputs not used
+	direction.clk = gnd;
+	count[].clk = clock;
+
+	IF count[].q == 400 THEN direction.clrn = gnd;		-- down  
+	ELSIF count[].q == 100 THEN direction.prn = gnd;	-- up
+	ELSE direction.prn = vcc; direction.clrn=vcc;		-- no change
+	END IF;
+	
+	IF direction == 1 THEN count[].d = count[].q + 1;
+	ELSIF direction == 0 THEN count[].d = count[].q - 1;
+	END IF;
+	position[] = count[].q;
+END;
+
+
+	

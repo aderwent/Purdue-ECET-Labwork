@@ -1,0 +1,220 @@
+Simulator report for gun
+Mon Feb 27 20:48:35 2012
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 650.0 us     ;
+; Simulation Netlist Size     ; 53 nodes     ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 11102        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C20F484C7 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;     100.00 % ;
+; Total nodes checked                                 ; 53           ;
+; Total output ports checked                          ; 61           ;
+; Total output ports with complete 1/0-value coverage ; 61           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 0            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                  ;
++--------------------+----------------------+------------------+
+; Node Name          ; Output Port Name     ; Output Port Type ;
++--------------------+----------------------+------------------+
+; |gun|op_1~0        ; |gun|op_1~0          ; combout          ;
+; |gun|op_1~0        ; |gun|op_1~1          ; cout             ;
+; |gun|op_1~2        ; |gun|op_1~2          ; combout          ;
+; |gun|op_1~2        ; |gun|op_1~3          ; cout             ;
+; |gun|op_1~4        ; |gun|op_1~4          ; combout          ;
+; |gun|op_1~4        ; |gun|op_1~5          ; cout             ;
+; |gun|op_1~6        ; |gun|op_1~6          ; combout          ;
+; |gun|op_1~6        ; |gun|op_1~7          ; cout             ;
+; |gun|op_1~8        ; |gun|op_1~8          ; combout          ;
+; |gun|op_1~8        ; |gun|op_1~9          ; cout             ;
+; |gun|op_1~10       ; |gun|op_1~10         ; combout          ;
+; |gun|op_1~10       ; |gun|op_1~11         ; cout             ;
+; |gun|op_1~12       ; |gun|op_1~12         ; combout          ;
+; |gun|op_1~12       ; |gun|op_1~13         ; cout             ;
+; |gun|op_1~14       ; |gun|op_1~14         ; combout          ;
+; |gun|op_1~14       ; |gun|op_1~15         ; cout             ;
+; |gun|op_1~16       ; |gun|op_1~16         ; combout          ;
+; |gun|count[0]      ; |gun|count[0]        ; regout           ;
+; |gun|count[1]      ; |gun|count[1]        ; regout           ;
+; |gun|count[2]      ; |gun|count[2]        ; regout           ;
+; |gun|count[3]      ; |gun|count[3]        ; regout           ;
+; |gun|count[4]      ; |gun|count[4]        ; regout           ;
+; |gun|count[5]      ; |gun|count[5]        ; regout           ;
+; |gun|count[6]      ; |gun|count[6]        ; regout           ;
+; |gun|count[7]      ; |gun|count[7]        ; regout           ;
+; |gun|count[8]      ; |gun|count[8]        ; regout           ;
+; |gun|count[9]      ; |gun|count[9]        ; regout           ;
+; |gun|count[9]~0    ; |gun|count[9]~0      ; combout          ;
+; |gun|count[9]~1    ; |gun|count[9]~1      ; combout          ;
+; |gun|count[9]~2    ; |gun|count[9]~2      ; combout          ;
+; |gun|count[0]~3    ; |gun|count[0]~3      ; combout          ;
+; |gun|count[9]~4    ; |gun|count[9]~4      ; combout          ;
+; |gun|_~0           ; |gun|_~0             ; combout          ;
+; |gun|count[0]~5    ; |gun|count[0]~5      ; combout          ;
+; |gun|count[0]~6    ; |gun|count[0]~6      ; combout          ;
+; |gun|count[0]~7    ; |gun|count[0]~7      ; combout          ;
+; |gun|count[1]~8    ; |gun|count[1]~8      ; combout          ;
+; |gun|count[8]~9    ; |gun|count[8]~9      ; combout          ;
+; |gun|count[2]~10   ; |gun|count[2]~10     ; combout          ;
+; |gun|count[3]~11   ; |gun|count[3]~11     ; combout          ;
+; |gun|count[4]~12   ; |gun|count[4]~12     ; combout          ;
+; |gun|count[5]~13   ; |gun|count[5]~13     ; combout          ;
+; |gun|count[6]~14   ; |gun|count[6]~14     ; combout          ;
+; |gun|count[7]~15   ; |gun|count[7]~15     ; combout          ;
+; |gun|count[8]~16   ; |gun|count[8]~16     ; combout          ;
+; |gun|count[9]~17   ; |gun|count[9]~17     ; combout          ;
+; |gun|count[9]~18   ; |gun|count[9]~18     ; combout          ;
+; |gun|shot[0]       ; |gun|shot[0]         ; padio            ;
+; |gun|shot[1]       ; |gun|shot[1]         ; padio            ;
+; |gun|shot[2]       ; |gun|shot[2]         ; padio            ;
+; |gun|shot[3]       ; |gun|shot[3]         ; padio            ;
+; |gun|shot[4]       ; |gun|shot[4]         ; padio            ;
+; |gun|shot[5]       ; |gun|shot[5]         ; padio            ;
+; |gun|shot[6]       ; |gun|shot[6]         ; padio            ;
+; |gun|shot[7]       ; |gun|shot[7]         ; padio            ;
+; |gun|shot[8]       ; |gun|shot[8]         ; padio            ;
+; |gun|shot[9]       ; |gun|shot[9]         ; padio            ;
+; |gun|loadn         ; |gun|loadn~corein    ; combout          ;
+; |gun|triggern      ; |gun|triggern~corein ; combout          ;
+; |gun|clock         ; |gun|clock~corein    ; combout          ;
+; |gun|clock~clkctrl ; |gun|clock~clkctrl   ; outclk           ;
++--------------------+----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Feb 27 20:48:34 2012
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off gun -c gun
+Info: Using vector source file "D:/Purdue/Spring 2012/229/Labs/Lab 8/Pong/gun/gun.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is     100.00 %
+Info: Number of transitions in simulation is 11102
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 113 megabytes
+    Info: Processing ended: Mon Feb 27 20:48:35 2012
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

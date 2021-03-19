@@ -1,0 +1,25 @@
+%		3-bit binary input
+	This program is a 3-bit input program that converts combinations of the
+	three inputs into binary 8-segment outputs, correlating combinations from
+	1 to 7 to my phone number.
+	
+	@author Alec Derwent
+	@version 9/16/2020
+%
+
+SUBDESIGN code_conv %Program code_conv,%
+(		D0,D1,D2 :INPUT;
+		a,b,c,d,e,f,g :OUTPUT;	)
+BEGIN %Begin Executable Program%
+TABLE %Begin Table of Combinations%
+			(D2,D1,D0) => (g,f,e,d,c,b,a); %Combinations of D2,D1,D0 to outputs g,f,e,d,c,b,a%
+			 B"000"	  =>	B"0110000"; %3%
+			 B"001"	  =>	B"0011001"; %4%
+			 B"010"	  =>	B"0011001"; %4%
+			 B"011"	  =>	B"0111111"; %-%
+			 B"100"	  =>	B"0000000"; %8%
+			 B"101"	  =>	B"0000010"; %6%
+			 B"110"	  =>	B"0000010"; %6%
+			 B"111"	  =>	B"0100100"; %2%
+END TABLE; %End Table of Combinations%
+END; %End Executable Program%

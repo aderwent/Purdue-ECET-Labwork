@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Sat Nov 14 20:16:03 2020
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : latch
+Top-level Entity Name : storeit_synch
+Family : Cyclone IV GX
+Total logic elements : 4
+    Total combinational functions : 0
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 10
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0

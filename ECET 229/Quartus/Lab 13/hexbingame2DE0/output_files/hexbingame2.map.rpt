@@ -1,0 +1,455 @@
+Analysis & Synthesis report for hexbingame2
+Thu Nov 19 10:41:02 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Parameter Settings for User Entity Instance: prescale:inst|lpm_counter:LPM_COUNTER_component
+ 12. Parameter Settings for User Entity Instance: div11:inst3|lpm_counter:LPM_COUNTER_component
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                           ;
++-------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status         ; Successful - Thu Nov 19 10:41:02 2020            ;
+; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                       ; hexbingame2                                      ;
+; Top-level Entity Name               ; hexbingame2                                      ;
+; Family                              ; Cyclone V                                        ;
+; Logic utilization (in ALMs)         ; N/A                                              ;
+; Total registers                     ; 64                                               ;
+; Total pins                          ; 57                                               ;
+; Total virtual pins                  ; 0                                                ;
+; Total block memory bits             ; 0                                                ;
+; Total DSP Blocks                    ; 0                                                ;
+; Total HSSI RX PCSs                  ; 0                                                ;
+; Total HSSI PMA RX Deserializers     ; 0                                                ;
+; Total HSSI PMA RX ATT Deserializers ; 0                                                ;
+; Total HSSI TX PCSs                  ; 0                                                ;
+; Total HSSI PMA TX Serializers       ; 0                                                ;
+; Total HSSI PMA TX ATT Serializers   ; 0                                                ;
+; Total PLLs                          ; 0                                                ;
+; Total DLLs                          ; 0                                                ;
++-------------------------------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; hexbingame2        ; hexbingame2        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; Latch/storeit_synch.tdf          ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/Latch/storeit_synch.tdf       ;         ;
+; random/random.tdf                ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/random/random.tdf             ;         ;
+; divide_by_N/divide_by_N.tdf      ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/divide_by_N/divide_by_N.tdf   ;         ;
+; decode_octal/decode_octal.tdf    ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/decode_octal/decode_octal.tdf ;         ;
+; decode_7seg/decode_7seg.tdf      ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/decode_7seg/decode_7seg.tdf   ;         ;
+; count_100/count100.tdf           ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/count_100/count100.tdf        ;         ;
+; count_8/count8.tdf               ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/count_8/count8.tdf            ;         ;
+; Compare/compare.tdf              ; yes             ; User AHDL File                     ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/Compare/compare.tdf           ;         ;
+; hexbingame2.bdf                  ; yes             ; User Block Diagram/Schematic File  ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/hexbingame2.bdf               ;         ;
+; prescale.tdf                     ; yes             ; Auto-Found Wizard-Generated File   ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/prescale.tdf                  ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc               ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.tdf               ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_constant.inc              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc               ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cmpconst.inc                  ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc               ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dffeea.inc                    ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_counter_stratix.inc       ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                ;         ;
+; db/cntr_2ak.tdf                  ; yes             ; Auto-Generated Megafunction        ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/db/cntr_2ak.tdf               ;         ;
+; db/cmpr_tac.tdf                  ; yes             ; Auto-Generated Megafunction        ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/db/cmpr_tac.tdf               ;         ;
+; div11.tdf                        ; yes             ; Auto-Found Wizard-Generated File   ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/div11.tdf                     ;         ;
+; db/cntr_acj.tdf                  ; yes             ; Auto-Generated Megafunction        ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/db/cntr_acj.tdf               ;         ;
+; db/cmpr_d9c.tdf                  ; yes             ; Auto-Generated Megafunction        ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/db/cmpr_d9c.tdf               ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 71          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 128         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 12          ;
+;     -- 5 input functions                    ; 12          ;
+;     -- 4 input functions                    ; 46          ;
+;     -- <=3 input functions                  ; 58          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 64          ;
+;                                             ;             ;
+; I/O pins                                    ; 57          ;
+; Total DSP Blocks                            ; 0           ;
+; Maximum fan-out node                        ; 50Mhz~input ;
+; Maximum fan-out                             ; 55          ;
+; Total fan-out                               ; 789         ;
+; Average fan-out                             ; 2.58        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
+; |hexbingame2                              ; 128 (1)           ; 64 (0)       ; 0                 ; 0          ; 57   ; 0            ; |hexbingame2                                                                                        ; work         ;
+;    |compare:inst6|                        ; 3 (3)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|compare:inst6                                                                          ; work         ;
+;    |count100:inst10|                      ; 11 (11)           ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|count100:inst10                                                                        ; work         ;
+;    |count100:inst7|                       ; 12 (12)           ; 8 (8)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|count100:inst7                                                                         ; work         ;
+;    |count8:inst2|                         ; 13 (13)           ; 7 (7)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|count8:inst2                                                                           ; work         ;
+;    |decode_7seg:inst11|                   ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|decode_7seg:inst11                                                                     ; work         ;
+;    |decode_7seg:inst12|                   ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|decode_7seg:inst12                                                                     ; work         ;
+;    |decode_7seg:inst13|                   ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|decode_7seg:inst13                                                                     ; work         ;
+;    |decode_7seg:inst8|                    ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|decode_7seg:inst8                                                                      ; work         ;
+;    |decode_7seg:inst9|                    ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|decode_7seg:inst9                                                                      ; work         ;
+;    |decode_octal:inst25|                  ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|decode_octal:inst25                                                                    ; work         ;
+;    |div11:inst3|                          ; 7 (0)             ; 5 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|div11:inst3                                                                            ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 7 (0)             ; 5 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|div11:inst3|lpm_counter:LPM_COUNTER_component                                          ; work         ;
+;          |cntr_acj:auto_generated|        ; 7 (7)             ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|div11:inst3|lpm_counter:LPM_COUNTER_component|cntr_acj:auto_generated                  ; work         ;
+;    |divide_by_N:inst1|                    ; 5 (5)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|divide_by_N:inst1                                                                      ; work         ;
+;    |prescale:inst|                        ; 30 (0)            ; 23 (0)       ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|prescale:inst                                                                          ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 30 (0)            ; 23 (0)       ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|prescale:inst|lpm_counter:LPM_COUNTER_component                                        ; work         ;
+;          |cntr_2ak:auto_generated|        ; 30 (25)           ; 23 (23)      ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|prescale:inst|lpm_counter:LPM_COUNTER_component|cntr_2ak:auto_generated                ; work         ;
+;             |cmpr_tac:cmpr1|              ; 5 (5)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|prescale:inst|lpm_counter:LPM_COUNTER_component|cntr_2ak:auto_generated|cmpr_tac:cmpr1 ; work         ;
+;    |random:inst4|                         ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|random:inst4                                                                           ; work         ;
+;    |storeit_synch:inst14|                 ; 0 (0)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |hexbingame2|storeit_synch:inst14                                                                   ; work         ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                       ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------+
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |hexbingame2|prescale:inst ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/prescale.tdf ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |hexbingame2|div11:inst3   ; W:/Classes/ECET 229/Quartus/Lab 13/hexbingame2DE0/div11.tdf    ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 28    ;
+; Number of registers using Asynchronous Clear ; 24    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; count8:inst2|mod8[2]                   ; 11      ;
+; count8:inst2|mod8[1]                   ; 11      ;
+; count8:inst2|mod8[0]                   ; 11      ;
+; count8:inst2|EDGE[1]                   ; 2       ;
+; count8:inst2|EDGE[2]                   ; 1       ;
+; count8:inst2|EDGE[0]                   ; 1       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prescale:inst|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                  ;
++------------------------+-------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 23          ; Untyped                                               ;
+; LPM_DIRECTION          ; UP          ; Untyped                                               ;
+; LPM_MODULUS            ; 5000000     ; Untyped                                               ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                               ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                               ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone V   ; Untyped                                               ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                               ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                    ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                    ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                               ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                               ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                               ;
+; CBXI_PARAMETER         ; cntr_2ak    ; Untyped                                               ;
++------------------------+-------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div11:inst3|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-----------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                ;
++------------------------+-------------+-----------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                      ;
+; LPM_WIDTH              ; 5           ; Untyped                                             ;
+; LPM_DIRECTION          ; UP          ; Untyped                                             ;
+; LPM_MODULUS            ; 31          ; Untyped                                             ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                             ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                             ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                             ;
+; DEVICE_FAMILY          ; Cyclone V   ; Untyped                                             ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                             ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                  ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                  ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                             ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                             ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                             ;
+; CBXI_PARAMETER         ; cntr_acj    ; Untyped                                             ;
++------------------------+-------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Nov 19 10:40:52 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hexbingame2 -c hexbingame2
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file latch/storeit_synch.tdf
+    Info (12023): Found entity 1: storeit_synch
+Info (12021): Found 1 design units, including 1 entities, in source file random/random.tdf
+    Info (12023): Found entity 1: random
+Info (12021): Found 1 design units, including 1 entities, in source file divide_by_n/divide_by_n.tdf
+    Info (12023): Found entity 1: divide_by_N
+Info (12021): Found 1 design units, including 1 entities, in source file decode_octal/decode_octal.tdf
+    Info (12023): Found entity 1: decode_octal
+Info (12021): Found 1 design units, including 1 entities, in source file decode_decimal/decode_decimal.tdf
+    Info (12023): Found entity 1: decode_decimal
+Info (12021): Found 1 design units, including 1 entities, in source file decode_7seg/decode_7seg.tdf
+    Info (12023): Found entity 1: decode_7seg
+Info (12021): Found 1 design units, including 1 entities, in source file count_100/count100.tdf
+    Info (12023): Found entity 1: count100
+Warning (287002): Group MSB EDGE2 overrides BIT0 = LSB in actual or default Options Statement
+Info (12021): Found 1 design units, including 1 entities, in source file count_8/count8.tdf
+    Info (12023): Found entity 1: count8
+Info (12021): Found 1 design units, including 1 entities, in source file compare/compare.tdf
+    Info (12023): Found entity 1: compare
+Info (12021): Found 1 design units, including 1 entities, in source file hexbingame2.bdf
+    Info (12023): Found entity 1: hexbingame2
+Info (12127): Elaborating entity "hexbingame2" for the top level hierarchy
+Info (12128): Elaborating entity "count100" for hierarchy "count100:inst10"
+Info (12128): Elaborating entity "count8" for hierarchy "count8:inst2"
+Info (12128): Elaborating entity "divide_by_N" for hierarchy "divide_by_N:inst1"
+Warning (12125): Using design file prescale.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: prescale
+Info (12128): Elaborating entity "prescale" for hierarchy "prescale:inst"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "prescale:inst|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "prescale:inst|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "prescale:inst|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info (12134): Parameter "LPM_WIDTH" = "23"
+    Info (12134): Parameter "LPM_DIRECTION" = "UP"
+    Info (12134): Parameter "LPM_MODULUS" = "5000000"
+    Info (12134): Parameter "LPM_PORT_UPDOWN" = "PORT_UNUSED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_2ak.tdf
+    Info (12023): Found entity 1: cntr_2ak
+Info (12128): Elaborating entity "cntr_2ak" for hierarchy "prescale:inst|lpm_counter:LPM_COUNTER_component|cntr_2ak:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_tac.tdf
+    Info (12023): Found entity 1: cmpr_tac
+Info (12128): Elaborating entity "cmpr_tac" for hierarchy "prescale:inst|lpm_counter:LPM_COUNTER_component|cntr_2ak:auto_generated|cmpr_tac:cmpr1"
+Info (12128): Elaborating entity "decode_7seg" for hierarchy "decode_7seg:inst13"
+Info (12128): Elaborating entity "storeit_synch" for hierarchy "storeit_synch:inst14"
+Info (12128): Elaborating entity "random" for hierarchy "random:inst4"
+Warning (12125): Using design file div11.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: div11
+Info (12128): Elaborating entity "div11" for hierarchy "div11:inst3"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "div11:inst3|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "div11:inst3|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "div11:inst3|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info (12134): Parameter "LPM_WIDTH" = "5"
+    Info (12134): Parameter "LPM_DIRECTION" = "UP"
+    Info (12134): Parameter "LPM_MODULUS" = "31"
+    Info (12134): Parameter "LPM_PORT_UPDOWN" = "PORT_UNUSED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_acj.tdf
+    Info (12023): Found entity 1: cntr_acj
+Info (12128): Elaborating entity "cntr_acj" for hierarchy "div11:inst3|lpm_counter:LPM_COUNTER_component|cntr_acj:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_d9c.tdf
+    Info (12023): Found entity 1: cmpr_d9c
+Info (12128): Elaborating entity "cmpr_d9c" for hierarchy "div11:inst3|lpm_counter:LPM_COUNTER_component|cntr_acj:auto_generated|cmpr_d9c:cmpr1"
+Info (12128): Elaborating entity "decode_octal" for hierarchy "decode_octal:inst25"
+Info (12128): Elaborating entity "count100" for hierarchy "count100:inst7"
+Info (12128): Elaborating entity "compare" for hierarchy "compare:inst6"
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "count8:inst2|SR" is converted into an equivalent circuit using register "count8:inst2|SR~_emulated" and latch "count8:inst2|SR~1"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 191 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 43 output pins
+    Info (21061): Implemented 134 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4678 megabytes
+    Info: Processing ended: Thu Nov 19 10:41:02 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:02
+
+

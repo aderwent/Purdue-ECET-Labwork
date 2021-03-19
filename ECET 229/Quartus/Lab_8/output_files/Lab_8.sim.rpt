@@ -1,0 +1,303 @@
+Simulator report for Lab_8
+Thu Oct 15 11:16:36 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 50.0 us      ;
+; Simulation Netlist Size     ; 102 nodes    ;
+; Simulation Coverage         ;      46.08 % ;
+; Total Number of Transitions ; 981          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                     ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                  ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                        ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                         ;               ;
+; Vector input source                                                                        ; W:/Classes/ECET 229/Quartus/Lab_8/output_files/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                          ; On            ;
+; Check outputs                                                                              ; Off                                                         ; Off           ;
+; Report simulation coverage                                                                 ; On                                                          ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                          ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                          ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                          ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                         ; Off           ;
+; Detect glitches                                                                            ; Off                                                         ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                         ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                         ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                         ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                         ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                          ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                  ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                         ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                        ; Auto          ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      46.08 % ;
+; Total nodes checked                                 ; 102          ;
+; Total output ports checked                          ; 102          ;
+; Total output ports with complete 1/0-value coverage ; 47           ;
+; Total output ports with no 1/0-value coverage       ; 39           ;
+; Total output ports with no 1-value coverage         ; 44           ;
+; Total output ports with no 0-value coverage         ; 50           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                      ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |Block3|ClockIn               ; |Block3|ClockIn               ; out              ;
+; |Block3|Lab_8:inst|flips[9]~0 ; |Block3|Lab_8:inst|flips[9]~0 ; out0             ;
+; |Block3|Lab_8:inst|flips[8]~1 ; |Block3|Lab_8:inst|flips[8]~1 ; out0             ;
+; |Block3|Lab_8:inst|flips[7]~2 ; |Block3|Lab_8:inst|flips[7]~2 ; out0             ;
+; |Block3|Lab_8:inst|flips[6]~3 ; |Block3|Lab_8:inst|flips[6]~3 ; out0             ;
+; |Block3|Lab_8:inst|flips[5]~4 ; |Block3|Lab_8:inst|flips[5]~4 ; out0             ;
+; |Block3|Lab_8:inst|flips[4]~5 ; |Block3|Lab_8:inst|flips[4]~5 ; out0             ;
+; |Block3|Lab_8:inst|flips[3]~6 ; |Block3|Lab_8:inst|flips[3]~6 ; out0             ;
+; |Block3|Lab_8:inst|flips[2]~7 ; |Block3|Lab_8:inst|flips[2]~7 ; out0             ;
+; |Block3|Lab_8:inst|flips[1]~8 ; |Block3|Lab_8:inst|flips[1]~8 ; out0             ;
+; |Block3|Lab_8:inst|flips[0]~9 ; |Block3|Lab_8:inst|flips[0]~9 ; out0             ;
+; |Block3|Lab_8:inst|_~44       ; |Block3|Lab_8:inst|_~44       ; out0             ;
+; |Block3|Lab_8:inst|_~45       ; |Block3|Lab_8:inst|_~45       ; out0             ;
+; |Block3|Lab_8:inst|_~46       ; |Block3|Lab_8:inst|_~46       ; out0             ;
+; |Block3|Lab_8:inst|_~47       ; |Block3|Lab_8:inst|_~47       ; out0             ;
+; |Block3|Lab_8:inst|_~48       ; |Block3|Lab_8:inst|_~48       ; out0             ;
+; |Block3|Lab_8:inst|_~49       ; |Block3|Lab_8:inst|_~49       ; out0             ;
+; |Block3|Lab_8:inst|_~50       ; |Block3|Lab_8:inst|_~50       ; out0             ;
+; |Block3|Lab_8:inst|_~51       ; |Block3|Lab_8:inst|_~51       ; out0             ;
+; |Block3|Lab_8:inst|_~52       ; |Block3|Lab_8:inst|_~52       ; out0             ;
+; |Block3|Lab_8:inst|_~53       ; |Block3|Lab_8:inst|_~53       ; out0             ;
+; |Block3|Lab_8:inst|flips[5]   ; |Block3|Lab_8:inst|flips[5]   ; regout           ;
+; |Block3|Lab_8:inst|flips[4]   ; |Block3|Lab_8:inst|flips[4]   ; regout           ;
+; |Block3|Lab_8:inst|flips[3]   ; |Block3|Lab_8:inst|flips[3]   ; regout           ;
+; |Block3|Lab_8:inst|flips[2]   ; |Block3|Lab_8:inst|flips[2]   ; regout           ;
+; |Block3|Lab_8:inst|flips[1]   ; |Block3|Lab_8:inst|flips[1]   ; regout           ;
+; |Block3|Lab_8:inst|flips[0]   ; |Block3|Lab_8:inst|flips[0]   ; regout           ;
+; |Block3|Lab_8:inst|op_1~0     ; |Block3|Lab_8:inst|op_1~0     ; out0             ;
+; |Block3|Lab_8:inst|op_1~1     ; |Block3|Lab_8:inst|op_1~1     ; out0             ;
+; |Block3|Lab_8:inst|op_1~2     ; |Block3|Lab_8:inst|op_1~2     ; out0             ;
+; |Block3|Lab_8:inst|op_1~3     ; |Block3|Lab_8:inst|op_1~3     ; out0             ;
+; |Block3|Lab_8:inst|op_1~4     ; |Block3|Lab_8:inst|op_1~4     ; out0             ;
+; |Block3|Lab_8:inst|op_1~5     ; |Block3|Lab_8:inst|op_1~5     ; out0             ;
+; |Block3|Lab_8:inst|op_1~6     ; |Block3|Lab_8:inst|op_1~6     ; out0             ;
+; |Block3|Lab_8:inst|op_1~7     ; |Block3|Lab_8:inst|op_1~7     ; out0             ;
+; |Block3|Lab_8:inst|op_1~8     ; |Block3|Lab_8:inst|op_1~8     ; out0             ;
+; |Block3|Lab_8:inst|op_1~9     ; |Block3|Lab_8:inst|op_1~9     ; out0             ;
+; |Block3|Lab_8:inst|op_1~10    ; |Block3|Lab_8:inst|op_1~10    ; out0             ;
+; |Block3|Lab_8:inst|op_1~11    ; |Block3|Lab_8:inst|op_1~11    ; out0             ;
+; |Block3|Lab_8:inst|op_1~12    ; |Block3|Lab_8:inst|op_1~12    ; out0             ;
+; |Block3|Lab_8:inst|op_1~13    ; |Block3|Lab_8:inst|op_1~13    ; out0             ;
+; |Block3|Lab_8:inst|op_1~14    ; |Block3|Lab_8:inst|op_1~14    ; out0             ;
+; |Block3|Lab_8:inst|op_1~15    ; |Block3|Lab_8:inst|op_1~15    ; out0             ;
+; |Block3|Lab_8:inst|op_1~17    ; |Block3|Lab_8:inst|op_1~17    ; out0             ;
+; |Block3|Lab_8:inst|op_1~18    ; |Block3|Lab_8:inst|op_1~18    ; out0             ;
+; |Block3|Lab_8:inst|op_1~21    ; |Block3|Lab_8:inst|op_1~21    ; out0             ;
+; |Block3|Lab_8:inst|op_1~24    ; |Block3|Lab_8:inst|op_1~24    ; out0             ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                 ;
++---------------------------+---------------------------+------------------+
+; Node Name                 ; Output Port Name          ; Output Port Type ;
++---------------------------+---------------------------+------------------+
+; |Block3|Led0              ; |Block3|Led0              ; pin_out          ;
+; |Block3|EnableIn          ; |Block3|EnableIn          ; out              ;
+; |Block3|N9                ; |Block3|N9                ; out              ;
+; |Block3|N8                ; |Block3|N8                ; out              ;
+; |Block3|N7                ; |Block3|N7                ; out              ;
+; |Block3|N6                ; |Block3|N6                ; out              ;
+; |Block3|N5                ; |Block3|N5                ; out              ;
+; |Block3|N4                ; |Block3|N4                ; out              ;
+; |Block3|N2                ; |Block3|N2                ; out              ;
+; |Block3|N0                ; |Block3|N0                ; out              ;
+; |Block3|Lab_8:inst|_~1    ; |Block3|Lab_8:inst|_~1    ; out0             ;
+; |Block3|Lab_8:inst|_~12   ; |Block3|Lab_8:inst|_~12   ; out0             ;
+; |Block3|Lab_8:inst|_~13   ; |Block3|Lab_8:inst|_~13   ; out0             ;
+; |Block3|Lab_8:inst|_~14   ; |Block3|Lab_8:inst|_~14   ; out0             ;
+; |Block3|Lab_8:inst|_~15   ; |Block3|Lab_8:inst|_~15   ; out0             ;
+; |Block3|Lab_8:inst|_~16   ; |Block3|Lab_8:inst|_~16   ; out0             ;
+; |Block3|Lab_8:inst|_~17   ; |Block3|Lab_8:inst|_~17   ; out0             ;
+; |Block3|Lab_8:inst|_~18   ; |Block3|Lab_8:inst|_~18   ; out0             ;
+; |Block3|Lab_8:inst|_~19   ; |Block3|Lab_8:inst|_~19   ; out0             ;
+; |Block3|Lab_8:inst|_~20   ; |Block3|Lab_8:inst|_~20   ; out0             ;
+; |Block3|Lab_8:inst|_~21   ; |Block3|Lab_8:inst|_~21   ; out0             ;
+; |Block3|Lab_8:inst|_~22   ; |Block3|Lab_8:inst|_~22   ; out0             ;
+; |Block3|Lab_8:inst|Fout~1 ; |Block3|Lab_8:inst|Fout~1 ; out0             ;
+; |Block3|Lab_8:inst|_~32   ; |Block3|Lab_8:inst|_~32   ; out0             ;
+; |Block3|Lab_8:inst|_~33   ; |Block3|Lab_8:inst|_~33   ; out0             ;
+; |Block3|Lab_8:inst|_~34   ; |Block3|Lab_8:inst|_~34   ; out0             ;
+; |Block3|Lab_8:inst|_~35   ; |Block3|Lab_8:inst|_~35   ; out0             ;
+; |Block3|Lab_8:inst|_~36   ; |Block3|Lab_8:inst|_~36   ; out0             ;
+; |Block3|Lab_8:inst|_~37   ; |Block3|Lab_8:inst|_~37   ; out0             ;
+; |Block3|Lab_8:inst|_~38   ; |Block3|Lab_8:inst|_~38   ; out0             ;
+; |Block3|Lab_8:inst|_~39   ; |Block3|Lab_8:inst|_~39   ; out0             ;
+; |Block3|Lab_8:inst|_~40   ; |Block3|Lab_8:inst|_~40   ; out0             ;
+; |Block3|Lab_8:inst|_~41   ; |Block3|Lab_8:inst|_~41   ; out0             ;
+; |Block3|Lab_8:inst|_~43   ; |Block3|Lab_8:inst|_~43   ; out0             ;
+; |Block3|Lab_8:inst|_~55   ; |Block3|Lab_8:inst|_~55   ; out0             ;
+; |Block3|Lab_8:inst|_~56   ; |Block3|Lab_8:inst|_~56   ; out0             ;
+; |Block3|Lab_8:inst|_~57   ; |Block3|Lab_8:inst|_~57   ; out0             ;
+; |Block3|Lab_8:inst|_~58   ; |Block3|Lab_8:inst|_~58   ; out0             ;
+; |Block3|Lab_8:inst|_~59   ; |Block3|Lab_8:inst|_~59   ; out0             ;
+; |Block3|Lab_8:inst|_~60   ; |Block3|Lab_8:inst|_~60   ; out0             ;
+; |Block3|Lab_8:inst|_~61   ; |Block3|Lab_8:inst|_~61   ; out0             ;
+; |Block3|Lab_8:inst|_~62   ; |Block3|Lab_8:inst|_~62   ; out0             ;
+; |Block3|Lab_8:inst|_~63   ; |Block3|Lab_8:inst|_~63   ; out0             ;
+; |Block3|Lab_8:inst|_~64   ; |Block3|Lab_8:inst|_~64   ; out0             ;
++---------------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |Block3|Led0                ; |Block3|Led0                ; pin_out          ;
+; |Block3|EnableIn            ; |Block3|EnableIn            ; out              ;
+; |Block3|N9                  ; |Block3|N9                  ; out              ;
+; |Block3|N8                  ; |Block3|N8                  ; out              ;
+; |Block3|N7                  ; |Block3|N7                  ; out              ;
+; |Block3|N6                  ; |Block3|N6                  ; out              ;
+; |Block3|N5                  ; |Block3|N5                  ; out              ;
+; |Block3|N4                  ; |Block3|N4                  ; out              ;
+; |Block3|N3                  ; |Block3|N3                  ; out              ;
+; |Block3|N1                  ; |Block3|N1                  ; out              ;
+; |Block3|Lab_8:inst|_~12     ; |Block3|Lab_8:inst|_~12     ; out0             ;
+; |Block3|Lab_8:inst|_~13     ; |Block3|Lab_8:inst|_~13     ; out0             ;
+; |Block3|Lab_8:inst|_~14     ; |Block3|Lab_8:inst|_~14     ; out0             ;
+; |Block3|Lab_8:inst|_~15     ; |Block3|Lab_8:inst|_~15     ; out0             ;
+; |Block3|Lab_8:inst|_~16     ; |Block3|Lab_8:inst|_~16     ; out0             ;
+; |Block3|Lab_8:inst|_~17     ; |Block3|Lab_8:inst|_~17     ; out0             ;
+; |Block3|Lab_8:inst|_~18     ; |Block3|Lab_8:inst|_~18     ; out0             ;
+; |Block3|Lab_8:inst|_~20     ; |Block3|Lab_8:inst|_~20     ; out0             ;
+; |Block3|Lab_8:inst|_~22     ; |Block3|Lab_8:inst|_~22     ; out0             ;
+; |Block3|Lab_8:inst|Fout~1   ; |Block3|Lab_8:inst|Fout~1   ; out0             ;
+; |Block3|Lab_8:inst|_~32     ; |Block3|Lab_8:inst|_~32     ; out0             ;
+; |Block3|Lab_8:inst|_~33     ; |Block3|Lab_8:inst|_~33     ; out0             ;
+; |Block3|Lab_8:inst|_~34     ; |Block3|Lab_8:inst|_~34     ; out0             ;
+; |Block3|Lab_8:inst|_~35     ; |Block3|Lab_8:inst|_~35     ; out0             ;
+; |Block3|Lab_8:inst|_~36     ; |Block3|Lab_8:inst|_~36     ; out0             ;
+; |Block3|Lab_8:inst|_~37     ; |Block3|Lab_8:inst|_~37     ; out0             ;
+; |Block3|Lab_8:inst|_~38     ; |Block3|Lab_8:inst|_~38     ; out0             ;
+; |Block3|Lab_8:inst|_~39     ; |Block3|Lab_8:inst|_~39     ; out0             ;
+; |Block3|Lab_8:inst|_~40     ; |Block3|Lab_8:inst|_~40     ; out0             ;
+; |Block3|Lab_8:inst|_~41     ; |Block3|Lab_8:inst|_~41     ; out0             ;
+; |Block3|Lab_8:inst|_~43     ; |Block3|Lab_8:inst|_~43     ; out0             ;
+; |Block3|Lab_8:inst|_~55     ; |Block3|Lab_8:inst|_~55     ; out0             ;
+; |Block3|Lab_8:inst|_~56     ; |Block3|Lab_8:inst|_~56     ; out0             ;
+; |Block3|Lab_8:inst|_~57     ; |Block3|Lab_8:inst|_~57     ; out0             ;
+; |Block3|Lab_8:inst|_~58     ; |Block3|Lab_8:inst|_~58     ; out0             ;
+; |Block3|Lab_8:inst|_~59     ; |Block3|Lab_8:inst|_~59     ; out0             ;
+; |Block3|Lab_8:inst|_~60     ; |Block3|Lab_8:inst|_~60     ; out0             ;
+; |Block3|Lab_8:inst|_~61     ; |Block3|Lab_8:inst|_~61     ; out0             ;
+; |Block3|Lab_8:inst|_~62     ; |Block3|Lab_8:inst|_~62     ; out0             ;
+; |Block3|Lab_8:inst|_~63     ; |Block3|Lab_8:inst|_~63     ; out0             ;
+; |Block3|Lab_8:inst|_~64     ; |Block3|Lab_8:inst|_~64     ; out0             ;
+; |Block3|Lab_8:inst|flips[9] ; |Block3|Lab_8:inst|flips[9] ; regout           ;
+; |Block3|Lab_8:inst|flips[8] ; |Block3|Lab_8:inst|flips[8] ; regout           ;
+; |Block3|Lab_8:inst|flips[7] ; |Block3|Lab_8:inst|flips[7] ; regout           ;
+; |Block3|Lab_8:inst|flips[6] ; |Block3|Lab_8:inst|flips[6] ; regout           ;
+; |Block3|Lab_8:inst|op_1~16  ; |Block3|Lab_8:inst|op_1~16  ; out0             ;
+; |Block3|Lab_8:inst|op_1~19  ; |Block3|Lab_8:inst|op_1~19  ; out0             ;
+; |Block3|Lab_8:inst|op_1~20  ; |Block3|Lab_8:inst|op_1~20  ; out0             ;
+; |Block3|Lab_8:inst|op_1~22  ; |Block3|Lab_8:inst|op_1~22  ; out0             ;
+; |Block3|Lab_8:inst|op_1~23  ; |Block3|Lab_8:inst|op_1~23  ; out0             ;
++-----------------------------+-----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Oct 15 11:16:35 2020
+Info: Command: quartus_sim --simulation_results_format=VWF Lab_8 -c Lab_8
+Info (324025): Using vector source file "W:/Classes/ECET 229/Quartus/Lab_8/output_files/Waveform.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      46.08 %
+Info (328052): Number of transitions in simulation is 981
+Info (324045): Vector file Lab_8.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4459 megabytes
+    Info: Processing ended: Thu Oct 15 11:16:36 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

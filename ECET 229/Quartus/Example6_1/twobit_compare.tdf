@@ -1,0 +1,11 @@
+SUBDESIGN twobit_compare
+(
+	a[1..0], b[1..0]		:INPUT;
+	gt, lt, eq				:OUTPUT;
+)
+
+BEGIN
+	gt = a[] > b[];
+	lt = a[] < b[];
+	eq = a[] == b[];
+END;

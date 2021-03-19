@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'clock'
+Slack : -3.227
+TNS   : -86.331
+
+Type  : Slow 1100mV 100C Model Setup 'MOD800:inst5|ff[0]'
+Slack : -2.577
+TNS   : -70.008
+
+Type  : Slow 1100mV 100C Model Hold 'clock'
+Slack : -2.762
+TNS   : -47.757
+
+Type  : Slow 1100mV 100C Model Hold 'MOD800:inst5|ff[0]'
+Slack : 0.576
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'clock'
+Slack : -0.538
+TNS   : -28.030
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'MOD800:inst5|ff[0]'
+Slack : -0.538
+TNS   : -26.609
+
+Type  : Slow 1100mV -40C Model Setup 'clock'
+Slack : -3.343
+TNS   : -86.289
+
+Type  : Slow 1100mV -40C Model Setup 'MOD800:inst5|ff[0]'
+Slack : -2.673
+TNS   : -72.392
+
+Type  : Slow 1100mV -40C Model Hold 'clock'
+Slack : -2.816
+TNS   : -48.864
+
+Type  : Slow 1100mV -40C Model Hold 'MOD800:inst5|ff[0]'
+Slack : 0.556
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'MOD800:inst5|ff[0]'
+Slack : -0.538
+TNS   : -28.481
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'clock'
+Slack : -0.538
+TNS   : -24.104
+
+Type  : Fast 1100mV 100C Model Setup 'clock'
+Slack : -1.126
+TNS   : -27.001
+
+Type  : Fast 1100mV 100C Model Setup 'MOD800:inst5|ff[0]'
+Slack : -0.795
+TNS   : -21.185
+
+Type  : Fast 1100mV 100C Model Hold 'clock'
+Slack : -1.560
+TNS   : -29.905
+
+Type  : Fast 1100mV 100C Model Hold 'MOD800:inst5|ff[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'clock'
+Slack : -0.400
+TNS   : -13.986
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'MOD800:inst5|ff[0]'
+Slack : 0.069
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'clock'
+Slack : -0.856
+TNS   : -20.035
+
+Type  : Fast 1100mV -40C Model Setup 'MOD800:inst5|ff[0]'
+Slack : -0.652
+TNS   : -17.004
+
+Type  : Fast 1100mV -40C Model Hold 'clock'
+Slack : -1.479
+TNS   : -29.394
+
+Type  : Fast 1100mV -40C Model Hold 'MOD800:inst5|ff[0]'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'clock'
+Slack : -0.456
+TNS   : -18.200
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'MOD800:inst5|ff[0]'
+Slack : 0.092
+TNS   : 0.000
+
+------------------------------------------------------------

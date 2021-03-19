@@ -1,0 +1,141 @@
+%	HW 13   State machine stepper driver
+This stepper driver has 3 modes: 0: Full step
+1:  half step,  2:  wave driver
+This version has been modified to work on the Rio Rand board.
+the enable is permanently active and the coil_disable is in active. 
+OUTPUTs QA..D are arranged for the ETT stepper board. 
+Neal Widmer
+ECET 22900
+March 5, 2020 
+%
+SUBDESIGN hw13rio
+(	clock, M[1..0], cw, pb %enable, coil_disable % 	:INPUT;
+	QA, QC, QB, QD, LEDS[3..0]					:OUTPUT;)
+VARIABLE
+	step		:MACHINE of BITS  (Q[3..0])	--(QA, QAN, QB, QBN) 
+	WITH STATES (S0 = B"1010", S1 = B"1000", S2 = B"1001", S3 = B"0001",
+					S4 = B"0101", S5 = B"0100", S6 = B"0110", S7 = B"0010");
+					
+	debounce			:DFF;
+	Prescale[19..0] :DFF;	-- for 1 million
+					
+BEGIN
+prescale[].clk = clock;		-- scale clock to 50Hz.
+debounce.clk = prescale[19];
+debounce.d = PB;				-- debounce PB at 50Hz
+step.clk = debounce.q;  -- connect debounced pb to SM
+(QA,QC,QB,QD) = Q[3..0];
+LEDS[] = Q[3..0];
+--step.ena = enable & !coil_disable;
+--IF coil_disable THEN (QA,QAN,QB,QBN) = 0;-- all off
+								
+--ELSE (QA,QAN,QB,QBN) = Q[3..0];	-- connect outputs to state machine
+--END IF;
+--IF step == S0 THEN
+
+IF prescale[] < 999999 THEN 
+		prescale[].d = prescale[].q + 1;
+	ELSE
+		prescale[].d = 0;
+--		co = vcc;
+	END IF;
+
+CASE step IS
+  WHEN S0 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S2;
+						ELSE step = S6; END IF;
+		WHEN 1	=>	IF cw THEN step = S1;
+						ELSE step = S7;END IF;
+		WHEN 2	=>	IF cw THEN step = S1;
+						ELSE step = S7;END IF;
+--		WHEN 3	=>	
+		END CASE;
+ 
+--ELSIF step == S1 THEN
+
+  WHEN S1 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S2;	--FULL
+						ELSE step = S0;END IF;
+		WHEN 1	=>	IF cw THEN step = S2;	--HALF
+						ELSE step = S0;END IF;
+		WHEN 2	=>	IF cw THEN step = S3;	--WAVE
+						ELSE step = S7;END IF;
+--		WHEN 0	=>	IF cw THEN step = S2;
+--						ELSE step = S6;
+		END CASE;
+ -- END CASE;
+--ELSIF step == S2 THEN
+
+  WHEN S2 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S4;	--FULL
+						ELSE step = S0;END IF;
+		WHEN 1	=>	IF cw THEN step = S3;	--HALF
+						ELSE step = S1;END IF;
+		WHEN 2	=>	IF cw THEN step = S3;	--WAVE
+						ELSE step = S1;END IF;
+--		WHEN 0	=>	IF cw THEN step = S2;
+--						ELSE step = S6;
+		END CASE;
+  
+--ELSIF step == S3 THEN
+  WHEN S3 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S4;	--FULL
+						ELSE step = S2;END IF;
+		WHEN 1	=>	IF cw THEN step = S4;	--HALF
+						ELSE step = S2;END IF;
+		WHEN 2	=>	IF cw THEN step = S5;	--WAVE
+						ELSE step = S1;END IF;
+--		WHEN 3	=>	
+		END CASE;
+--ELSIF step == S4 THEN
+  WHEN S4 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S6;	--FULL
+						ELSE step = S2;END IF;
+		WHEN 1	=>	IF cw THEN step = S5;	--HALF
+						ELSE step = S3;END IF;
+		WHEN 2	=>	IF cw THEN step = S5;	--WAVE
+						ELSE step = S3;END IF;
+--		WHEN 3	=>	
+		END CASE;
+--ELSIF step == S5  THEN
+  WHEN S5 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S6;	--FULL
+						ELSE step = S4;END IF;
+		WHEN 1	=>	IF cw THEN step = S6;	--HALF
+						ELSE step = S4;END IF;
+		WHEN 2	=>	IF cw THEN step = S7;	--WAVE
+						ELSE step = S3;END IF;
+--		WHEN 3	=>	
+		END CASE;
+--ELSIF step == S6 THEN
+  WHEN S6 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S0;	--FULL
+						ELSE step = S4;END IF;
+		WHEN 1	=>	IF cw THEN step = S7;	--HALF
+						ELSE step = S5;END IF;
+		WHEN 2	=>	IF cw THEN step = S7;	--WAVE
+						ELSE step = S5;END IF;
+--		WHEN 3		
+		END CASE;
+--ELSIF step == S7 THEN
+  WHEN S7 =>
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S0;	--FULL
+						ELSE step = S6;END IF;
+		WHEN 1	=>	IF cw THEN step = S0;	--HALF
+						ELSE step = S6;END IF;
+		WHEN 2	=>	IF cw THEN step = S1;	--WAVE
+						ELSE step = S5;END IF;
+--		WHEN 3	=>	
+		END CASE;
+END CASE;
+--END IF;
+END;
+		

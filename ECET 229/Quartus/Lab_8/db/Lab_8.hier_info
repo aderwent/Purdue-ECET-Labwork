@@ -1,0 +1,53 @@
+|Block3
+Led0 <= Lab_8:inst.Fout
+ClockIn => Lab_8:inst.clock
+EnableIn => Lab_8:inst.Enable
+N9 => Lab_8:inst.N[9]
+N8 => Lab_8:inst.N[8]
+N7 => Lab_8:inst.N[7]
+N6 => Lab_8:inst.N[6]
+N5 => Lab_8:inst.N[5]
+N4 => Lab_8:inst.N[4]
+N3 => Lab_8:inst.N[3]
+N2 => Lab_8:inst.N[2]
+N1 => Lab_8:inst.N[1]
+N0 => Lab_8:inst.N[0]
+
+
+|Block3|Lab_8:inst
+clock => flips[9].CLK
+clock => flips[8].CLK
+clock => flips[7].CLK
+clock => flips[6].CLK
+clock => flips[5].CLK
+clock => flips[4].CLK
+clock => flips[3].CLK
+clock => flips[2].CLK
+clock => flips[1].CLK
+clock => flips[0].CLK
+N[0] => _~21.IN1
+N[0] => _~41.IN1
+N[1] => _~20.IN1
+N[1] => _~40.IN1
+N[2] => _~19.IN1
+N[2] => _~39.IN1
+N[3] => _~18.IN1
+N[3] => _~38.IN1
+N[4] => _~17.IN1
+N[4] => _~37.IN1
+N[5] => _~16.IN1
+N[5] => _~36.IN1
+N[6] => _~15.IN1
+N[6] => _~35.IN1
+N[7] => _~14.IN1
+N[7] => _~34.IN1
+N[8] => _~13.IN1
+N[8] => _~33.IN1
+N[9] => _~12.IN1
+N[9] => _~32.IN1
+Enable => Fout~1.IN0
+Enable => _~43.IN0
+Enable => _~54.IN0
+Fout <= Fout~2.DB_MAX_OUTPUT_PORT_TYPE
+
+

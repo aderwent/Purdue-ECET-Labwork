@@ -1,0 +1,117 @@
+Flow report for latch
+Sat Nov 14 20:16:03 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Flow Summary                                                                          ;
++------------------------------------+--------------------------------------------------+
+; Flow Status                        ; Successful - Sat Nov 14 20:16:03 2020            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; latch                                            ;
+; Top-level Entity Name              ; storeit_synch                                    ;
+; Family                             ; Cyclone IV GX                                    ;
+; Total logic elements               ; 4                                                ;
+;     Total combinational functions  ; 0                                                ;
+;     Dedicated logic registers      ; 4                                                ;
+; Total registers                    ; 4                                                ;
+; Total pins                         ; 10                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total GXB Receiver Channel PCS     ; 0                                                ;
+; Total GXB Receiver Channel PMA     ; 0                                                ;
+; Total GXB Transmitter Channel PCS  ; 0                                                ;
+; Total GXB Transmitter Channel PMA  ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/14/2020 20:15:59 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; latch               ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++-------------------------------------+---------------------------------+---------------+---------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name   ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+---------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 211375645809850.160540295821476 ; --            ; --            ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                              ; --            ; --            ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --            ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --            ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; storeit_synch ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; storeit_synch ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; storeit_synch ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --            ; --             ;
+; TOP_LEVEL_ENTITY                    ; storeit_synch                   ; latch         ; --            ; --             ;
++-------------------------------------+---------------------------------+---------------+---------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 4690 MB             ; 00:00:01                           ;
+; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:01                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; X-lt-nwidmer01   ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off latch -c latch
+
+
+

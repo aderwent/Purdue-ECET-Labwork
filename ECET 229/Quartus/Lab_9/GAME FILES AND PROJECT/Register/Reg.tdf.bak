@@ -1,0 +1,14 @@
+SUBDESIGN reg
+(	clock, Dat[9..0]	:INPUT;
+	Qout[9..0]	:OUTPUT;)	
+	
+VARIABLE	
+	bits[9..0]	:DFF;
+
+	BEGIN
+		
+		bits[].clk = clock;
+		bits[].d = dat[];
+		qout[] = bits[].q;
+	END;
+	

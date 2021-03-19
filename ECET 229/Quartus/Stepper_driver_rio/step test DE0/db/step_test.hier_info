@@ -1,0 +1,17 @@
+|step_test
+clock => clkout.DATAIN
+clock => FF[3].CLK
+clock => FF[2].CLK
+clock => FF[1].CLK
+clock => FF[0].CLK
+step_out[0] <= FF[0].DB_MAX_OUTPUT_PORT_TYPE
+step_out[1] <= FF[1].DB_MAX_OUTPUT_PORT_TYPE
+step_out[2] <= FF[2].DB_MAX_OUTPUT_PORT_TYPE
+step_out[3] <= FF[3].DB_MAX_OUTPUT_PORT_TYPE
+LED_out[0] <= FF[0].DB_MAX_OUTPUT_PORT_TYPE
+LED_out[1] <= FF[1].DB_MAX_OUTPUT_PORT_TYPE
+LED_out[2] <= FF[2].DB_MAX_OUTPUT_PORT_TYPE
+LED_out[3] <= FF[3].DB_MAX_OUTPUT_PORT_TYPE
+clkout <= clock.DB_MAX_OUTPUT_PORT_TYPE
+
+

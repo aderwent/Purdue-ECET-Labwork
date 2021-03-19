@@ -1,0 +1,23 @@
+
+State Machine - |lab_10_stepper_motor|driver
+Name off top_left left bot_left bot bot_right right top_right top 
+top 0 0 0 0 0 0 0 0 0 
+top_right 0 0 0 0 0 0 0 1 1 
+right 0 0 0 0 0 0 1 0 1 
+bot_right 0 0 0 0 0 1 0 0 1 
+bot 0 0 0 0 1 0 0 0 1 
+bot_left 0 0 0 1 0 0 0 0 1 
+left 0 0 1 0 0 0 0 0 1 
+top_left 0 1 0 0 0 0 0 0 1 
+off 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lab_10_stepper_motor|mem
+Name top_left2 left2 bot_left2 bot2 bot_right2 right2 top_right2 top2 
+top2 0 0 0 0 0 0 0 0 
+top_right2 0 0 0 0 0 0 1 1 
+right2 0 0 0 0 0 1 0 1 
+bot_right2 0 0 0 0 1 0 0 1 
+bot2 0 0 0 1 0 0 0 1 
+bot_left2 0 0 1 0 0 0 0 1 
+left2 0 1 0 0 0 0 0 1 
+top_left2 1 0 0 0 0 0 0 1 

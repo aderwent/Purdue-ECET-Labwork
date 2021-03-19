@@ -1,0 +1,55 @@
+%  Generate random numbers and test for correct answer
+ns widmer
+1/9/14
+%
+SUBDESIGN gentest
+(	clk24M, mod16N, hexN_bcd, answer[3..0], timesupN 	:INPUT;
+	score, hex_display[6..0], hex[3..0]						:OUTPUT;	)
+VARIABLE
+	mod16[3..0], reg[3..0] 	:DFF;
+	
+BEGIN
+	mod16[].clk = clk24M;
+	reg[].clk = timesupN;
+	reg[].d = mod16[].q;		-- latch in the random count value
+	
+	IF mod16N == 0 THEN
+		mod16[].d = mod16[].q + 1;
+	ELSIF hexN_bcd == 0 THEN	
+		IF mod16[].q == 15 THEN	
+			mod16[].d = 10;		-- start over at A
+		ELSE mod16[].d = mod16[].q + 1;	
+		END IF;
+	ELSE 
+		IF mod16[].q == 9 THEN	
+			mod16[].d = 0;		-- start over at 0
+		ELSE mod16[].d = mod16[].q + 1;
+		END IF; 
+	END IF;
+	hex[] = reg[];
+		TABLE						-- convert Binary to 7-seg patterns
+		reg[].q	=>		hex_display[];	
+		0			=>		(1,0,0,0,0,0,0);	-- 0   displays a 7-segment pattern for 0 (segments a-f on)
+		1			=>		(1,1,1,1,0,0,1);
+		2			=>		(0,1,0,0,1,0,0);
+		3			=>		(0,1,1,0,0,0,0);
+		4			=>		(0,0,1,1,0,0,1);
+		5			=>		(0,0,1,0,0,1,0);
+		6			=>		(0,0,0,0,0,1,0);
+		7			=>		(1,1,1,1,0,0,0);
+		8			=>		(0,0,0,0,0,0,0);
+		9			=>		(0,0,1,1,0,0,0);
+		10			=>		(0,0,0,1,0,0,0);	-- A
+		11			=>		(0,0,0,0,0,1,1);	-- B
+		12			=>		(1,0,0,0,1,1,0);	-- C
+		13			=> 	(0,1,0,0,0,0,1);
+		14			=> 	(0,0,0,0,1,1,0);
+		15			=>		(0,0,0,1,1,1,0);	-- F
+	END TABLE;
+	
+	IF (timesupN == 0) & (reg[].q == answer[]) THEN
+					score = vcc;
+	END IF;
+	
+	END;
+	

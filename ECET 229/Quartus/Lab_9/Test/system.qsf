@@ -1,0 +1,90 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+# Date created = 14:59:28  February 27, 2012
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		system_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CEFA4F23I7
+set_global_assignment -name TOP_LEVEL_ENTITY system
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:59:28  FEBRUARY 27, 2012"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_H13 -to clock
+set_location_assignment PIN_A5 -to r[3]
+set_location_assignment PIN_C9 -to r[2]
+set_location_assignment PIN_B10 -to r[1]
+set_location_assignment PIN_A9 -to r[0]
+set_location_assignment PIN_G8 -to v_synch
+set_location_assignment PIN_H8 -to h_synch
+set_location_assignment PIN_L7 -to g[0]
+set_location_assignment PIN_K7 -to g[1]
+set_location_assignment PIN_J7 -to g[2]
+set_location_assignment PIN_J8 -to g[3]
+set_location_assignment PIN_A7 -to b[3]
+set_location_assignment PIN_A8 -to b[2]
+set_location_assignment PIN_B7 -to b[1]
+set_location_assignment PIN_B6 -to b[0]
+set_location_assignment PIN_AA2 -to 60HZ
+set_location_assignment PIN_U7 -to triggern
+set_location_assignment PIN_AB12 -to n[9]
+set_location_assignment PIN_AB13 -to n[8]
+set_location_assignment PIN_AA13 -to n[7]
+set_location_assignment PIN_AA14 -to n[6]
+set_location_assignment PIN_AB15 -to n[5]
+set_location_assignment PIN_AA15 -to n[4]
+set_location_assignment PIN_T12 -to n[3]
+set_location_assignment PIN_T13 -to n[2]
+set_location_assignment PIN_V13 -to n[1]
+set_location_assignment PIN_U13 -to n[0]
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_location_assignment PIN_M6 -to SELECT
+set_global_assignment -name AHDL_FILE ../VGA_Driver_V2/VGA_driverLab8.tdf
+set_global_assignment -name AHDL_FILE ../Register/Reg.tdf
+set_global_assignment -name AHDL_FILE ../MOD525/mod525.tdf
+set_global_assignment -name AHDL_FILE ../MOD800/mod800.tdf
+set_global_assignment -name BDF_FILE system.bdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

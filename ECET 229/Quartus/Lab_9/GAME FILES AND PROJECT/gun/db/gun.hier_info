@@ -1,0 +1,25 @@
+|gun
+loadn => _.IN0
+triggern => _.IN0
+clock => count[9].CLK
+clock => count[8].CLK
+clock => count[7].CLK
+clock => count[6].CLK
+clock => count[5].CLK
+clock => count[4].CLK
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+shot[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+shot[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+shot[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+shot[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+shot[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+shot[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+shot[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+shot[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+shot[8] <= count[8].DB_MAX_OUTPUT_PORT_TYPE
+shot[9] <= count[9].DB_MAX_OUTPUT_PORT_TYPE
+
+

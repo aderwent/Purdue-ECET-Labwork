@@ -1,0 +1,103 @@
+%	HW 13   State machine stepper driver
+This stepper driver has 3 modes: 0: Full step
+1:  half step,  2:  wave driver
+Neal Widmer
+ECET 22900
+March 5, 2016 
+%
+SUBDESIGN hw13
+(	clock, M[1..0], cw, enable		:INPUT;
+	QA, QAN, QB, QBN					:OUTPUT;)
+VARIABLE
+	step		:MACHINE of BITS (QA, QAN, QB, QBN) 
+	WITH STATES (S0 = B"1010", S1 = B"1000", S2 = B"1001", S3 = B"0001",
+					S4 = B"0101", S5 = B"0100", S6 = B"0110", S7 = B"0010");
+					
+BEGIN
+step.clk = clock;
+step.ena = enable;
+IF step == S0 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S2;
+						ELSE step = S6; END IF;
+		WHEN 1	=>	IF cw THEN step = S1;
+						ELSE step = S7;END IF;
+		WHEN 2	=>	IF cw THEN step = S1;
+						ELSE step = S7;END IF;
+--		WHEN 3	=>	
+		END CASE;
+ELSIF step == S1 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S2;	--FULL
+						ELSE step = S0;END IF;
+		WHEN 1	=>	IF cw THEN step = S2;	--HALF
+						ELSE step = S0;END IF;
+		WHEN 2	=>	IF cw THEN step = S3;	--WAVE
+						ELSE step = S7;END IF;
+--		WHEN 0	=>	IF cw THEN step = S2;
+--						ELSE step = S6;
+		END CASE;
+ELSIF step == S2 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S4;	--FULL
+						ELSE step = S0;END IF;
+		WHEN 1	=>	IF cw THEN step = S3;	--HALF
+						ELSE step = S1;END IF;
+		WHEN 2	=>	IF cw THEN step = S3;	--WAVE
+						ELSE step = S1;END IF;
+--		WHEN 0	=>	IF cw THEN step = S2;
+--						ELSE step = S6;
+		END CASE;
+ELSIF step == S3 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S4;	--FULL
+						ELSE step = S2;END IF;
+		WHEN 1	=>	IF cw THEN step = S4;	--HALF
+						ELSE step = S2;END IF;
+		WHEN 2	=>	IF cw THEN step = S5;	--WAVE
+						ELSE step = S1;END IF;
+--		WHEN 3	=>	
+		END CASE;
+ELSIF step == S4 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S6;	--FULL
+						ELSE step = S2;END IF;
+		WHEN 1	=>	IF cw THEN step = S5;	--HALF
+						ELSE step = S3;END IF;
+		WHEN 2	=>	IF cw THEN step = S5;	--WAVE
+						ELSE step = S3;END IF;
+--		WHEN 3	=>	
+		END CASE;
+ELSIF step == S5  THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S6;	--FULL
+						ELSE step = S4;END IF;
+		WHEN 1	=>	IF cw THEN step = S6;	--HALF
+						ELSE step = S4;END IF;
+		WHEN 2	=>	IF cw THEN step = S7;	--WAVE
+						ELSE step = S3;END IF;
+--		WHEN 3	=>	
+		END CASE;
+ELSIF step == S6 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S0;	--FULL
+						ELSE step = S4;END IF;
+		WHEN 1	=>	IF cw THEN step = S7;	--HALF
+						ELSE step = S5;END IF;
+		WHEN 2	=>	IF cw THEN step = S7;	--WAVE
+						ELSE step = S5;END IF;
+--		WHEN 3		
+		END CASE;
+ELSIF step == S7 THEN
+	CASE M[] IS 
+		WHEN 0	=>	IF cw THEN step = S0;	--FULL
+						ELSE step = S6;END IF;
+		WHEN 1	=>	IF cw THEN step = S0;	--HALF
+						ELSE step = S6;END IF;
+		WHEN 2	=>	IF cw THEN step = S1;	--WAVE
+						ELSE step = S5;END IF;
+--		WHEN 3	=>	
+		END CASE;
+END IF;
+END;
+		

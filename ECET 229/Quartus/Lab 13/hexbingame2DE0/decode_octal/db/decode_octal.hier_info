@@ -1,0 +1,35 @@
+|decode_octal
+bin[0] => _.IN0
+bin[0] => bar_graph[1]~1.IN2
+bin[0] => _.IN0
+bin[0] => bar_graph[3]~3.IN2
+bin[0] => _.IN0
+bin[0] => bar_graph[5]~5.IN2
+bin[0] => _.IN0
+bin[0] => bar_graph[7]~7.IN2
+bin[1] => _.IN0
+bin[1] => _.IN0
+bin[1] => bar_graph[2]~2.IN1
+bin[1] => bar_graph[3]~3.IN1
+bin[1] => _.IN0
+bin[1] => _.IN0
+bin[1] => bar_graph[6]~6.IN1
+bin[1] => bar_graph[7]~7.IN1
+bin[2] => _.IN0
+bin[2] => _.IN0
+bin[2] => _.IN0
+bin[2] => _.IN0
+bin[2] => bar_graph[4]~4.IN0
+bin[2] => bar_graph[5]~5.IN0
+bin[2] => bar_graph[6]~6.IN0
+bin[2] => bar_graph[7]~7.IN0
+bar_graph[0] <= bar_graph[0].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[1] <= bar_graph[1].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[2] <= bar_graph[2].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[3] <= bar_graph[3].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[4] <= bar_graph[4].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[5] <= bar_graph[5].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[6] <= bar_graph[6].DB_MAX_OUTPUT_PORT_TYPE
+bar_graph[7] <= bar_graph[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

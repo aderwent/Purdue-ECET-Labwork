@@ -1,0 +1,23 @@
+SUBDESIGN MOD525
+(
+	EN, clock				:INPUT;
+	CO, counter[9..0]		:OUTPUT;
+)
+
+VARIABLE
+	ff[9..0]					:DFF;
+
+BEGIN
+	ff[].clk = clock;
+	
+	IF EN == 0 THEN 
+		ff[].d = ff[].q;
+	ELSEIF ff[].q < 524 THEN
+		ff[].d = ff[].q + 1;
+	ELSEIF ff[].q == 524 THEN
+		CO = VCC;
+	ELSE
+		ff[].d = 0;
+	END IF;
+	counter[] = ff[].q;
+END;

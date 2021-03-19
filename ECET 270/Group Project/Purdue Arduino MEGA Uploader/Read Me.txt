@@ -1,0 +1,16 @@
+These programs (exe files) allow a user to select and download a hex file into an Arduino MEGA 2560 development board outside the Arduino IDE.
+Requires a new (updated) version of the AVRdude programmer.  
+
+
+Below appears to be the correct sequence of commands to invoke the process to download to an Arduino MEGA:
+
+avrdude.exe -F -v -p ATmega2560 -c wiring -P\\.\" & cbbCOMPorts.Text & " -b 115200 -D -Uflash:w:" & TextBox4.Text & ":i"
+
+
+
+Unzip these files into a local folder and run the Purdue ECET MEGA Arduino Uploader.exe file.  
+
+Navigate to find the proper HEX file, select the comm port that matches the Arduino MEGA board, and click on the "Upload" button!  
+
+If all goes as it should, a command prompt style window will open and the output of the Avrdude program should be visible.  
+Upon completion, the command prompt should close automatically.

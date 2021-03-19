@@ -1,0 +1,39 @@
+%
+	author: Alec Derwent
+	date: 11/5/2020
+	
+	This file includes a serial input to parallel out shifting register,
+	which takes a serial input and shifts it through an array of length 8.
+	This shift occurs on each clock pulse.
+
+	This SIPO register takes a clock input "serial_clock", data input "sdin",
+	and active high enable input "enablen". It then shifts the input value through
+	a dff latch "ff[7..0]", outputting the updated array as "position[7..0]".
+%
+
+SUBDESIGN SIPO (
+	serial_clock, sdin, enablen		:INPUT;	--define inputs
+	position[7..0]				:OUTPUT;	--define output
+)
+
+VARIABLE
+	ff[7..0]					:DFF;	--single dff for shifting output
+
+BEGIN
+	ff[].clk = serial_clock;	--connect clock input
+	
+	IF enablen == 0 THEN			--if active high enable is low
+		ff[].d = ff[].q;			--hold value
+	ELSE
+		--shift all included values to the left, set LSD to sdin
+		ff[7].d = ff[6].q;
+		ff[6].d = ff[5].q;
+		ff[5].d = ff[4].q;
+		ff[4].d = ff[3].q;
+		ff[3].d = ff[2].q;
+		ff[2].d = ff[1].q;
+		ff[1].d = sdin;
+	END IF;
+	
+	position[] = ff[].q;
+END;

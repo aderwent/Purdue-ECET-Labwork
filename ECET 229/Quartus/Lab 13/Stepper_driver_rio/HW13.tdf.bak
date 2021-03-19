@@ -1,0 +1,18 @@
+%	HW 13   State machine stepper driver
+This stepper driver has 3 modes: 0: Full step
+1:  half step,  2:  wave driver
+Neal Widmer
+ECET 22900
+March 5, 2016 
+%
+SUBDESIGN hw15
+(	clock, M[1..0], cw, enable		:INPUT;
+	QA, QAN, QB, QBN					:OUTPUT;)
+VARIABLE
+	step		:MACHINE of BITS (QA, QAN, QB, QBN) 
+	WITH STATES (S0 = B"1010", S1 = B"1000", S2 = B"1001", S3 = B"0001",
+					S4 = B"0101", S5 = B"0100", S6 = B"0110", S7 = B"0010");
+					
+BEGIN
+step.clk = clock;
+step.ena = enable;

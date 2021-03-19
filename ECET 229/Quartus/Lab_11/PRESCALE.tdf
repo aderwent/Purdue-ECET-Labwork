@@ -1,0 +1,32 @@
+%
+	Author: Alec Derwent
+	Date: 11/5/2020
+	MOD 392 Counter
+	
+	This program is a mod 392 counter, used to prescale a 50 MHZ
+	clock input to produce a period of 7.84 us. This counter
+	achieves this by pulsing every 392 clock rising edges, which
+	occurs every 7.84 us.
+%
+SUBDESIGN PRESCALE
+(
+	EN, clock				:INPUT;
+	CO, counter[9..0]		:OUTPUT;
+)
+
+VARIABLE
+	ff[9..0]					:DFF;
+
+BEGIN
+	ff[].clk = clock;
+	
+	IF EN == 0 THEN 
+		ff[].d = ff[].q;
+	ELSEIF ff[].q < 392 THEN
+		ff[].d = ff[].q + 1;
+	ELSEIF ff[].q == 392 THEN
+		CO = VCC;
+	ELSE
+		ff[].d = 0;
+	END IF;
+END;

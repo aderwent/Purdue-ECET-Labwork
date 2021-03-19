@@ -1,0 +1,26 @@
+%	Divide by N
+N is a 4-bit integer
+NS widmer
+January 9, 2014
+%
+SUBDESIGN divide_by_N
+( 	enable, clock, n[3..0]		:INPUT;
+	tc									:OUTPUT;		)
+	
+VARIABLE
+	divide[3..0]		:DFF;
+		
+BEGIN
+
+divide[].clk = clock;
+
+IF enable THEN
+	IF divide[] == 1 THEN		-- create a divide by N coutner to scale frequency
+		divide[].d = n[];		-- losd
+		tc = vcc;
+	ELSE divide[].d = divide[].q - 1;		--decrement
+	END IF;
+ELSE divide[].d = divide[].q;		-- hold
+END IF;
+END;
+

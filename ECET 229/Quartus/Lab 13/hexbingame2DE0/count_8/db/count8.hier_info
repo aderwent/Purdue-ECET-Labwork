@@ -1,0 +1,17 @@
+|count8
+entern => _~12.IN0
+entern => EDGE[0].DATAIN
+enable => _~1.IN0
+clock => mod8[2]~reg.CLK
+clock => mod8[1]~reg.CLK
+clock => mod8[0]~reg.CLK
+clock => SR.CLK
+clock => EDGE[0].CLK
+clock => EDGE[1].CLK
+clock => EDGE[2].CLK
+mod8[0] <= mod8[0]~reg.DB_MAX_OUTPUT_PORT_TYPE
+mod8[1] <= mod8[1]~reg.DB_MAX_OUTPUT_PORT_TYPE
+mod8[2] <= mod8[2]~reg.DB_MAX_OUTPUT_PORT_TYPE
+timesupN <= timesupN~2.DB_MAX_OUTPUT_PORT_TYPE
+
+

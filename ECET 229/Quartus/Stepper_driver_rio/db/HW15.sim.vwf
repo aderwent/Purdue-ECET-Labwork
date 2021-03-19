@@ -1,0 +1,488 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 50000.0;
+	SIMULATION_TIME = 50000.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 1000.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+USER_TYPE("|hw13|step")
+{
+	VALUES = "S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7";
+}
+
+SIGNAL("clock")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("cw")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("M")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("M[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "M";
+}
+
+SIGNAL("M[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "M";
+}
+
+SIGNAL("QA")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("QAN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("QB")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("QBN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("step")
+{
+	VALUE_TYPE = ENUM;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+	ENUM_NAME = "|hw13|step";
+}
+
+TRANSITION_LIST("clock")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 50;
+			LEVEL 0 FOR 500.0;
+			LEVEL 1 FOR 500.0;
+		}
+	}
+}
+
+TRANSITION_LIST("cw")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 6000.0;
+		LEVEL 1 FOR 8000.0;
+		LEVEL 0 FOR 10000.0;
+		LEVEL 1 FOR 10000.0;
+		LEVEL 0 FOR 6000.0;
+		LEVEL 1 FOR 8000.0;
+		LEVEL 0 FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("enable")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 50000.0;
+	}
+}
+
+TRANSITION_LIST("M[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 34000.0;
+		LEVEL 1 FOR 16000.0;
+	}
+}
+
+TRANSITION_LIST("M[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 14000.0;
+		LEVEL 1 FOR 20000.0;
+		LEVEL 0 FOR 14000.0;
+		LEVEL 1 FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("QA")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 500.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 3000.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 1 FOR 2000.0;
+			LEVEL 0 FOR 2000.0;
+		}
+		LEVEL 1 FOR 3000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 3000.0;
+		NODE
+		{
+			REPEAT = 3;
+			LEVEL 0 FOR 3000.0;
+			LEVEL 1 FOR 1000.0;
+		}
+		LEVEL 0 FOR 3000.0;
+		LEVEL 1 FOR 2500.0;
+	}
+}
+
+TRANSITION_LIST("QAN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 3000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 3000.0;
+		LEVEL 0 FOR 3000.0;
+		LEVEL 1 FOR 3000.0;
+		LEVEL 0 FOR 5000.0;
+		NODE
+		{
+			REPEAT = 3;
+			LEVEL 1 FOR 1000.0;
+			LEVEL 0 FOR 3000.0;
+		}
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 3500.0;
+	}
+}
+
+TRANSITION_LIST("QB")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1500.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 3000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 3000.0;
+		LEVEL 0 FOR 6000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 3000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 2500.0;
+	}
+}
+
+TRANSITION_LIST("QBN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1500.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
+		LEVEL 1 FOR 4000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 5000.0;
+		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 4000.0;
+		LEVEL 0 FOR 3000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 3000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 4500.0;
+	}
+}
+
+TRANSITION_LIST("step")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL S0 FOR 500.0;
+		LEVEL S6 FOR 1000.0;
+		LEVEL S4 FOR 1000.0;
+		LEVEL S2 FOR 1000.0;
+		LEVEL S0 FOR 1000.0;
+		LEVEL S6 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL S4 FOR 1000.0;
+			LEVEL S6 FOR 1000.0;
+			LEVEL S0 FOR 1000.0;
+			LEVEL S2 FOR 1000.0;
+		}
+		LEVEL S4 FOR 1000.0;
+		LEVEL S3 FOR 1000.0;
+		LEVEL S2 FOR 1000.0;
+		LEVEL S1 FOR 1000.0;
+		LEVEL S0 FOR 1000.0;
+		LEVEL S7 FOR 1000.0;
+		LEVEL S6 FOR 1000.0;
+		LEVEL S5 FOR 1000.0;
+		LEVEL S4 FOR 1000.0;
+		LEVEL S3 FOR 1000.0;
+		LEVEL S2 FOR 1000.0;
+		LEVEL S3 FOR 1000.0;
+		LEVEL S4 FOR 1000.0;
+		LEVEL S5 FOR 1000.0;
+		LEVEL S6 FOR 1000.0;
+		LEVEL S7 FOR 1000.0;
+		LEVEL S0 FOR 1000.0;
+		LEVEL S1 FOR 1000.0;
+		LEVEL S2 FOR 1000.0;
+		LEVEL S3 FOR 1000.0;
+		LEVEL S4 FOR 1000.0;
+		LEVEL S3 FOR 1000.0;
+		LEVEL S1 FOR 1000.0;
+		LEVEL S7 FOR 1000.0;
+		LEVEL S5 FOR 1000.0;
+		LEVEL S3 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL S1 FOR 1000.0;
+			LEVEL S3 FOR 1000.0;
+			LEVEL S5 FOR 1000.0;
+			LEVEL S7 FOR 1000.0;
+		}
+		LEVEL S1 FOR 2500.0;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "clock";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "cw";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "enable";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "M";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+	CHILDREN = 4, 5;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "M[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "M[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "QA";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "QAN";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "QB";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "QBN";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "step";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+}
+
+TIME_BAR
+{
+	TIME = 0;
+	MASTER = TRUE;
+}
+;

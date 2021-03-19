@@ -1,0 +1,26 @@
+SUBDESIGN step_test
+( clock				:INPUT;
+step_out[3..0], LED_out[3..0], clkout		:OUTPUT;	
+)
+
+VARIABLE
+	FF[3..0]			:DFF;
+	
+BEGIN
+
+ff[].clk = clock;
+
+TABLE
+	FF[].Q			=>		FF[].D;
+	
+	B"1010"		=>		B"1001";
+	B"1001"		=>		B"0101";
+	B"0101"		=>		B"0110";
+	B"0110"		=>		B"1010";
+	B"0000"		=>		B"1010";
+END TABLE;
+step_out[] = ff[].q;
+LED_out[] = ff[].q;
+clkout = clock;
+END;
+	

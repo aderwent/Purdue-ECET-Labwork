@@ -1,0 +1,226 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
+
+// DATE "09/10/2020 10:49:53"
+
+// 
+// Device: Altera 5CEBA4F23C7 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module twobit_compare (
+	a,
+	b,
+	gt,
+	lt,
+	eq);
+input 	[1:0] a;
+input 	[1:0] b;
+output 	gt;
+output 	lt;
+output 	eq;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \gt~output_o ;
+wire \lt~output_o ;
+wire \eq~output_o ;
+wire \a[1]~input_o ;
+wire \b[1]~input_o ;
+wire \a[0]~input_o ;
+wire \b[0]~input_o ;
+wire \op_1~0_combout ;
+wire \op_2~0_combout ;
+wire \eq~0_combout ;
+
+
+cyclonev_io_obuf \gt~output (
+	.i(\op_1~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\gt~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \gt~output .bus_hold = "false";
+defparam \gt~output .open_drain_output = "false";
+defparam \gt~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \lt~output (
+	.i(\op_2~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\lt~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \lt~output .bus_hold = "false";
+defparam \lt~output .open_drain_output = "false";
+defparam \lt~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \eq~output (
+	.i(!\eq~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\eq~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \eq~output .bus_hold = "false";
+defparam \eq~output .open_drain_output = "false";
+defparam \eq~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_ibuf \a[1]~input (
+	.i(a[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\a[1]~input_o ));
+// synopsys translate_off
+defparam \a[1]~input .bus_hold = "false";
+defparam \a[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \b[1]~input (
+	.i(b[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\b[1]~input_o ));
+// synopsys translate_off
+defparam \b[1]~input .bus_hold = "false";
+defparam \b[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \a[0]~input (
+	.i(a[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\a[0]~input_o ));
+// synopsys translate_off
+defparam \a[0]~input .bus_hold = "false";
+defparam \a[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \b[0]~input (
+	.i(b[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\b[0]~input_o ));
+// synopsys translate_off
+defparam \b[0]~input .bus_hold = "false";
+defparam \b[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \op_1~0 (
+// Equation(s):
+// \op_1~0_combout  = (!\a[1]~input_o  & (!\b[1]~input_o  & (\a[0]~input_o  & !\b[0]~input_o ))) # (\a[1]~input_o  & ((!\b[1]~input_o ) # ((\a[0]~input_o  & !\b[0]~input_o ))))
+
+	.dataa(!\a[1]~input_o ),
+	.datab(!\b[1]~input_o ),
+	.datac(!\a[0]~input_o ),
+	.datad(!\b[0]~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\op_1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \op_1~0 .extended_lut = "off";
+defparam \op_1~0 .lut_mask = 64'h4D444D444D444D44;
+defparam \op_1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \op_2~0 (
+// Equation(s):
+// \op_2~0_combout  = (!\a[1]~input_o  & (((!\a[0]~input_o  & \b[0]~input_o )) # (\b[1]~input_o ))) # (\a[1]~input_o  & (\b[1]~input_o  & (!\a[0]~input_o  & \b[0]~input_o )))
+
+	.dataa(!\a[1]~input_o ),
+	.datab(!\b[1]~input_o ),
+	.datac(!\a[0]~input_o ),
+	.datad(!\b[0]~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\op_2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \op_2~0 .extended_lut = "off";
+defparam \op_2~0 .lut_mask = 64'h22B222B222B222B2;
+defparam \op_2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \eq~0 (
+// Equation(s):
+// \eq~0_combout  = (!\a[1]~input_o  & ((!\a[0]~input_o  $ (!\b[0]~input_o )) # (\b[1]~input_o ))) # (\a[1]~input_o  & ((!\b[1]~input_o ) # (!\a[0]~input_o  $ (!\b[0]~input_o ))))
+
+	.dataa(!\a[1]~input_o ),
+	.datab(!\b[1]~input_o ),
+	.datac(!\a[0]~input_o ),
+	.datad(!\b[0]~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\eq~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \eq~0 .extended_lut = "off";
+defparam \eq~0 .lut_mask = 64'h6FF66FF66FF66FF6;
+defparam \eq~0 .shared_arith = "off";
+// synopsys translate_on
+
+assign gt = \gt~output_o ;
+
+assign lt = \lt~output_o ;
+
+assign eq = \eq~output_o ;
+
+endmodule

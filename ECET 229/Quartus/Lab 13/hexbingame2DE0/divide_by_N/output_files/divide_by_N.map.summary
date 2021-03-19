@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Sat Jan 18 18:52:47 2014
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : divide_by_N
+Top-level Entity Name : divide_by_N
+Family : Cyclone IV GX
+Total logic elements : 8
+    Total combinational functions : 8
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0

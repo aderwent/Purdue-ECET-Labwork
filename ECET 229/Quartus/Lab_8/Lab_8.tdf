@@ -1,0 +1,28 @@
+
+SUBDESIGN Lab_8
+(	clock, N[9..0], Enable		:INPUT;
+
+	Fout				:OUTPUT;	)
+	
+	VARIABLE
+		flips[9..0]		:DFF;
+
+BEGIN
+	flips[].clk = clock;
+	--IF flips[].q == 0 THEN     -- if count = 0
+		IF flips[].q == 0 THEN
+			flips[].d = N[];
+		END IF;
+		IF Enable THEN
+			IF flips[].q == 1 THEN
+				Fout = B"1";		-- output pulse
+				flips[].d = N[];  -- load n
+			ELSE
+				flips[].d = flips[].q - 1;
+				Fout = B"0";
+			END IF;
+		ELSE
+			flips[].d = flips[].q;
+		END IF;
+--END IF;
+END;

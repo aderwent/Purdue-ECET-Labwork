@@ -1,0 +1,18 @@
+SUBDESIGN reg
+(	clock, ENA, Dat[9..0]	:INPUT;
+	Qout[9..0]	:OUTPUT;)	
+	
+VARIABLE	
+	bitsS[9..0]	:DFF;
+
+	BEGIN
+		
+		bitsS[].clK = CLOCK;
+		if ENA THEN 
+			bitsS[].d = dat[];
+		ELSE
+			BITSS[].D = BITSS[].Q;
+		END IF;
+		qout[] = bitsS[].q;
+	END;
+	

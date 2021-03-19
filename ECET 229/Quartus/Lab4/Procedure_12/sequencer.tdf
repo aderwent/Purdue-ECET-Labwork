@@ -1,0 +1,26 @@
+%	Sequencer
+	Lab 4  ECET 229000
+	Spring  2019
+	NS Widmer
+	This design counts up from 000 to 111 non-recycling.
+	A synchrounous  Clear input starts it over at 0. 
+%
+SUBDESIGN sequencer
+(	clock, clearn		:INPUT ;
+	QC, QB, QA			:OUTPUT; )
+	
+VARIABLE
+	digits[2..0]			:DFF;
+
+	
+	BEGIN
+		digits[].clk = clock;		-- connect all clocks
+		IF digits[].Q < 7 THEN		-- generating phone number
+			digits[].D = digits[].Q + 1;	-- couht up
+		ELSIF clearn == 0 THEN		-- start sequanec over
+			digits[].D = 0;
+		ELSE 
+			digits[].D = 7;			-- hold last digit
+		END IF;
+		(QC,QB,QA) = digits[];	--connect to output pins
+	END;

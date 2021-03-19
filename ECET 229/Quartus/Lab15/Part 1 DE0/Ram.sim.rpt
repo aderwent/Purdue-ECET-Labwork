@@ -1,0 +1,202 @@
+Simulator report for Ram
+Thu Dec 03 20:34:53 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 32 nodes     ;
+; Simulation Coverage         ;      81.25 % ;
+; Total Number of Transitions ; 423          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                              ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                           ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                 ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                  ;               ;
+; Vector input source                                                                        ; W:/Classes/ECET 229/Quartus/Lab15/Part 1 DE0/Ram.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                   ; On            ;
+; Check outputs                                                                              ; Off                                                  ; Off           ;
+; Report simulation coverage                                                                 ; On                                                   ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                   ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                   ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                   ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                  ; Off           ;
+; Detect glitches                                                                            ; Off                                                  ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                  ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                  ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                  ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                  ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                   ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                           ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                  ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                  ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                 ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++---------------------------------------------------------------------------------------------+
+; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|ALTSYNCRAM ;
++---------------------------------------------------------------------------------------------+
+Please refer to fitter text-based report (*.fit.rpt) to view logical memory report content in ASCII.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      81.25 % ;
+; Total nodes checked                                 ; 32           ;
+; Total output ports checked                          ; 32           ;
+; Total output ports with complete 1/0-value coverage ; 26           ;
+; Total output ports with no 1/0-value coverage       ; 1            ;
+; Total output ports with no 1-value coverage         ; 3            ;
+; Total output ports with no 0-value coverage         ; 4            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                ;
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                     ; Output Port Name                                                                        ; Output Port Type ;
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
+; |Ram|LEDG6_Y22                                                                                ; |Ram|LEDG6_Y22                                                                          ; pin_out          ;
+; |Ram|CSn                                                                                      ; |Ram|CSn                                                                                ; out              ;
+; |Ram|LEDG4_w22                                                                                ; |Ram|LEDG4_w22                                                                          ; pin_out          ;
+; |Ram|OEn                                                                                      ; |Ram|OEn                                                                                ; out              ;
+; |Ram|LEDG0_U22                                                                                ; |Ram|LEDG0_U22                                                                          ; pin_out          ;
+; |Ram|WRn                                                                                      ; |Ram|WRn                                                                                ; out              ;
+; |Ram|Dout[2]                                                                                  ; |Ram|Dout[2]                                                                            ; pin_out          ;
+; |Ram|Dout[1]                                                                                  ; |Ram|Dout[1]                                                                            ; pin_out          ;
+; |Ram|Dout[0]                                                                                  ; |Ram|Dout[0]                                                                            ; pin_out          ;
+; |Ram|inst1[2]                                                                                 ; |Ram|inst1[2]                                                                           ; out              ;
+; |Ram|inst1[1]                                                                                 ; |Ram|inst1[1]                                                                           ; out              ;
+; |Ram|inst1[0]                                                                                 ; |Ram|inst1[0]                                                                           ; out              ;
+; |Ram|inst13                                                                                   ; |Ram|inst13                                                                             ; out0             ;
+; |Ram|inst10                                                                                   ; |Ram|inst10                                                                             ; out0             ;
+; |Ram|clock                                                                                    ; |Ram|clock                                                                              ; out              ;
+; |Ram|A[2]                                                                                     ; |Ram|A[2]                                                                               ; out              ;
+; |Ram|A[1]                                                                                     ; |Ram|A[1]                                                                               ; out              ;
+; |Ram|A[0]                                                                                     ; |Ram|A[0]                                                                               ; out              ;
+; |Ram|Din[2]                                                                                   ; |Ram|Din[2]                                                                             ; out              ;
+; |Ram|Din[1]                                                                                   ; |Ram|Din[1]                                                                             ; out              ;
+; |Ram|Din[0]                                                                                   ; |Ram|Din[0]                                                                             ; out              ;
+; |Ram|inst9                                                                                    ; |Ram|inst9                                                                              ; out0             ;
+; |Ram|inst8                                                                                    ; |Ram|inst8                                                                              ; out0             ;
+; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|ram_block1a0 ; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|q_a[0] ; portadataout0    ;
+; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|ram_block1a1 ; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|q_a[1] ; portadataout0    ;
+; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|ram_block1a2 ; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|q_a[2] ; portadataout0    ;
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------+
+; Missing 1-Value Coverage                          ;
++-------------+------------------+------------------+
+; Node Name   ; Output Port Name ; Output Port Type ;
++-------------+------------------+------------------+
+; |Ram|A[4]   ; |Ram|A[4]        ; out              ;
+; |Ram|A[3]   ; |Ram|A[3]        ; out              ;
+; |Ram|Din[3] ; |Ram|Din[3]      ; out              ;
++-------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                   ;
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                     ; Output Port Name                                                                        ; Output Port Type ;
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
+; |Ram|Dout[3]                                                                                  ; |Ram|Dout[3]                                                                            ; pin_out          ;
+; |Ram|inst1[3]                                                                                 ; |Ram|inst1[3]                                                                           ; out              ;
+; |Ram|A[3]                                                                                     ; |Ram|A[3]                                                                               ; out              ;
+; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|ram_block1a3 ; |Ram|RAM4x32:inst|altsyncram:altsyncram_component|altsyncram_hpa1:auto_generated|q_a[3] ; portadataout0    ;
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 03 20:34:46 2020
+Info: Command: quartus_sim --simulation_results_format=VWF Ram -c Ram
+Info (324025): Using vector source file "W:/Classes/ECET 229/Quartus/Lab15/Part 1 DE0/Ram.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      81.25 %
+Info (328052): Number of transitions in simulation is 423
+Info (324045): Vector file Ram.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4446 megabytes
+    Info: Processing ended: Thu Dec 03 20:34:53 2020
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:00
+
+

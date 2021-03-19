@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.567 ns
+From           : triggern
+To             : gun:inst8|count[9]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 26.251 ns
+From           : gun:inst8|count[4]
+To             : r[1]
+From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 4.830 ns
+From           : triggern
+To             : gun:inst8|count[3]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 142.65 MHz ( period = 7.010 ns )
+From           : gun:inst8|count[2]
+To             : gun:inst8|count[9]
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clock'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : target:inst2|count[0]
+To             : target:inst2|count[0]
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 191
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 191
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,117 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -2.761
+TNS   : -49.592
+
+Type  : Slow 1100mV 85C Model Setup 'debounce'
+Slack : -1.979
+TNS   : -18.666
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : -2.051
+TNS   : -24.239
+
+Type  : Slow 1100mV 85C Model Hold 'debounce'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.538
+TNS   : -17.870
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'debounce'
+Slack : -0.538
+TNS   : -9.345
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Prescale[19]'
+Slack : -0.538
+TNS   : -0.813
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -2.948
+TNS   : -50.241
+
+Type  : Slow 1100mV 0C Model Setup 'debounce'
+Slack : -1.979
+TNS   : -19.002
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : -2.052
+TNS   : -28.382
+
+Type  : Slow 1100mV 0C Model Hold 'debounce'
+Slack : 0.342
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.543
+TNS   : -15.810
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'debounce'
+Slack : -0.538
+TNS   : -9.299
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Prescale[19]'
+Slack : -0.538
+TNS   : -0.810
+
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -1.267
+TNS   : -16.417
+
+Type  : Fast 1100mV 85C Model Setup 'debounce'
+Slack : -0.680
+TNS   : -5.356
+
+Type  : Fast 1100mV 85C Model Hold 'clock'
+Slack : -0.837
+TNS   : -16.241
+
+Type  : Fast 1100mV 85C Model Hold 'debounce'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.601
+TNS   : -9.927
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Prescale[19]'
+Slack : 0.075
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'debounce'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -1.150
+TNS   : -13.532
+
+Type  : Fast 1100mV 0C Model Setup 'debounce'
+Slack : -0.566
+TNS   : -4.391
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : -0.883
+TNS   : -17.591
+
+Type  : Fast 1100mV 0C Model Hold 'debounce'
+Slack : 0.082
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.641
+TNS   : -11.809
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Prescale[19]'
+Slack : 0.095
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'debounce'
+Slack : 0.142
+TNS   : 0.000
+
+------------------------------------------------------------

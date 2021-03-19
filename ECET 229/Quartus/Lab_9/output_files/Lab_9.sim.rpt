@@ -1,0 +1,354 @@
+Simulator report for Lab_9
+Thu Oct 22 09:54:13 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 80.0 us      ;
+; Simulation Netlist Size     ; 89 nodes     ;
+; Simulation Coverage         ;      87.64 % ;
+; Total Number of Transitions ; 19985        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                        ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                     ; Timing        ;
+; Start time                                                                                 ; 0 ns                                           ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                            ;               ;
+; Vector input source                                                                        ; W:/Classes/ECET 229/Quartus/Lab_9/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                             ; On            ;
+; Check outputs                                                                              ; Off                                            ; Off           ;
+; Report simulation coverage                                                                 ; On                                             ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                             ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                             ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                             ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                            ; Off           ;
+; Detect glitches                                                                            ; Off                                            ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                            ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                            ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                            ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                            ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                             ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                     ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                            ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                            ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                           ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      87.64 % ;
+; Total nodes checked                                 ; 89           ;
+; Total output ports checked                          ; 89           ;
+; Total output ports with complete 1/0-value coverage ; 78           ;
+; Total output ports with no 1/0-value coverage       ; 11           ;
+; Total output ports with no 1-value coverage         ; 11           ;
+; Total output ports with no 0-value coverage         ; 11           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------+
+; Complete 1/0-Value Coverage                              ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |lab_9|clock      ; |lab_9|clock      ; out              ;
+; |lab_9|CO         ; |lab_9|CO         ; pin_out          ;
+; |lab_9|counter[0] ; |lab_9|counter[0] ; pin_out          ;
+; |lab_9|counter[1] ; |lab_9|counter[1] ; pin_out          ;
+; |lab_9|counter[2] ; |lab_9|counter[2] ; pin_out          ;
+; |lab_9|counter[3] ; |lab_9|counter[3] ; pin_out          ;
+; |lab_9|counter[4] ; |lab_9|counter[4] ; pin_out          ;
+; |lab_9|counter[5] ; |lab_9|counter[5] ; pin_out          ;
+; |lab_9|counter[6] ; |lab_9|counter[6] ; pin_out          ;
+; |lab_9|counter[7] ; |lab_9|counter[7] ; pin_out          ;
+; |lab_9|counter[8] ; |lab_9|counter[8] ; pin_out          ;
+; |lab_9|counter[9] ; |lab_9|counter[9] ; pin_out          ;
+; |lab_9|_~13       ; |lab_9|_~13       ; out0             ;
+; |lab_9|_~14       ; |lab_9|_~14       ; out0             ;
+; |lab_9|ff[9]~0    ; |lab_9|ff[9]~0    ; out0             ;
+; |lab_9|_~15       ; |lab_9|_~15       ; out0             ;
+; |lab_9|ff[8]~1    ; |lab_9|ff[8]~1    ; out0             ;
+; |lab_9|_~16       ; |lab_9|_~16       ; out0             ;
+; |lab_9|ff[7]~2    ; |lab_9|ff[7]~2    ; out0             ;
+; |lab_9|_~17       ; |lab_9|_~17       ; out0             ;
+; |lab_9|ff[6]~3    ; |lab_9|ff[6]~3    ; out0             ;
+; |lab_9|_~18       ; |lab_9|_~18       ; out0             ;
+; |lab_9|ff[5]~4    ; |lab_9|ff[5]~4    ; out0             ;
+; |lab_9|_~19       ; |lab_9|_~19       ; out0             ;
+; |lab_9|ff[4]~5    ; |lab_9|ff[4]~5    ; out0             ;
+; |lab_9|_~20       ; |lab_9|_~20       ; out0             ;
+; |lab_9|ff[3]~6    ; |lab_9|ff[3]~6    ; out0             ;
+; |lab_9|_~21       ; |lab_9|_~21       ; out0             ;
+; |lab_9|ff[2]~7    ; |lab_9|ff[2]~7    ; out0             ;
+; |lab_9|_~22       ; |lab_9|_~22       ; out0             ;
+; |lab_9|ff[1]~8    ; |lab_9|ff[1]~8    ; out0             ;
+; |lab_9|_~23       ; |lab_9|_~23       ; out0             ;
+; |lab_9|ff[0]~9    ; |lab_9|ff[0]~9    ; out0             ;
+; |lab_9|_~25       ; |lab_9|_~25       ; out0             ;
+; |lab_9|_~26       ; |lab_9|_~26       ; out0             ;
+; |lab_9|CO~0       ; |lab_9|CO~0       ; out0             ;
+; |lab_9|ff[9]      ; |lab_9|ff[9]      ; regout           ;
+; |lab_9|ff[8]      ; |lab_9|ff[8]      ; regout           ;
+; |lab_9|ff[7]      ; |lab_9|ff[7]      ; regout           ;
+; |lab_9|ff[6]      ; |lab_9|ff[6]      ; regout           ;
+; |lab_9|ff[5]      ; |lab_9|ff[5]      ; regout           ;
+; |lab_9|ff[4]      ; |lab_9|ff[4]      ; regout           ;
+; |lab_9|ff[3]      ; |lab_9|ff[3]      ; regout           ;
+; |lab_9|ff[2]      ; |lab_9|ff[2]      ; regout           ;
+; |lab_9|ff[1]      ; |lab_9|ff[1]      ; regout           ;
+; |lab_9|ff[0]      ; |lab_9|ff[0]      ; regout           ;
+; |lab_9|op_1~0     ; |lab_9|op_1~0     ; out0             ;
+; |lab_9|op_1~1     ; |lab_9|op_1~1     ; out0             ;
+; |lab_9|op_1~2     ; |lab_9|op_1~2     ; out0             ;
+; |lab_9|op_1~3     ; |lab_9|op_1~3     ; out0             ;
+; |lab_9|op_1~4     ; |lab_9|op_1~4     ; out0             ;
+; |lab_9|op_1~5     ; |lab_9|op_1~5     ; out0             ;
+; |lab_9|op_1~6     ; |lab_9|op_1~6     ; out0             ;
+; |lab_9|op_1~7     ; |lab_9|op_1~7     ; out0             ;
+; |lab_9|op_1~8     ; |lab_9|op_1~8     ; out0             ;
+; |lab_9|op_1~9     ; |lab_9|op_1~9     ; out0             ;
+; |lab_9|op_1~10    ; |lab_9|op_1~10    ; out0             ;
+; |lab_9|op_1~11    ; |lab_9|op_1~11    ; out0             ;
+; |lab_9|op_1~12    ; |lab_9|op_1~12    ; out0             ;
+; |lab_9|op_1~13    ; |lab_9|op_1~13    ; out0             ;
+; |lab_9|op_1~14    ; |lab_9|op_1~14    ; out0             ;
+; |lab_9|op_2~0     ; |lab_9|op_2~0     ; out0             ;
+; |lab_9|op_2~1     ; |lab_9|op_2~1     ; out0             ;
+; |lab_9|op_2~2     ; |lab_9|op_2~2     ; out0             ;
+; |lab_9|op_2~3     ; |lab_9|op_2~3     ; out0             ;
+; |lab_9|op_2~4     ; |lab_9|op_2~4     ; out0             ;
+; |lab_9|op_2~5     ; |lab_9|op_2~5     ; out0             ;
+; |lab_9|op_2~6     ; |lab_9|op_2~6     ; out0             ;
+; |lab_9|op_2~7     ; |lab_9|op_2~7     ; out0             ;
+; |lab_9|op_2~8     ; |lab_9|op_2~8     ; out0             ;
+; |lab_9|op_2~9     ; |lab_9|op_2~9     ; out0             ;
+; |lab_9|op_2~10    ; |lab_9|op_2~10    ; out0             ;
+; |lab_9|op_2~11    ; |lab_9|op_2~11    ; out0             ;
+; |lab_9|op_2~12    ; |lab_9|op_2~12    ; out0             ;
+; |lab_9|op_2~13    ; |lab_9|op_2~13    ; out0             ;
+; |lab_9|op_2~14    ; |lab_9|op_2~14    ; out0             ;
+; |lab_9|op_2~15    ; |lab_9|op_2~15    ; out0             ;
+; |lab_9|op_2~16    ; |lab_9|op_2~16    ; out0             ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------+
+; Missing 1-Value Coverage                          ;
++-------------+------------------+------------------+
+; Node Name   ; Output Port Name ; Output Port Type ;
++-------------+------------------+------------------+
+; |lab_9|EN   ; |lab_9|EN        ; out              ;
+; |lab_9|_~2  ; |lab_9|_~2       ; out0             ;
+; |lab_9|_~3  ; |lab_9|_~3       ; out0             ;
+; |lab_9|_~4  ; |lab_9|_~4       ; out0             ;
+; |lab_9|_~5  ; |lab_9|_~5       ; out0             ;
+; |lab_9|_~6  ; |lab_9|_~6       ; out0             ;
+; |lab_9|_~7  ; |lab_9|_~7       ; out0             ;
+; |lab_9|_~8  ; |lab_9|_~8       ; out0             ;
+; |lab_9|_~9  ; |lab_9|_~9       ; out0             ;
+; |lab_9|_~10 ; |lab_9|_~10      ; out0             ;
+; |lab_9|_~11 ; |lab_9|_~11      ; out0             ;
++-------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------+
+; Missing 0-Value Coverage                          ;
++-------------+------------------+------------------+
+; Node Name   ; Output Port Name ; Output Port Type ;
++-------------+------------------+------------------+
+; |lab_9|EN   ; |lab_9|EN        ; out              ;
+; |lab_9|_~2  ; |lab_9|_~2       ; out0             ;
+; |lab_9|_~3  ; |lab_9|_~3       ; out0             ;
+; |lab_9|_~4  ; |lab_9|_~4       ; out0             ;
+; |lab_9|_~5  ; |lab_9|_~5       ; out0             ;
+; |lab_9|_~6  ; |lab_9|_~6       ; out0             ;
+; |lab_9|_~7  ; |lab_9|_~7       ; out0             ;
+; |lab_9|_~8  ; |lab_9|_~8       ; out0             ;
+; |lab_9|_~9  ; |lab_9|_~9       ; out0             ;
+; |lab_9|_~10 ; |lab_9|_~10      ; out0             ;
+; |lab_9|_~11 ; |lab_9|_~11      ; out0             ;
++-------------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Oct 22 09:54:12 2020
+Info: Command: quartus_sim --simulation_results_format=VWF Lab_9 -c Lab_9
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Info (324025): Using vector source file "W:/Classes/ECET 229/Quartus/Lab_9/Waveform.vwf"
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      87.64 %
+Info (328052): Number of transitions in simulation is 19985
+Info (324045): Vector file Lab_9.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 4459 megabytes
+    Info: Processing ended: Thu Oct 22 09:54:13 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

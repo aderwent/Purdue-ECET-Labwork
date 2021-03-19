@@ -1,0 +1,33 @@
+|Reg
+clock => bitsS[9].CLK
+clock => bitsS[8].CLK
+clock => bitsS[7].CLK
+clock => bitsS[6].CLK
+clock => bitsS[5].CLK
+clock => bitsS[4].CLK
+clock => bitsS[3].CLK
+clock => bitsS[2].CLK
+clock => bitsS[1].CLK
+clock => bitsS[0].CLK
+Dat[0] => bitsS[0].DATAIN
+Dat[1] => bitsS[1].DATAIN
+Dat[2] => bitsS[2].DATAIN
+Dat[3] => bitsS[3].DATAIN
+Dat[4] => bitsS[4].DATAIN
+Dat[5] => bitsS[5].DATAIN
+Dat[6] => bitsS[6].DATAIN
+Dat[7] => bitsS[7].DATAIN
+Dat[8] => bitsS[8].DATAIN
+Dat[9] => bitsS[9].DATAIN
+Qout[0] <= bitsS[0].DB_MAX_OUTPUT_PORT_TYPE
+Qout[1] <= bitsS[1].DB_MAX_OUTPUT_PORT_TYPE
+Qout[2] <= bitsS[2].DB_MAX_OUTPUT_PORT_TYPE
+Qout[3] <= bitsS[3].DB_MAX_OUTPUT_PORT_TYPE
+Qout[4] <= bitsS[4].DB_MAX_OUTPUT_PORT_TYPE
+Qout[5] <= bitsS[5].DB_MAX_OUTPUT_PORT_TYPE
+Qout[6] <= bitsS[6].DB_MAX_OUTPUT_PORT_TYPE
+Qout[7] <= bitsS[7].DB_MAX_OUTPUT_PORT_TYPE
+Qout[8] <= bitsS[8].DB_MAX_OUTPUT_PORT_TYPE
+Qout[9] <= bitsS[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
